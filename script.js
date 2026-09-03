@@ -22,6 +22,10 @@ themeButton.addEventListener("click", () => {
 const path = document.querySelector(".path");
 const links = document.querySelectorAll(".nav-link");
 
+path.addEventListener("click", () => {
+  path.textContent = "@mathieu-morin-dev/HOME";
+});
+
 links.forEach((link) => {
   link.addEventListener("click", () => {
     const pageName = link.textContent;
