@@ -68,10 +68,13 @@ header{
 	position: sticky;
 	justify-content: space-between;
 	font-size: var(--font);
+	margin: 7px;
 }
 main{
 	flex: 1;
 	display: flex;
+	flex-direction: column;
+	min-height: calc(100vh - 60px);
 }
 .path{
   font-size: 30px;
@@ -84,10 +87,24 @@ main{
 	align-items: center;
 }
 .menu a{
+	position: relative;
 	font-size: 30px;
   	letter-spacing: 0.06em;
 	color: var(--ink);
   	text-decoration: none;
+}
+.menu a::before{
+	content: '';
+	position: absolute;
+	bottom: -1px;
+	left: 0;
+	width: 0;
+	height: 3px;
+	background-color: var(--accent);
+	transition: width 0.4s ease;
+}
+.menu a:hover::before{
+	width: 100%;
 }
 .theme-btn{
 	width: 34px;
@@ -95,15 +112,17 @@ main{
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	border: 1px solid;
+	border: 0.5px solid;
 	border-color: var(--ink);
-	background: var(--surface);
+	background: none;
 	color: var(--ink);
 	border-radius: var(--radius);
 	font-size: 15px;
 	cursor: pointer;
 }
-
+.theme-btn:hover{
+	transform: translateY(-2px);
+}
 .theme-btn .moon,
 .darkmode .theme-btn .sun{
 	display: none;
@@ -117,7 +136,8 @@ main{
 .hero{
 	box-sizing: border-box;
 	width: 100%;
-	flex: 1;
+	flex: 1 1 auto;
+	min-height: 0;
   	max-width: var(--maxw);
  	margin-inline: auto;
 	padding: 32px;
@@ -228,4 +248,21 @@ main{
 	background: var(--surface);
 	border: 1px solid var(--accent);
 	color: var(--accent);
+}
+
+.now{
+	width: 100%;
+	box-sizing: border-box;
+	max-width: 1600px;
+	margin: 0 auto;
+	padding: 15px 32px;
+	border-top: 1px solid var(--line);
+	display: flex; align-items: center;
+	gap: 12px;
+	font-family: var(--mono); 
+	font-size: 20px; 
+	color: var(--muted);
+	}
+.now .date{
+	margin-left: auto; opacity: .75; 
 }

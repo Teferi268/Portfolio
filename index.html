@@ -15,17 +15,17 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
     <link rel="stylesheet" href="style.css" />
-    <script src="darkmode.js" defer></script>
+    <script src="script.js" defer></script>
   </head>
 
   
   <body class="darkmode">
-    <header>
-      <a class="path">@mathieu-morin-dev/</a>
+    <header id="HOME">
+      <a class="path" href="#HOME">@mathieu-morin-dev/</a>
       <nav class="menu">
-        <a href="#ABOUT">ABOUT</a>
-        <a href="#WORK">WORK</a>
-        <a href="#CONTACT">CONTACT</a>
+        <a class="nav-link" href="#ABOUT">ABOUT</a>
+        <a class="nav-link" href="#WORK">WORK</a>
+        <a class="nav-link" href="#CONTACT">CONTACT</a>
 
         <button class="theme-btn" id="theme-btn" type="button" aria-label="Activer le mode clair" aria-pressed="true">
           <i class="fa-solid fa-sun sun" aria-hidden="true"></i>
@@ -43,7 +43,7 @@
             <i class="fa-solid fa-envelope" aria-hidden="true"></i>
           </a>
           <a
-            href=""
+            href="https://www.linkedin.com/in/mathieu-morin-319710353/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Voir mon profil LinkedIn"
@@ -51,7 +51,7 @@
             <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
           </a>
           <a
-            href=""
+            href="https://github.com/Teferi268"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Voir mon profil GitHub"
@@ -68,11 +68,12 @@
             <a class="btn-cv" href="assets/cv.pdf">CV</a>
         </div>
 
-        <p class="now">
-          En ce moment: ........................... septembre 2026
-        </p>
       </section>
 
+      <p class="now">
+        <span>En ce moment: je teste la restauration complète de mes sauvegardes, pour vérifier qu'elles servent à quelque chose</span>
+        <span class="date">[septembre 2026]</span>
+      </p>
 
     </main>
   </body>

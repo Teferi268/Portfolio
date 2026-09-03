@@ -18,3 +18,13 @@ themeButton.addEventListener("click", () => {
     localStorage.setItem("theme", document.body.classList.contains("darkmode") ? "dark" : "light");
     updateThemeButton();
 });
+
+const path = document.querySelector(".path");
+const links = document.querySelectorAll(".nav-link");
+
+links.forEach((link) => {
+  link.addEventListener("click", () => {
+    const pageName = link.textContent;
+    path.textContent = `@mathieu-morin-dev/${pageName}`;
+  });
+});
