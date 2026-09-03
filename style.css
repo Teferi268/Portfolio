@@ -1,3 +1,89 @@
-* {
-	font-family: "Syne", sans-serif;
+:root{
+  --bg:       #F1F3F5;   /* fond de page */
+  --surface:  #FFFFFF;   /* cartes, blocs */
+  --ink:      #16181B;   /* texte principal */
+  --muted:    #5D6570;   /* texte secondaire */
+  --line:     #DDE1E5;   /* bordures, filets */
+  --accent:   #2E9BF0;   /* bleu, focus et survols */
+ 
+  --ok-bg:    #D8F3E1;   /* fond de la pastille */
+  --ok-text:  #14532D;   /* texte de la pastille */
+  --ok-dot:   #16A34A;   /* le point vert */
+ 
+  --btn-bg:   #16181B;   /* fond du bouton principal */
+  --btn-ink:  #FFFFFF;   /* texte du bouton principal */
+ 
+  --font: "Syne", sans-serif;
+  --mono: "Syne", sans-serif;
+ 
+  --radius: 6px;
+  --maxw:   960px;
+}
+
+.darkmode{
+	--bg:       #0D1420;   /* fond de page — bleu nuit désaturé */
+	--surface:  #141E2E;   /* cartes, blocs — un cran au-dessus du fond */
+	--ink:      #E6EDF6;   /* texte principal — jamais du blanc pur */
+	--muted:    #8FA3BC;   /* texte secondaire */
+	--line:     #24334C;   /* bordures, filets */
+	--accent:   #4DA3FF;   /* bleu, focus et survols */
+
+	--ok-bg:    #10361F;   /* fond de la pastille */
+	--ok-text:  #7BE8A6;   /* texte de la pastille */
+	--ok-dot:   #34D07C;   /* le point vert */
+
+	--btn-bg:   #4DA3FF;   /* fond du bouton principal */
+	--btn-ink:  #06192E;   /* texte du bouton principal */
+}
+body{
+	background-color: var(--bg);
+	color: var(--ink);
+	font-family: var(--font);
+	transition: background-color 0.2s ease, color 0.2s ease;
+}
+header{
+	display: flex;
+	top: 0;
+	position: sticky;
+	justify-content: space-between;
+	font-size: var(--font);
+}
+.path{
+  font-size: 30px;
+	color: var(--ink);
+  text-decoration: none;
+}
+.menu{
+	display: flex;
+	gap:24px;
+	align-items: center;
+}
+.menu a{
+	font-size: 30px;
+  	letter-spacing: 0.06em;
+	color: var(--ink);
+  	text-decoration: none;
+}
+.theme-btn{
+	width: 34px;
+	height: 34px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid;
+	border-color: var(--ink);
+	background: var(--surface);
+	color: var(--ink);
+	border-radius: var(--radius);
+	font-size: 15px;
+	cursor: pointer;
+}
+
+.theme-btn .moon,
+.darkmode .theme-btn .sun{
+	display: none;
+}
+
+.darkmode .theme-btn .moon{
+	display: inline-block;
 }

@@ -15,10 +15,11 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
     <link rel="stylesheet" href="style.css" />
+    <script src="darkmode.js" defer></script>
   </head>
 
   
-  <body>
+  <body class="darkmode">
     <header>
       <a class="path">@mathieu-morin-dev/</a>
       <nav class="menu">
@@ -26,7 +27,7 @@
         <a href="#WORK">WORK</a>
         <a href="#CONTACT">CONTACT</a>
 
-        <button class="theme-btn" id="theme-btn" type="button">
+        <button class="theme-btn" id="theme-btn" type="button" aria-label="Activer le mode clair" aria-pressed="true">
           <i class="fa-solid fa-sun sun" aria-hidden="true"></i>
           <i class="fa-solid fa-moon moon" aria-hidden="true"></i>
         </button>
@@ -36,7 +37,7 @@
     <main>
       <section class="hero" id="ABOUT">
         <h1>Mathieu Morin</h1>
-        <p class="hero_label">Étudiant en informatique, deuxième année. Je m'oriente versl'administration système et l'infrastructure.</p>
+        <p class="hero-label">Étudiant en informatique, deuxième année. Je m'oriente vers l'administration système et l'infrastructure.</p>
         <div class="socials">
           <a href="mailto:mathieu.morinm@gmail.com" aria-label="Envoyer un e-mail">
             <i class="fa-solid fa-envelope" aria-hidden="true"></i>
@@ -58,10 +59,18 @@
             <i class="fa-brands fa-github" aria-hidden="true"></i>
           </a>
         </div>
-        <p class="dispo">Recherche un stage - mai & juin 2027</p>
-        <div class="plus">
-            <a class="btn-projet" href="#WORK">VOIR MES PROJETS</a><a class="btn-cv" href="assets/cv.pdf">CV</a>
+        <div class="stage">
+          <span class="stage-dot"></span>
+          <p class="dispo">Recherche un stage - mai & juin 2027</p>
         </div>
+        <div class="plus">
+            <a class="btn-projet" href="#WORK">VOIR MES PROJETS</a>
+            <a class="btn-cv" href="assets/cv.pdf">CV</a>
+        </div>
+
+        <p class="now">
+          En ce moment: ........................... septembre 2026
+        </p>
       </section>
 
 
