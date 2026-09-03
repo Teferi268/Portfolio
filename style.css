@@ -1,44 +1,65 @@
 :root{
-  --bg:       #F1F3F5;   /* fond de page */
-  --surface:  #FFFFFF;   /* cartes, blocs */
-  --ink:      #16181B;   /* texte principal */
-  --muted:    #5D6570;   /* texte secondaire */
-  --line:     #DDE1E5;   /* bordures, filets */
-  --accent:   #2E9BF0;   /* bleu, focus et survols */
- 
-  --ok-bg:    #D8F3E1;   /* fond de la pastille */
-  --ok-text:  #14532D;   /* texte de la pastille */
-  --ok-dot:   #16A34A;   /* le point vert */
- 
-  --btn-bg:   #16181B;   /* fond du bouton principal */
-  --btn-ink:  #FFFFFF;   /* texte du bouton principal */
- 
-  --font: "Syne", sans-serif;
-  --mono: "Syne", sans-serif;
- 
-  --radius: 6px;
-  --maxw:   960px;
+	--bg:          #F1F3F5;   /* fond de page */
+	--surface:     #FFFFFF;   /* cartes, blocs */
+	--ink:         #16181B;   /* texte principal */
+	--muted:       #5D6570;   /* texte secondaire */
+	--line:        #DDE1E5;   /* filets décoratifs */
+	--line-strong: #B4BCC4;   /* bordures de boutons */
+	--accent:      #247FC7;   /* bleu, focus et survols */
+
+	--ok-bg:       #D8F3E1;   /* fond de la pastille */
+	--ok-text:     #14532D;   /* texte de la pastille */
+	--ok-dot:      #16A34A;   /* le point vert */
+
+	--btn-bg:      #2E78B7;   /* fond du bouton principal */
+	--btn-ink:     #FFFFFF;   /* texte du bouton principal */
+
+	--bg-gradient: radial-gradient(700px 500px at 100% 0%, rgba(180, 207, 245, 0.42), transparent 65%), linear-gradient(135deg, #F1F3F5 0%, #FFFFFF 100%);
+	--grad-a:      #1F3446;   /* début du dégradé du titre */
+	--grad-b:      #1C6FB8;   /* fin du dégradé du titre */
+
+	--font-titre:  'Syne', sans-serif;
+	--font:        'IBM Plex Sans', system-ui, sans-serif;
+	--mono:        'IBM Plex Mono', ui-monospace, monospace;
+
+	--radius: 6px;
+	--maxw:   960px;
 }
 
 .darkmode{
-	--bg:       #0D1420;   /* fond de page — bleu nuit désaturé */
-	--surface:  #141E2E;   /* cartes, blocs — un cran au-dessus du fond */
-	--ink:      #E6EDF6;   /* texte principal — jamais du blanc pur */
-	--muted:    #8FA3BC;   /* texte secondaire */
-	--line:     #24334C;   /* bordures, filets */
-	--accent:   #4DA3FF;   /* bleu, focus et survols */
+  --bg:          #232F3F;   /* bleu ardoise, plus clair que du nuit */
+  --surface:     #2A3849;   /* cartes, un cran au-dessus */
+  --ink:         #EDF2F8;   /* texte principal */
+  --muted:       #A3B2C6;   /* texte secondaire */
+  --line:        #3A4A5E;   /* filets décoratifs */
+  --line-strong: #5B6E86;   /* bordures de boutons */
+  --accent:      #5EA8F5;   /* bleu, focus et survols */
 
-	--ok-bg:    #10361F;   /* fond de la pastille */
-	--ok-text:  #7BE8A6;   /* texte de la pastille */
-	--ok-dot:   #34D07C;   /* le point vert */
+  --ok-bg:       #1D4230;
+  --ok-text:     #86EDAC;
+  --ok-dot:      #3BD684;
 
-	--btn-bg:   #4DA3FF;   /* fond du bouton principal */
-	--btn-ink:  #06192E;   /* texte du bouton principal */
+  --btn-bg:      #5EA8F5;
+  --btn-ink:     #0E1F33;
+
+	--bg-gradient: radial-gradient(700px 500px at 100% 0%, rgba(83, 139, 198, 0.28), transparent 65%), linear-gradient(135deg, #1B2635 0%, #26364A 100%);
+  --grad-a:      #F2F6FB;   /* début du dégradé du titre, presque blanc */
+  --grad-b:      #7FBBFA;   /* fin, bleu clair */
 }
+
 body{
-	background-color: var(--bg);
+  min-height: 100vh;
+	background: var(--bg-gradient);
+  background-attachment: fixed;
+}
+
+body{
 	color: var(--ink);
 	font-family: var(--font);
+	min-height: 100vh;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
 	transition: background-color 0.2s ease, color 0.2s ease;
 }
 header{
@@ -47,6 +68,10 @@ header{
 	position: sticky;
 	justify-content: space-between;
 	font-size: var(--font);
+}
+main{
+	flex: 1;
+	display: flex;
 }
 .path{
   font-size: 30px;
@@ -86,4 +111,121 @@ header{
 
 .darkmode .theme-btn .moon{
 	display: inline-block;
+}
+
+
+.hero{
+	box-sizing: border-box;
+	width: 100%;
+	flex: 1;
+  	max-width: var(--maxw);
+ 	margin-inline: auto;
+	padding: 32px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+  	text-align: center;
+}
+ 
+.hero h1{
+	font-size:100px;
+  	margin: 0 0 8px;
+	font-family: var(--font-titre);
+	color: var(--ink);
+	background: linear-gradient(100deg, var(--grad-a) 30%, var(--grad-b) 75%);
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+	}
+.hero p{
+	font-size: 20px;
+	margin-top: 0;
+}
+
+
+.socials{
+	display: flex;
+	justify-content: center;
+	gap: 16px;
+	margin-bottom: 30px;
+}
+ 
+.socials a{
+	width: 80px;
+	height: 80px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	border: 1.5px solid var(--accent);
+	border-radius: 50%;
+	font-size: 37px;
+	color: var(--accent);
+	text-decoration: none;
+	transition: background 0.18s, color 0.18s, transform 0.18s;
+}
+.socials a:hover{
+	background: var(--accent);
+	color: var(--btn-ink);
+	transform: translateY(-2px);
+}
+
+.stage{
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	padding: 8px 18px;
+	margin-bottom: 30px;
+	background: var(--ok-bg);
+	border-radius: 50px;
+}
+ 
+.stage-dot{
+	width: 8px;
+	height: 8px;
+	flex: none;              
+	border-radius: 50%;
+	background: var(--ok-dot);
+	animation: flash 2.5s infinite;
+}
+@keyframes flash {
+	100%{
+		opacity: 1;
+	}
+	50%{
+		opacity: 0;
+	}
+}
+ 
+.dispo{
+	font-size: 15px;
+	margin: 0;
+	line-height: 1;
+  	color: var(--ok-text);
+}
+
+.plus{
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+.btn-projet,
+.btn-cv{
+	text-decoration: none;
+	padding: 12px;
+	border-radius: 10px;
+	transition: transform 0.3s, background-color 0.2s, color 0.2s;
+}
+.btn-projet:hover,
+.btn-cv:hover{
+	transform: translateY(-2px);
+}
+.btn-projet{
+  background: var(--btn-bg);
+  color: var(--btn-ink);
+}
+.btn-cv{
+	background: var(--surface);
+	border: 1px solid var(--accent);
+	color: var(--accent);
 }
