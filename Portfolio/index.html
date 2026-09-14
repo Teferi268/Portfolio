@@ -1,0 +1,478 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mathieu-Portfolio</title>
+    <meta
+      name="description"
+      content="Mathieu Morin, étudiant en deuxième année d'informatique, orienté administration système et infrastructure. Recherche un stage en mai et juin 2027."
+    />
+    <meta name="author" content="Mathieu Morin" />
+    <meta name="theme-color" content="#F1F3F5" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Mathieu Morin — administration système & infrastructure" />
+    <meta
+      property="og:description"
+      content="Étudiant en deuxième année d'informatique. Homelab, sauvegardes, réseau. Stage recherché en mai et juin 2027."
+    />
+    <meta property="og:locale" content="fr_FR" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+
+  
+  <body>
+    <script>
+      // Applique le theme avant le rendu, sinon la page clignote en clair au chargement.
+      // script.js refait le meme calcul, c'est voulu : ce bloc doit rester autonome.
+      (() => {
+        const theme = localStorage.getItem("theme");
+        const sombre = theme ? theme === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
+        document.body.classList.toggle("mode-sombre", sombre);
+      })();
+    </script>
+
+    <a class="lien-rapide" href="#HOME">Aller au contenu</a>
+
+    <header >
+      <a class="chemin" href="#HOME">@mathieu-morin-dev/HOME</a>
+
+      <nav class="menu" id="menu">
+        <a class="lien-navigation" href="#ABOUT">ABOUT</a>
+        <a class="lien-navigation" href="#WORK">WORK</a>
+        <a class="lien-navigation" href="#CONTACT">CONTACT</a>
+      </nav>
+
+      <div class="actions-header">
+        <button class="bouton-theme" id="theme-btn" type="button" aria-label="Activer le mode clair" aria-pressed="true">
+          <i class="fa-solid fa-sun soleil" aria-hidden="true"></i>
+          <i class="fa-solid fa-moon lune" aria-hidden="true"></i>
+        </button>
+
+        <button class="bouton-menu" id="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu">
+          <i class="fa-solid fa-bars ouvert" aria-hidden="true"></i>
+          <i class="fa-solid fa-xmark ferme" aria-hidden="true"></i>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <!-- HOME : presentation, disponibilite et acces rapides -->
+      <section class="accueil" id="HOME">
+        <h1>Mathieu Morin</h1>
+        <p class="introduction-accueil">Étudiant en informatique, deuxième année. Je m'oriente vers <br> l'administration système et l'infrastructure.</p>
+        <div class="reseaux">
+          <a href="mailto:mathieu.morinm@gmail.com" aria-label="Envoyer un e-mail">
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/mathieu-morin-319710353/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Voir mon profil LinkedIn"
+          >
+            <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+          </a>
+          <a
+            href="https://github.com/Teferi268"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Voir mon profil GitHub"
+          >
+            <i class="fa-brands fa-github" aria-hidden="true"></i>
+          </a>
+        </div>
+        <div class="disponibilite">
+          <span class="point-disponibilite"></span>
+          <p class="texte-disponibilite">Recherche un stage - mai &amp; juin 2027</p>
+        </div>
+        <div class="actions-accueil">
+          <a class="bouton-projets" href="#WORK">VOIR MES PROJETS</a>
+          <a class="bouton-cv" href="assets/CV.pdf" target="_blank" rel="noopener noreferrer">CV</a>
+        </div>
+
+        <p class="actualite">
+          <span>En ce moment: je teste la restauration complète de mes sauvegardes de mon NAS, pour vérifier qu'elles servent à quelque chose</span>
+          <span class="date">[septembre 2026]</span>
+        </p>
+      </section>
+
+      <!-- ABOUT : presentation, competences et parcours -->
+      <section class="a-propos" id="ABOUT" aria-labelledby="about-title">
+        <h2 class="titre" id="about-title">ABOUT ME</h2>
+
+        <!-- À personnaliser : le texte ci-dessous, les dates et les intitulés exacts -->
+        <div class="grille-a-propos">
+          <div class="texte-a-propos apparition">
+            <p>
+              Je suis en deuxième année d'informatique. Ce qui m'intéresse, ce n'est pas
+              tellement d'écrire du code : c'est de faire tourner ce qu'il y a dessous. Des
+              machines, un réseau, des services qui redémarrent tout seuls et des sauvegardes
+              qui se restaurent vraiment.
+            </p>
+            <p>
+              J'ai monté un homelab à la maison — un petit serveur, un NAS, quelques services
+              auto-hébergés. C'est là que j'apprends le plus : quand quelque chose tombe,
+              personne ne vient le réparer à ma place.
+            </p>
+            <p>
+              Je cherche un stage de deux mois, en mai et juin 2027, dans une équipe système,
+              réseau ou infrastructure. De préférence quelque part où je pourrai casser des
+              choses dans un environnement de test avant d'y toucher en production.
+            </p>
+
+            <ul class="faits">
+              <li><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i><span>2<sup>e</sup> année d'informatique</span></li>
+              <li><i class="fa-solid fa-server" aria-hidden="true"></i><span>Homelab Proxmox + NAS</span></li>
+              <li><i class="fa-solid fa-language" aria-hidden="true"></i><span>Français, anglais technique</span></li>
+              <li><i class="fa-solid fa-calendar-days" aria-hidden="true"></i><span>Disponible mai &amp; juin 2027</span></li>
+            </ul>
+          </div>
+
+          <aside class="terminal apparition" aria-label="Carte de présentation">
+            <div class="barre-terminal">
+              <span class="point-terminal rouge"></span>
+              <span class="point-terminal ambre"></span>
+              <span class="point-terminal vert"></span>
+              <span class="nom-terminal">mathieu@homelab</span>
+            </div>
+            <div class="corps-terminal">
+              <p><span class="invite">mathieu@homelab:~$</span> whoami</p>
+              <p class="sortie">étudiant, 2<sup>e</sup> année d'informatique</p>
+              <p><span class="invite">mathieu@homelab:~$</span> cat objectif.txt</p>
+              <p class="sortie">administration système &amp; infrastructure</p>
+              <p><span class="invite">mathieu@homelab:~$</span> uptime</p>
+              <p class="sortie">up 214 days, load average: 0.12 0.09 0.08</p>
+              <p><span class="invite">mathieu@homelab:~$</span> <span class="curseur"></span></p>
+            </div>
+          </aside>
+        </div>
+
+        <h3 class="sous-titre">Ce que je manipule</h3>
+        <div class="competences">
+          <article class="carte-competence apparition">
+            <h4><i class="fa-brands fa-linux" aria-hidden="true"></i> Systèmes</h4>
+            <ul>
+              <li>Debian</li>
+              <li>Ubuntu Server</li>
+              <li>Windows Server</li>
+            </ul>
+          </article>
+          <article class="carte-competence apparition">
+            <h4><i class="fa-solid fa-layer-group" aria-hidden="true"></i> Virtualisation</h4>
+            <ul>
+              <li>Proxmox VE</li>
+              <li>Docker</li>
+              <li>VirtualBox</li>
+            </ul>
+          </article>
+          <article class="carte-competence apparition">
+            <h4><i class="fa-solid fa-network-wired" aria-hidden="true"></i> Réseau</h4>
+            <ul>
+              <li>TCP/IP, VLAN</li>
+              <li>DNS, DHCP</li>
+              <li>WireGuard</li>
+            </ul>
+          </article>
+          <article class="carte-competence apparition">
+            <h4><i class="fa-solid fa-hard-drive" aria-hidden="true"></i> Stockage</h4>
+            <ul>
+              <li>NAS, RAID</li>
+              <li>rsync, snapshots</li>
+              <li>Règle 3-2-1</li>
+            </ul>
+          </article>
+          <article class="carte-competence apparition">
+            <h4><i class="fa-solid fa-terminal" aria-hidden="true"></i> Scripts</h4>
+            <ul>
+              <li>Bash</li>
+              <li>Python</li>
+              <li>PowerShell</li>
+            </ul>
+          </article>
+          <article class="carte-competence apparition">
+            <h4><i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i> Outils</h4>
+            <ul>
+              <li>Git</li>
+              <li>Nginx</li>
+              <li>Grafana, Wireshark</li>
+            </ul>
+          </article>
+        </div>
+
+        <h3 class="sous-titre">Parcours</h3>
+        <ol class="parcours">
+          <li class="apparition">
+            <span class="periode">mai &amp; juin 2027</span>
+            <h4>Stage recherché — système &amp; infrastructure</h4>
+            <p>Deux mois dans une équipe qui exploite une infra réelle. C'est la case qu'il me reste à remplir.</p>
+          </li>
+          <li class="apparition">
+            <span class="periode">depuis 2026</span>
+            <h4>2<sup>e</sup> année d'informatique</h4>
+            <p>Réseau, systèmes d'exploitation, virtualisation, bases de données.</p>
+          </li>
+          <li class="apparition">
+            <span class="periode">depuis 2025</span>
+            <h4>Homelab</h4>
+            <p>Un hyperviseur, un NAS, des services auto-hébergés, des sauvegardes testées. Mon vrai terrain d'apprentissage.</p>
+          </li>
+          <li class="apparition">
+            <span class="periode">2025</span>
+            <h4>1<sup>re</sup> année d'informatique</h4>
+            <p>Algorithmique, développement web, premiers scripts et première ligne de commande.</p>
+          </li>
+        </ol>
+      </section>
+
+      <!-- WORK : projets et filtres par categorie -->
+      <section class="projets" id="WORK" aria-labelledby="work-title">
+        <h2 class="titre" id="work-title">WORK</h2>
+        <p class="introduction-section">
+          Des projets personnels, montés chez moi et cassés plusieurs fois avant de tenir.
+        </p>
+
+        <!-- À personnaliser : titres, descriptions et liens des projets -->
+        <div class="filtres" role="group" aria-label="Filtrer les projets">
+          <button class="filtre actif" type="button" data-filter="tous">Tous</button>
+          <button class="filtre" type="button" data-filter="infra">Infra</button>
+          <button class="filtre" type="button" data-filter="script">Scripts</button>
+          <button class="filtre" type="button" data-filter="web">Web</button>
+        </div>
+
+        <div class="liste-projets" id="projects">
+          <article class="projet apparition" data-cat="infra">
+            <div class="tete-projet">
+              <i class="fa-solid fa-server icone-projet" aria-hidden="true"></i>
+              <span class="etat-projet termine">en production</span>
+            </div>
+            <h3>Homelab Proxmox</h3>
+            <p>
+              Un hyperviseur Proxmox qui fait tourner mes machines virtuelles et mes conteneurs :
+              NAS, DNS local, reverse proxy. Tout est reconstructible à partir de zéro.
+            </p>
+            <ul class="technologies">
+              <li>Proxmox VE</li>
+              <li>Debian</li>
+              <li>LXC</li>
+            </ul>
+            <div class="liens-projet">
+              <a href="https://github.com/Teferi268" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-github" aria-hidden="true"></i> Code
+              </a>
+            </div>
+          </article>
+
+          <article class="projet apparition" data-cat="script">
+            <div class="tete-projet">
+              <i class="fa-solid fa-box-archive icone-projet" aria-hidden="true"></i>
+              <span class="etat-projet termine">en production</span>
+            </div>
+            <h3>Sauvegardes 3-2-1</h3>
+            <p>
+              Scripts de sauvegarde automatisés : rsync, rotation des versions, rapport par mail
+              et surtout une restauration testée tous les mois. Une sauvegarde jamais restaurée
+              n'est pas une sauvegarde.
+            </p>
+            <ul class="technologies">
+              <li>Bash</li>
+              <li>rsync</li>
+              <li>cron</li>
+            </ul>
+            <div class="liens-projet">
+              <a href="https://github.com/Teferi268" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-github" aria-hidden="true"></i> Code
+              </a>
+            </div>
+          </article>
+
+          <article class="projet apparition" data-cat="infra">
+            <div class="tete-projet">
+              <i class="fa-brands fa-docker icone-projet" aria-hidden="true"></i>
+              <span class="etat-projet termine">en production</span>
+            </div>
+            <h3>Services auto-hébergés</h3>
+            <p>
+              Une dizaine de conteneurs derrière un reverse proxy Nginx, avec certificats
+              Let's Encrypt renouvelés automatiquement et accès distant par VPN.
+            </p>
+            <ul class="technologies">
+              <li>Docker</li>
+              <li>Nginx</li>
+              <li>WireGuard</li>
+            </ul>
+            <div class="liens-projet">
+              <a href="https://github.com/Teferi268" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-github" aria-hidden="true"></i> Code
+              </a>
+            </div>
+          </article>
+
+          <article class="projet apparition" data-cat="infra">
+            <div class="tete-projet">
+              <i class="fa-solid fa-chart-line icone-projet" aria-hidden="true"></i>
+              <span class="etat-projet en-cours">en cours</span>
+            </div>
+            <h3>Supervision du homelab</h3>
+            <p>
+              Prometheus collecte, Grafana affiche, et une alerte me prévient quand un disque
+              approche de sa fin ou qu'un service ne répond plus.
+            </p>
+            <ul class="technologies">
+              <li>Prometheus</li>
+              <li>Grafana</li>
+              <li>Alertes</li>
+            </ul>
+            <div class="liens-projet">
+              <a href="https://github.com/Teferi268" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-github" aria-hidden="true"></i> Code
+              </a>
+            </div>
+          </article>
+
+          <article class="projet apparition" data-cat="infra">
+            <div class="tete-projet">
+              <i class="fa-brands fa-windows icone-projet" aria-hidden="true"></i>
+              <span class="etat-projet en-cours">en cours</span>
+            </div>
+            <h3>Lab Active Directory</h3>
+            <p>
+              Un domaine Windows Server monté en machines virtuelles : contrôleur de domaine,
+              DNS, DHCP, stratégies de groupe et postes clients pour tester les restrictions.
+            </p>
+            <ul class="technologies">
+              <li>Windows Server</li>
+              <li>Active Directory</li>
+              <li>GPO</li>
+            </ul>
+            <div class="liens-projet">
+              <a href="https://github.com/Teferi268" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-github" aria-hidden="true"></i> Code
+              </a>
+            </div>
+          </article>
+
+          <article class="projet apparition" data-cat="web">
+            <div class="tete-projet">
+              <i class="fa-solid fa-code icone-projet" aria-hidden="true"></i>
+              <span class="etat-projet termine">en ligne</span>
+            </div>
+            <h3>Ce portfolio</h3>
+            <p>
+              Écrit à la main en HTML, CSS et JavaScript, sans framework ni dépendance à
+              installer. Thème clair et sombre, et un fil d'Ariane qui suit la lecture.
+            </p>
+            <ul class="technologies">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+            </ul>
+            <div class="liens-projet">
+              <a href="https://github.com/Teferi268/Portfolio" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-github" aria-hidden="true"></i> Code
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <p class="aucun-resultat" id="empty" hidden>Aucun projet dans cette catégorie pour le moment.</p>
+      </section>
+
+      <!-- CONTACT : formulaire, e-mail et liens externes -->
+      <section class="contact" id="CONTACT" aria-labelledby="contact-title">
+        <h2 class="titre" id="contact-title">CONTACT</h2>
+        <p class="introduction-section">
+          Une question, une piste de stage, ou juste envie de parler sauvegardes ? Écrivez-moi.
+        </p>
+
+        <div class="grille-contact">
+          <form class="formulaire apparition" id="form" novalidate>
+            <div class="champ">
+              <label for="nom">Nom</label>
+              <input type="text" id="nom" name="nom" autocomplete="name" required />
+            </div>
+            <div class="champ">
+              <label for="email">E-mail</label>
+              <input type="email" id="email" name="email" autocomplete="email" required />
+            </div>
+            <div class="champ">
+              <label for="sujet">Sujet</label>
+              <input type="text" id="sujet" name="sujet" />
+            </div>
+            <div class="champ">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="6" required></textarea>
+            </div>
+            <button class="bouton-projets" type="submit">ENVOYER</button>
+            <p class="note-formulaire" id="form-note" role="status"></p>
+          </form>
+
+          <aside class="cote-contact">
+            <div class="carte-contact apparition">
+              <p class="etiquette-contact">E-mail</p>
+              <div class="adresse-contact">
+                <a href="mailto:mathieu.morinm@gmail.com">mathieu.morinm@gmail.com</a>
+                <button class="bouton-copie" id="copy-btn" type="button" aria-label="Copier l'adresse e-mail">
+                  <i class="fa-regular fa-copy" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="carte-contact apparition">
+              <p class="etiquette-contact">Ailleurs</p>
+              <ul class="liens-contact">
+                <li>
+                  <a href="https://www.linkedin.com/in/mathieu-morin-319710353/" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i> LinkedIn
+                  </a>
+                </li>
+                <li>
+                  <a href="https://github.com/Teferi268" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub
+                  </a>
+                </li>
+                <li>
+                  <a href="assets/CV.pdf" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-regular fa-file-lines" aria-hidden="true"></i> Curriculum vitae
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="carte-contact apparition">
+              <p class="etiquette-contact">Disponibilité</p>
+              <div class="disponibilite">
+                <span class="point-disponibilite"></span>
+                <p class="texte-disponibilite">Stage - mai &amp; juin 2027</p>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p class="ligne-pied">
+        <span>&copy; <span id="year">2026</span> Mathieu Morin</span>
+        <span class="separateur-pied">/</span>
+        <span>écrit à la main en HTML, CSS et JavaScript</span>
+      </p>
+      <a class="retour-haut" href="#HOME" aria-label="Remonter en haut de la page">
+        <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+      </a>
+    </footer>
+  </body>
+</html>
