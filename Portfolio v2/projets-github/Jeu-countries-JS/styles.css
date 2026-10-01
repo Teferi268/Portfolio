@@ -1,0 +1,104 @@
+body{
+    margin: 0;
+
+}
+.header{
+    display: flex;
+    background-color: rgb(0, 106, 255);
+    height:10vh;
+    align-items: center;
+    justify-content: center;
+}
+.navbar{
+    display: flex;
+    gap: 20px;
+    font-size: 2rem;
+}
+.header a{
+    text-decoration: none;
+    color: aliceblue;
+}
+.header a:hover{
+    color: rgb(210, 218, 224);
+}
+
+
+.game{
+    display: flex;
+    background-color: rgb(255, 196, 0);
+    height: 90vh;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+.select_country{
+    text-decoration: none;
+    color: white;
+    background-color: rgb(0, 106, 255);
+    border: none;
+    padding: 30px 100px;
+    border-radius: 50px;
+    font-size: 2rem;
+}
+.select_country:hover{
+    background-color: rgb(0, 81, 195);
+}
+.show_flag{
+    display: flex;
+    background-color:rgb(246, 196, 32) ;
+    border: solid;
+    border-width: 2px;
+    width: 500px;
+    height: 300px;
+    border-color: rgb(47, 47, 47);
+    align-items: center;
+    justify-content: center;
+}
+.show_flag p{
+    font-size: 1.5rem;
+}
+.blink {
+    
+  animation: blink 1s infinite;
+}
+@keyframes blink { 
+  0% { opacity:0; }
+  50% { opacity:1; } 
+  100% { opacity:0; }
+}
+
+
+
+
+.quizz{
+    display: flex;
+    background-color: rgb(117, 173, 230);
+    width: 400px;
+    height: 250px;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 15px;
+}
+.quizz p{
+    font-size: 20px;
+}
+.choix_pays{
+    background-color:rgb(23, 133, 242) ;
+    width: 250px;
+    border-radius: 20px;
+}
+.submitBtn{
+    text-decoration: none;
+    color: white;
+    background-color: rgb(28, 156, 8);
+    border: none;
+    padding: 10px ;
+    border-radius: 5px;
+}
+.submitBtn:hover{
+    background-color: rgb(21, 115, 6);
+}

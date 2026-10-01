@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Météo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button class="theme" id="theme">Changer le thème</button>
+    <div class="conteneur">
+        <div class="dashboard">
+            <section class="carte-meteo">
+                <header>
+                    <input 
+                        type="text" 
+                        id="entreeVille" 
+                        placeholder="Cherche une ville..." 
+                        value="Paris..."
+                    >
+                    <button id="boutonRecherche">Rechercher</button>
+                </header>
+                <div id="chargement" class="chargement">Chargement...</div>
+                <div id="contenu" style="display: none;">
+                    <div class="nom-ville" id="nomVille">--</div>
+                    
+                    <div class="section-temperature">
+                        <div class="temperature" id="temperature">--°C</div>
+                        <div class="description" id="description">--</div>
+                    </div>
+
+                    <div class="details">
+                        <div class="detail-element">
+                            <span class="etiquette">Humidité</span>
+                            <span class="valeur" id="humidite">--%</span>
+                        </div>
+                        <div class="detail-element">
+                            <span class="etiquette">Vent</span>
+                            <span class="valeur" id="vent">-- km/h</span>
+                        </div>
+                        <div class="detail-element">
+                            <span class="etiquette">Pression</span>
+                            <span class="valeur" id="pression">-- hPa</span>
+                        </div>
+                    </div>
+
+                    <div class="info-supplementaires">
+                        <div class="ligne-info">
+                            <span>Ressenti</span>
+                            <span id="ressenti">--°C</span>
+                        </div>
+                        <div class="ligne-info">
+                            <span>Visibilité</span>
+                            <span id="visibilite">-- km</span>
+                        </div>
+                    </div>
+                </div>
+
+                
+            </section>
+            <section class="carte-github">
+                <div class="github-header">
+                    <img id="github-avatar" class="github-avatar" src="" alt="Avatar GitHub">
+                    <div class="github-info">
+                        <h2 id="github-nom">--</h2>
+                        <p id="github-bio">--</p>
+                    </div>
+                </div>
+                
+                <div class="github-stats">
+                    <div class="stat-element">
+                        <span class="stat-label">Repos</span>
+                        <span class="stat-valeur" id="github-repos">--</span>
+                    </div>
+                    <div class="stat-element">
+                        <span class="stat-label">Followers</span>
+                        <span class="stat-valeur" id="github-followers">--</span>
+                    </div>
+                </div>
+                
+                <a id="github-link" href="" target="_blank" class="github-bouton">
+                    Voir mon profil →
+                </a>
+            </section>
+        </div>
+    </div>
+
+    <script src="../app.js"></script>
+</body>
+</html>

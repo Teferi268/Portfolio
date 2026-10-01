@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculatrice - Projet 2</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="calculator-page">
+      <section class="calculator-shell">
+        <div class="calculator-copy">
+          <h1>Calculatrice</h1>
+        </div>
+
+        <div class="calculator">
+          <div class="calculator-display">
+            <p id="calculatorHistory" class="calculator-history">0</p>
+            <p id="calculatorOutput" class="calculator-output">0</p>
+          </div>
+
+          <div class="calculator-grid" aria-label="Clavier de calculatrice">
+            <button class="calculator-button wide" data-action="clear-entry" type="button">CE</button>
+            <button class="calculator-button" data-action="clear" type="button">C</button>
+            <button class="calculator-button" data-value="/" type="button">/</button>
+            <button class="calculator-button" data-action="backspace" type="button">⌫</button>
+
+            <button class="calculator-button" data-value="7" type="button">7</button>
+            <button class="calculator-button" data-value="8" type="button">8</button>
+            <button class="calculator-button" data-value="9" type="button">9</button>
+            <button class="calculator-button" data-value="*" type="button">X</button>
+
+            <button class="calculator-button" data-value="4" type="button">4</button>
+            <button class="calculator-button" data-value="5" type="button">5</button>
+            <button class="calculator-button" data-value="6" type="button">6</button>
+            <button class="calculator-button" data-value="-" type="button">-</button>
+
+            <button class="calculator-button" data-value="1" type="button">1</button>
+            <button class="calculator-button" data-value="2" type="button">2</button>
+            <button class="calculator-button" data-value="3" type="button">3</button>
+            <button class="calculator-button" data-value="+" type="button">+</button>
+
+            <button class="calculator-button wide" data-value="0" type="button">0</button>
+            <button class="calculator-button" data-value="." type="button">,</button>
+            <button class="calculator-button wide equal" data-action="equals" type="button">=</button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

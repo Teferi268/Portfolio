@@ -6,7 +6,7 @@
     <title>Mathieu-Portfolio</title>
     <meta
       name="description"
-      content="Mathieu Morin, étudiant en deuxième année d'informatique, orienté administration système et infrastructure. Recherche un stage en mai et juin 2027."
+      content="Mathieu Morin, étudiant en informatique, orienté DevOps, administration système et infrastructure. Recherche un stage du 10 mai au 2 juillet 2027."
     />
     <meta name="author" content="Mathieu Morin" />
     <meta name="theme-color" content="#F1F3F5" />
@@ -15,7 +15,7 @@
     <meta property="og:title" content="Mathieu Morin — administration système & infrastructure" />
     <meta
       property="og:description"
-      content="Étudiant en deuxième année d'informatique. Homelab, sauvegardes, réseau. Stage recherché en mai et juin 2027."
+      content="Étudiant en informatique. DevOps, administration système, serveur TrueNAS et développement web. Stage recherché du 10 mai au 2 juillet 2027."
     />
     <meta property="og:locale" content="fr_FR" />
 
@@ -29,7 +29,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css?v=20261001-accordeon" />
     <script src="script.js" defer></script>
   </head>
 
@@ -73,7 +73,7 @@
       <!-- HOME : presentation, disponibilite et acces rapides -->
       <section class="accueil" id="HOME">
         <h1>Mathieu Morin</h1>
-        <p class="introduction-accueil">Étudiant en informatique, deuxième année. Je m'oriente vers <br> l'administration système et l'infrastructure.</p>
+        <p class="introduction-accueil">Étudiant en informatique, je m'oriente vers <br> le DevOps, l'administration système et l'infrastructure.</p>
         <div class="reseaux">
           <a href="mailto:mathieu.morinm@gmail.com" aria-label="Envoyer un e-mail">
             <i class="fa-solid fa-envelope" aria-hidden="true"></i>
@@ -97,7 +97,7 @@
         </div>
         <div class="disponibilite">
           <span class="point-disponibilite"></span>
-          <p class="texte-disponibilite">Recherche un stage - mai &amp; juin 2027</p>
+          <p class="texte-disponibilite">Stage disponible du 10 mai au 2 juillet 2027</p>
         </div>
         <div class="actions-accueil">
           <a class="bouton-projets" href="#WORK">VOIR MES PROJETS</a>
@@ -105,8 +105,8 @@
         </div>
 
         <p class="actualite">
-          <span>En ce moment: je teste la restauration complète de mes sauvegardes de mon NAS, pour vérifier qu'elles servent à quelque chose</span>
-          <span class="date">[septembre 2026]</span>
+          <span>En ce moment : j'administre un serveur TrueNAS et je construis des projets web en équipe</span>
+          <span class="date">[octobre 2026]</span>
         </p>
       </section>
 
@@ -118,27 +118,26 @@
         <div class="grille-a-propos">
           <div class="texte-a-propos apparition">
             <p>
-              Je suis en deuxième année d'informatique. Ce qui m'intéresse, ce n'est pas
-              tellement d'écrire du code : c'est de faire tourner ce qu'il y a dessous. Des
-              machines, un réseau, des services qui redémarrent tout seuls et des sauvegardes
-              qui se restaurent vraiment.
+              Je suis en deuxième année d'informatique à Sup de Vinci, à La Défense. Je m'intéresse
+              au DevOps et à l'administration système : faire tourner des services fiables, comprendre
+              le réseau et automatiser ce qui peut l'être.
             </p>
             <p>
-              J'ai monté un homelab à la maison — un petit serveur, un NAS, quelques services
-              auto-hébergés. C'est là que j'apprends le plus : quand quelque chose tombe,
-              personne ne vient le réparer à ma place.
+              J'administre un serveur personnel sous TrueNAS avec Jellyfin, un serveur Minecraft,
+              des sites hébergés, des pools ZFS, des sauvegardes automatiques et de la supervision
+              des disques. C'est mon terrain d'expérimentation concret pour Linux, le stockage et le réseau.
             </p>
             <p>
-              Je cherche un stage de deux mois, en mai et juin 2027, dans une équipe système,
-              réseau ou infrastructure. De préférence quelque part où je pourrai casser des
-              choses dans un environnement de test avant d'y toucher en production.
+              Je recherche un stage du 10 mai au 2 juillet 2027, idéalement en DevOps ou administration
+              système, avec la possibilité de poursuivre en alternance à partir d'octobre 2027.
             </p>
 
             <ul class="faits">
               <li><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i><span>2<sup>e</sup> année d'informatique</span></li>
-              <li><i class="fa-solid fa-server" aria-hidden="true"></i><span>Homelab Proxmox + NAS</span></li>
-              <li><i class="fa-solid fa-language" aria-hidden="true"></i><span>Français, anglais technique</span></li>
-              <li><i class="fa-solid fa-calendar-days" aria-hidden="true"></i><span>Disponible mai &amp; juin 2027</span></li>
+              <li><i class="fa-solid fa-server" aria-hidden="true"></i><span>Serveur personnel TrueNAS</span></li>
+              <li><i class="fa-solid fa-code" aria-hidden="true"></i><span>Laravel, JavaScript, Firebase</span></li>
+              <li><i class="fa-solid fa-language" aria-hidden="true"></i><span>Anglais C1 courant</span></li>
+              <li><i class="fa-solid fa-calendar-days" aria-hidden="true"></i><span>Stage : 10 mai - 2 juillet 2027</span></li>
             </ul>
           </div>
 
@@ -151,11 +150,11 @@
             </div>
             <div class="corps-terminal">
               <p><span class="invite">mathieu@homelab:~$</span> whoami</p>
-              <p class="sortie">étudiant, 2<sup>e</sup> année d'informatique</p>
+              <p class="sortie">étudiant, 2<sup>e</sup> année à Sup de Vinci</p>
               <p><span class="invite">mathieu@homelab:~$</span> cat objectif.txt</p>
-              <p class="sortie">administration système &amp; infrastructure</p>
+              <p class="sortie">DevOps &amp; administration système</p>
               <p><span class="invite">mathieu@homelab:~$</span> uptime</p>
-              <p class="sortie">up 214 days, load average: 0.12 0.09 0.08</p>
+              <p class="sortie">TrueNAS / ZFS / sauvegardes automatiques</p>
               <p><span class="invite">mathieu@homelab:~$</span> <span class="curseur"></span></p>
             </div>
           </aside>
@@ -174,9 +173,9 @@
           <article class="carte-competence apparition">
             <h4><i class="fa-solid fa-layer-group" aria-hidden="true"></i> Virtualisation</h4>
             <ul>
-              <li>Proxmox VE</li>
-              <li>Docker</li>
-              <li>VirtualBox</li>
+              <li>TrueNAS</li>
+              <li>Jellyfin</li>
+              <li>Services auto-hébergés</li>
             </ul>
           </article>
           <article class="carte-competence apparition">
@@ -216,24 +215,24 @@
         <h3 class="sous-titre">Parcours</h3>
         <ol class="parcours">
           <li class="apparition">
-            <span class="periode">mai &amp; juin 2027</span>
-            <h4>Stage recherché — système &amp; infrastructure</h4>
-            <p>Deux mois dans une équipe qui exploite une infra réelle. C'est la case qu'il me reste à remplir.</p>
+            <span class="periode">10 mai - 2 juillet 2027</span>
+            <h4>Stage recherché — DevOps &amp; administration système</h4>
+            <p>Stage de fin de deuxième année, avec l'objectif de poursuivre en alternance à partir d'octobre 2027.</p>
           </li>
           <li class="apparition">
             <span class="periode">depuis 2026</span>
             <h4>2<sup>e</sup> année d'informatique</h4>
-            <p>Réseau, systèmes d'exploitation, virtualisation, bases de données.</p>
+            <p>Développement, systèmes, réseaux, cloud et cybersécurité à Sup de Vinci, La Défense.</p>
           </li>
           <li class="apparition">
             <span class="periode">depuis 2025</span>
-            <h4>Homelab</h4>
-            <p>Un hyperviseur, un NAS, des services auto-hébergés, des sauvegardes testées. Mon vrai terrain d'apprentissage.</p>
+            <h4>Serveur personnel auto-hébergé</h4>
+            <p>TrueNAS, Jellyfin, serveur Minecraft, hébergement web, stockage ZFS et sauvegardes automatiques.</p>
           </li>
           <li class="apparition">
             <span class="periode">2025</span>
             <h4>1<sup>re</sup> année d'informatique</h4>
-            <p>Algorithmique, développement web, premiers scripts et première ligne de commande.</p>
+            <p>Algorithmique, développement web et premiers projets en équipe, du cahier des charges à la soutenance.</p>
           </li>
         </ol>
       </section>
@@ -242,10 +241,11 @@
       <section class="projets" id="WORK" aria-labelledby="work-title">
         <h2 class="titre" id="work-title">WORK</h2>
         <p class="introduction-section">
-          Des projets personnels, montés chez moi et cassés plusieurs fois avant de tenir.
+          Des projets personnels qui montrent autant ce que je construis que la manière dont je
+          diagnostique et fiabilise ce qui tourne dessous.
         </p>
 
-        <!-- À personnaliser : titres, descriptions et liens des projets -->
+        <!-- Projets issus des dépôts publics GitHub -->
         <div class="filtres" role="group" aria-label="Filtrer les projets">
           <button class="filtre actif" type="button" data-filter="tous">Tous</button>
           <button class="filtre" type="button" data-filter="infra">Infra</button>
@@ -254,23 +254,146 @@
         </div>
 
         <div class="liste-projets" id="projects">
-          <article class="projet apparition" data-cat="infra">
+          <article class="projet projet-principal apparition" data-cat="infra">
             <div class="tete-projet">
               <i class="fa-solid fa-server icone-projet" aria-hidden="true"></i>
               <span class="etat-projet termine">en production</span>
             </div>
-            <h3>Homelab Proxmox</h3>
+            <h3>NAS / Homelab TrueNAS</h3>
             <p>
-              Un hyperviseur Proxmox qui fait tourner mes machines virtuelles et mes conteneurs :
-              NAS, DNS local, reverse proxy. Tout est reconstructible à partir de zéro.
+              J'ai conçu et j'administre un homelab basé sur TrueNAS afin de centraliser mes données,
+              héberger plusieurs services et expérimenter des problématiques proches d'un environnement
+              d'infrastructure réel : stockage ZFS, gestion des droits, réseau, conteneurs, sauvegardes,
+              services web et accès distant.
+            </p>
+            <p>
+              Ce projet m'a surtout appris une démarche d'administration système complète : déployer,
+              configurer, sécuriser, tester, diagnostiquer les incidents, analyser les performances et
+              faire évoluer l'infrastructure.
+            </p>
+
+            <div class="homelab-mesures" aria-label="Repères du projet">
+              <span><strong>1</strong> machine multi-services</span>
+              <span><strong>plusieurs</strong> datasets et services</span>
+              <span><strong>SSD + HDD</strong> pour applications et données</span>
+              <span><strong>1 GbE</strong> comme cible réseau locale</span>
+            </div>
+
+            <div class="homelab-accordeon">
+              <details class="homelab-bloc">
+                <summary><i class="fa-solid fa-list-check" aria-hidden="true"></i> Ce que j'ai réalisé</summary>
+                <ul>
+                  <li>Conception de l'architecture et organisation du stockage</li>
+                  <li>Création et administration de pools ZFS et datasets</li>
+                  <li>Mise en place de partages SMB, utilisateurs, groupes et ACL</li>
+                  <li>Déploiement de services avec volumes, ports et données persistantes</li>
+                  <li>Sauvegardes, accès distant et documentation technique</li>
+                </ul>
+              </details>
+
+              <details class="homelab-bloc">
+                <summary><i class="fa-solid fa-diagram-project" aria-hidden="true"></i> Environnement technique</summary>
+                <dl class="homelab-environnement">
+                  <dt>Plateforme</dt><dd>TrueNAS, Linux</dd>
+                  <dt>Stockage</dt><dd>ZFS, pools, datasets, SSD Apps</dd>
+                  <dt>Réseau</dt><dd>Ethernet, TCP/IP, SMB, Freebox, Tailscale</dd>
+                  <dt>Accès</dt><dd>ACL, UID/GID, HTTPS, droits Unix</dd>
+                </dl>
+              </details>
+
+              <details class="homelab-bloc homelab-bloc-large">
+                <summary><i class="fa-solid fa-cubes-stacked" aria-hidden="true"></i> Services : des cas d'usage concrets</summary>
+                <div class="homelab-services">
+                  <div class="homelab-service">
+                    <strong>Jellyfin</strong>
+                    <p>Datasets médias, droits, ports réseau, lecture directe et étude du transcodage matériel.</p>
+                  </div>
+                  <div class="homelab-service">
+                    <strong>Immich</strong>
+                    <p>Bibliothèques photo externes, volumes persistants et accès applicatif aux datasets.</p>
+                  </div>
+                  <div class="homelab-service">
+                    <strong>Crafty / Minecraft</strong>
+                    <p>Fichiers serveur, mémoire, sauvegardes, whitelist, ports et automatisation des horaires.</p>
+                  </div>
+                  <div class="homelab-service">
+                    <strong>Nginx</strong>
+                    <p>Conteneur web, montage en lecture seule, exposition de port et hébergement statique.</p>
+                  </div>
+                </div>
+              </details>
+
+              <details class="homelab-bloc homelab-bloc-large">
+                <summary><i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i> Incidents techniques résolus</summary>
+                <ul class="homelab-incidents">
+                  <li>Erreur I/O lors de la création d'un pool ZFS : vérification des disques, SMART, câbles SATA et contrôleur.</li>
+                  <li>Permissions entre conteneurs et datasets : configuration des UID/GID, ACL et droits récursifs.</li>
+                  <li>Accès aux bibliothèques Immich et aux dossiers Crafty : correction des chemins montés et des droits applicatifs.</li>
+                  <li>Lien Ethernet négocié à 100 Mb/s : analyse du débit SMB, du câble, du port et de la négociation réseau.</li>
+                  <li>Accès aux services : diagnostic des ports, des certificats HTTPS auto-signés et de la connectivité.</li>
+                </ul>
+              </details>
+
+              <details class="homelab-bloc">
+                <summary><i class="fa-solid fa-route" aria-hidden="true"></i> Approche</summary>
+                <ol class="homelab-approche">
+                  <li>Identifier le besoin</li>
+                  <li>Concevoir l'architecture</li>
+                  <li>Déployer et configurer</li>
+                  <li>Tester et diagnostiquer</li>
+                  <li>Documenter et améliorer</li>
+                </ol>
+              </details>
+
+              <details class="homelab-bloc">
+                <summary><i class="fa-solid fa-user-check" aria-hidden="true"></i> Compétences démontrées</summary>
+                <p class="homelab-competences">
+                  Administration système · stockage · réseau · gestion des accès · conteneurs ·
+                  persistance des données · troubleshooting · continuité de service
+                </p>
+              </details>
+            </div>
+
+            <ul class="technologies">
+              <li>TrueNAS</li>
+              <li>ZFS</li>
+              <li>Linux</li>
+              <li>SMB</li>
+              <li>ACL</li>
+              <li>Containers</li>
+              <li>Nginx</li>
+              <li>Networking</li>
+              <li>Tailscale</li>
+              <li>Self-hosting</li>
+              <li>Troubleshooting</li>
+            </ul>
+
+            <div class="homelab-etats">
+              <span><i class="fa-solid fa-check" aria-hidden="true"></i> Projet opérationnel : stockage ZFS, services auto-hébergés, partages réseau, gestion des accès, sauvegardes et accès distant.</span>
+              <span><i class="fa-solid fa-flask" aria-hidden="true"></i> Évolutions prévues : réseau 2,5 GbE, supervision avancée, automatisation et amélioration de la stratégie de sauvegarde.</span>
+            </div>
+          </article>
+
+          <article class="projet apparition" data-cat="web">
+            <div class="tete-projet">
+              <i class="fa-solid fa-cloud-sun icone-projet" aria-hidden="true"></i>
+              <span class="etat-projet en-cours">en évolution</span>
+            </div>
+            <h3>Dashboard météo</h3>
+            <p>
+              Un tableau de bord personnel pour consulter la météo, la position et des statistiques
+              GitHub, avec une interface en cours d'amélioration.
             </p>
             <ul class="technologies">
-              <li>Proxmox VE</li>
-              <li>Debian</li>
-              <li>LXC</li>
+              <li>JavaScript</li>
+              <li>API météo</li>
+              <li>CSS</li>
             </ul>
             <div class="liens-projet">
-              <a href="https://github.com/Teferi268" target="_blank" rel="noopener noreferrer">
+              <a href="projets-github/Dashboard/Front-end/index.html" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Démo
+              </a>
+              <a href="https://github.com/Teferi268/Dashboard" target="_blank" rel="noopener noreferrer">
                 <i class="fa-brands fa-github" aria-hidden="true"></i> Code
               </a>
             </div>
@@ -278,88 +401,21 @@
 
           <article class="projet apparition" data-cat="script">
             <div class="tete-projet">
-              <i class="fa-solid fa-box-archive icone-projet" aria-hidden="true"></i>
-              <span class="etat-projet termine">en production</span>
+              <i class="fa-brands fa-python icone-projet" aria-hidden="true"></i>
+              <span class="etat-projet termine">terminé</span>
             </div>
-            <h3>Sauvegardes 3-2-1</h3>
+            <h3>Jeu Python avec BDD</h3>
             <p>
-              Scripts de sauvegarde automatisés : rsync, rotation des versions, rapport par mail
-              et surtout une restauration testée tous les mois. Une sauvegarde jamais restaurée
-              n'est pas une sauvegarde.
+              Un jeu en Python structuré autour d'une base de données, avec plusieurs modules et
+              une commande de lancement documentée.
             </p>
             <ul class="technologies">
-              <li>Bash</li>
-              <li>rsync</li>
-              <li>cron</li>
+              <li>Python</li>
+              <li>Base de données</li>
+              <li>Modularité</li>
             </ul>
             <div class="liens-projet">
-              <a href="https://github.com/Teferi268" target="_blank" rel="noopener noreferrer">
-                <i class="fa-brands fa-github" aria-hidden="true"></i> Code
-              </a>
-            </div>
-          </article>
-
-          <article class="projet apparition" data-cat="infra">
-            <div class="tete-projet">
-              <i class="fa-brands fa-docker icone-projet" aria-hidden="true"></i>
-              <span class="etat-projet termine">en production</span>
-            </div>
-            <h3>Services auto-hébergés</h3>
-            <p>
-              Une dizaine de conteneurs derrière un reverse proxy Nginx, avec certificats
-              Let's Encrypt renouvelés automatiquement et accès distant par VPN.
-            </p>
-            <ul class="technologies">
-              <li>Docker</li>
-              <li>Nginx</li>
-              <li>WireGuard</li>
-            </ul>
-            <div class="liens-projet">
-              <a href="https://github.com/Teferi268" target="_blank" rel="noopener noreferrer">
-                <i class="fa-brands fa-github" aria-hidden="true"></i> Code
-              </a>
-            </div>
-          </article>
-
-          <article class="projet apparition" data-cat="infra">
-            <div class="tete-projet">
-              <i class="fa-solid fa-chart-line icone-projet" aria-hidden="true"></i>
-              <span class="etat-projet en-cours">en cours</span>
-            </div>
-            <h3>Supervision du homelab</h3>
-            <p>
-              Prometheus collecte, Grafana affiche, et une alerte me prévient quand un disque
-              approche de sa fin ou qu'un service ne répond plus.
-            </p>
-            <ul class="technologies">
-              <li>Prometheus</li>
-              <li>Grafana</li>
-              <li>Alertes</li>
-            </ul>
-            <div class="liens-projet">
-              <a href="https://github.com/Teferi268" target="_blank" rel="noopener noreferrer">
-                <i class="fa-brands fa-github" aria-hidden="true"></i> Code
-              </a>
-            </div>
-          </article>
-
-          <article class="projet apparition" data-cat="infra">
-            <div class="tete-projet">
-              <i class="fa-brands fa-windows icone-projet" aria-hidden="true"></i>
-              <span class="etat-projet en-cours">en cours</span>
-            </div>
-            <h3>Lab Active Directory</h3>
-            <p>
-              Un domaine Windows Server monté en machines virtuelles : contrôleur de domaine,
-              DNS, DHCP, stratégies de groupe et postes clients pour tester les restrictions.
-            </p>
-            <ul class="technologies">
-              <li>Windows Server</li>
-              <li>Active Directory</li>
-              <li>GPO</li>
-            </ul>
-            <div class="liens-projet">
-              <a href="https://github.com/Teferi268" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/Teferi268/Jeu_python_BDD" target="_blank" rel="noopener noreferrer">
                 <i class="fa-brands fa-github" aria-hidden="true"></i> Code
               </a>
             </div>
@@ -367,13 +423,63 @@
 
           <article class="projet apparition" data-cat="web">
             <div class="tete-projet">
-              <i class="fa-solid fa-code icone-projet" aria-hidden="true"></i>
-              <span class="etat-projet termine">en ligne</span>
+              <i class="fa-solid fa-earth-europe icone-projet" aria-hidden="true"></i>
+              <span class="etat-projet termine">terminé</span>
             </div>
-            <h3>Ce portfolio</h3>
+            <h3>Jeu Countries</h3>
             <p>
-              Écrit à la main en HTML, CSS et JavaScript, sans framework ni dépendance à
-              installer. Thème clair et sombre, et un fil d'Ariane qui suit la lecture.
+              Un jeu JavaScript autour des pays et des continents, avec une interface interactive
+              et un système de sélection.
+            </p>
+            <ul class="technologies">
+              <li>JavaScript</li>
+              <li>HTML</li>
+              <li>CSS</li>
+            </ul>
+            <div class="liens-projet">
+              <a href="projets-github/Jeu-countries-JS/Index.html" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Démo
+              </a>
+              <a href="https://github.com/Teferi268/Jeu-countries-JS" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-github" aria-hidden="true"></i> Code
+              </a>
+            </div>
+          </article>
+
+          <article class="projet apparition" data-cat="web">
+            <div class="tete-projet">
+              <i class="fa-solid fa-list-check icone-projet" aria-hidden="true"></i>
+              <span class="etat-projet termine">terminé</span>
+            </div>
+            <h3>Todo List</h3>
+            <p>
+              Une application de tâches avec ajout, suppression, validation et sauvegarde locale
+              pour conserver sa liste après actualisation.
+            </p>
+            <ul class="technologies">
+              <li>JavaScript</li>
+              <li>localStorage</li>
+              <li>Responsive</li>
+            </ul>
+            <div class="liens-projet">
+              <a href="projets-github/projet-todo-list/index.html" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Démo
+              </a>
+              <a href="https://github.com/Teferi268/projet-todo-list" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-github" aria-hidden="true"></i> Code
+              </a>
+            </div>
+          </article>
+
+          <article class="projet apparition" data-cat="web">
+            <div class="tete-projet">
+              <i class="fa-solid fa-table-columns icone-projet" aria-hidden="true"></i>
+              <span class="etat-projet termine">terminé</span>
+            </div>
+            <h3>Mini Dashboard</h3>
+            <p>
+              Un tableau de bord sobre avec date du jour, tâches rapides, progression fictive et
+              thème clair ou sombre mémorisé dans le navigateur.
             </p>
             <ul class="technologies">
               <li>HTML</li>
@@ -381,7 +487,35 @@
               <li>JavaScript</li>
             </ul>
             <div class="liens-projet">
-              <a href="https://github.com/Teferi268/Portfolio" target="_blank" rel="noopener noreferrer">
+              <a href="projets-github/projet-mini-dashboard/index.html" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Démo
+              </a>
+              <a href="https://github.com/Teferi268/projet-mini-dashboard" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-github" aria-hidden="true"></i> Code
+              </a>
+            </div>
+          </article>
+
+          <article class="projet apparition" data-cat="web">
+            <div class="tete-projet">
+              <i class="fa-solid fa-calculator icone-projet" aria-hidden="true"></i>
+              <span class="etat-projet termine">terminé</span>
+            </div>
+            <h3>Calculatrice</h3>
+            <p>
+              Une calculatrice responsive avec affichage de l'expression, opérations courantes,
+              contrôles CE et C, retour arrière et prise en charge du clavier.
+            </p>
+            <ul class="technologies">
+              <li>JavaScript</li>
+              <li>HTML</li>
+              <li>CSS</li>
+            </ul>
+            <div class="liens-projet">
+              <a href="projets-github/projet-calculatrice/index.html" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Démo
+              </a>
+              <a href="https://github.com/Teferi268/projet-calculatrice" target="_blank" rel="noopener noreferrer">
                 <i class="fa-brands fa-github" aria-hidden="true"></i> Code
               </a>
             </div>
@@ -394,8 +528,8 @@
       <!-- CONTACT : formulaire, e-mail et liens externes -->
       <section class="contact" id="CONTACT" aria-labelledby="contact-title">
         <h2 class="titre" id="contact-title">CONTACT</h2>
-        <p class="introduction-section">
-          Une question, une piste de stage, ou juste envie de parler sauvegardes ? Écrivez-moi.
+          <p class="introduction-section">
+          Une question, une piste de stage ou une opportunité en DevOps ? Écrivez-moi.
         </p>
 
         <div class="grille-contact">
@@ -456,7 +590,7 @@
               <p class="etiquette-contact">Disponibilité</p>
               <div class="disponibilite">
                 <span class="point-disponibilite"></span>
-                <p class="texte-disponibilite">Stage - mai &amp; juin 2027</p>
+                <p class="texte-disponibilite">Stage - 10 mai au 2 juillet 2027</p>
               </div>
             </div>
           </aside>
