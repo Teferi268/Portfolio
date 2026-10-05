@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="fr" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard Meteo</title>
+    <meta name="description" content="Tableau de bord meteo et GitHub avec recherche de ville, position optionnelle et theme persistant." />
+    <link rel="stylesheet" href="style.css" />
+    <script src="../app.js" defer></script>
+  </head>
+  <body>
+    <main class="dashboard-page">
+      <section class="dashboard-shell" aria-labelledby="dashboard-title">
+        <header class="page-header">
+          <div>
+            <p class="eyebrow">Projet API</p>
+            <h1 id="dashboard-title">Dashboard meteo</h1>
+            <p>Recherche meteo, position optionnelle et apercu rapide du profil GitHub.</p>
+          </div>
+          <button class="theme" id="theme" type="button" aria-pressed="false">Mode sombre</button>
+        </header>
+
+        <div class="dashboard">
+          <section class="carte-meteo" aria-labelledby="weather-title">
+            <div class="card-heading">
+              <h2 id="weather-title">Meteo actuelle</h2>
+              <p id="statutMeteo" aria-live="polite">Pret a rechercher une ville.</p>
+            </div>
+
+            <form class="weather-search" id="formRecherche">
+              <label class="sr-only" for="entreeVille">Ville</label>
+              <input type="text" id="entreeVille" placeholder="Paris, Lyon, Montreal..." value="Paris" />
+              <button id="boutonRecherche" type="submit">Rechercher</button>
+            </form>
+
+            <button class="location-button" id="boutonPosition" type="button">Utiliser ma position</button>
+
+            <div id="contenu" class="weather-content">
+              <div class="nom-ville" id="nomVille">--</div>
+
+              <div class="section-temperature">
+                <div class="temperature" id="temperature">--°C</div>
+                <div class="description" id="description">--</div>
+              </div>
+
+              <div class="details">
+                <div class="detail-element">
+                  <span class="etiquette">Humidite</span>
+                  <span class="valeur" id="humidite">--%</span>
+                </div>
+                <div class="detail-element">
+                  <span class="etiquette">Vent</span>
+                  <span class="valeur" id="vent">-- km/h</span>
+                </div>
+                <div class="detail-element">
+                  <span class="etiquette">Pression</span>
+                  <span class="valeur" id="pression">-- hPa</span>
+                </div>
+              </div>
+
+              <div class="info-supplementaires">
+                <div class="ligne-info">
+                  <span>Ressenti</span>
+                  <span id="ressenti">--°C</span>
+                </div>
+                <div class="ligne-info">
+                  <span>Visibilite</span>
+                  <span id="visibilite">-- km</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="carte-github" aria-labelledby="github-title">
+            <div class="card-heading">
+              <h2 id="github-title">Profil GitHub</h2>
+              <p id="statutGithub" aria-live="polite">Chargement du profil...</p>
+            </div>
+
+            <div class="github-header">
+              <img id="github-avatar" class="github-avatar" src="https://github.com/Teferi268.png" alt="Avatar GitHub" />
+              <div class="github-info">
+                <h3 id="github-nom">Teferi268</h3>
+                <p id="github-bio">--</p>
+              </div>
+            </div>
+
+            <div class="github-stats">
+              <div class="stat-element">
+                <span class="stat-label">Repos</span>
+                <span class="stat-valeur" id="github-repos">--</span>
+              </div>
+              <div class="stat-element">
+                <span class="stat-label">Followers</span>
+                <span class="stat-valeur" id="github-followers">--</span>
+              </div>
+            </div>
+
+            <a id="github-link" href="https://github.com/Teferi268" target="_blank" rel="noopener noreferrer" class="github-bouton">
+              Voir mon profil
+            </a>
+          </section>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

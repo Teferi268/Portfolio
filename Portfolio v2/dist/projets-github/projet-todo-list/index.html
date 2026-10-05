@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo List</title>
+    <meta name="description" content="Une liste de taches simple avec ajout, edition, validation et sauvegarde locale." />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="todo-page">
+      <section class="todo-card" aria-labelledby="todo-title">
+        <div class="todo-header">
+          <p class="eyebrow">Projet JavaScript</p>
+          <h1 id="todo-title">Todo List</h1>
+          <p>Ajout, edition, validation et sauvegarde locale des taches.</p>
+        </div>
+
+        <form class="task-form" id="taskForm" autocomplete="off">
+          <label class="sr-only" for="taskInput">Nouvelle tache</label>
+          <input id="taskInput" name="task" type="text" maxlength="80" placeholder="Ajouter une tache..." required />
+          <button type="submit" aria-label="Ajouter la tache">+</button>
+        </form>
+
+        <div class="todo-toolbar">
+          <p id="taskCounter">0 tache</p>
+          <button id="clearCompleted" type="button">Nettoyer</button>
+        </div>
+
+        <ul id="taskList" class="task-list"></ul>
+        <p id="emptyState" class="empty-state">Aucune tache pour le moment.</p>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,8 @@
+RewriteEngine On
+
+# Canonicalise le domaine et force HTTPS une fois le certificat OVH actif.
+RewriteCond %{HTTPS} !=on [OR]
+RewriteCond %{HTTP_HOST} ^www\.mathieu-morin-dev\.fr$ [NC]
+RewriteRule ^ https://mathieu-morin-dev.fr%{REQUEST_URI} [R=301,L]
+
+DirectoryIndex index.html

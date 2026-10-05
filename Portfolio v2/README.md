@@ -38,6 +38,16 @@ python3 -m http.server 8000
 # puis http://localhost:8000
 ```
 
+## Mettre en ligne sur OVHcloud
+
+Le site est statique et ne nécessite ni Node.js ni étape de compilation. Le dossier
+`dist/` est le paquet prêt à publier : il faut envoyer **son contenu** dans le
+dossier `www/` de l'hébergement OVH, et non le dossier `dist` lui-même.
+
+Le fichier `.htaccess` force l'URL canonique `https://mathieu-morin-dev.fr/` et
+redirige l'ancien hôte `www` vers le domaine sans `www`. Le certificat SSL doit
+être actif dans OVHcloud avant d'utiliser cette redirection.
+
 ## Mettre en ligne sur GitHub Pages
 
 `Settings` → `Pages` → `Source: Deploy from a branch` → branche `main`, dossier `/ (root)`.
