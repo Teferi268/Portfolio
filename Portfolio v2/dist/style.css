@@ -675,6 +675,18 @@ header.menu-ouvert .bouton-menu .ferme{
 .homelab-carte{
 	gap: 0;
 }
+.homelab-hero{
+	display: grid;
+	grid-template-columns: minmax(0, 0.95fr) minmax(360px, 1.05fr);
+	gap: 26px;
+	align-items: stretch;
+	margin-bottom: 22px;
+}
+.homelab-contenu{
+	min-width: 0;
+	display: flex;
+	flex-direction: column;
+}
 .homelab-entete{
 	display: flex;
 	align-items: flex-start;
@@ -714,60 +726,164 @@ header.menu-ouvert .bouton-menu .ferme{
 	color: var(--muted);
 }
 .homelab-carte .homelab-introduction{
-	max-width: 92ch;
-	margin: 0 0 24px;
+	margin: 0;
 	font-size: 16px;
 	line-height: 1.7;
 	color: var(--muted);
 }
-.homelab-domaines{
+.homelab-indicateurs{
 	display: grid;
-	grid-template-columns: repeat(3, minmax(0, 1fr));
-	gap: 14px;
-	margin-bottom: 24px;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 10px;
+	margin-top: auto;
+	padding-top: 24px;
 }
-.homelab-domaine{
+.homelab-indicateurs span{
 	display: flex;
 	min-width: 0;
-	min-height: 208px;
 	flex-direction: column;
+	gap: 4px;
+	padding: 13px 14px;
+	border: 1px solid var(--line);
+	border-radius: var(--radius);
+	background: color-mix(in srgb, var(--surface) 78%, var(--bg));
+}
+.homelab-indicateurs strong{
+	font-family: var(--font-titre);
+	font-size: 17px;
+	line-height: 1.2;
+	color: var(--ink);
+}
+.homelab-indicateurs small{
+	font-family: var(--mono);
+	font-size: 11px;
+	line-height: 1.35;
+	color: var(--muted);
+}
+.homelab-visuel{
+	position: relative;
+	margin: 0;
+	border: 1px solid var(--line);
+	border-radius: var(--radius);
+	background: #1f242a;
+	overflow: hidden;
+	min-height: 100%;
+	aspect-ratio: 16 / 10;
+}
+.homelab-visuel img{
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: top left;
+}
+.homelab-visuel figcaption{
+	position: absolute;
+	left: 12px;
+	right: 12px;
+	bottom: 12px;
+	padding: 9px 11px;
+	border: 1px solid rgba(255, 255, 255, 0.12);
+	border-radius: 6px;
+	background: rgba(15, 23, 32, 0.78);
+	color: #F8FAFC;
+	font-family: var(--mono);
+	font-size: 11px;
+	line-height: 1.35;
+	backdrop-filter: blur(8px);
+}
+.homelab-demarche{
+	display: grid;
+	grid-template-columns: auto 1fr;
+	align-items: center;
+	gap: 16px;
+	margin: 0 0 22px;
+	padding: 14px 0;
+	border-top: 1px solid var(--line);
+	border-bottom: 1px solid var(--line);
+}
+.homelab-demarche p{
+	margin: 0;
+	font-family: var(--mono);
+	font-size: 12px;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: var(--accent);
+}
+.homelab-demarche ol{
+	display: grid;
+	grid-template-columns: repeat(6, minmax(0, 1fr));
+	gap: 8px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.homelab-demarche li{
+	min-width: 0;
+	padding: 8px 9px;
+	border: 1px solid var(--line);
+	border-radius: 5px;
+	font-family: var(--mono);
+	font-size: 11px;
+	line-height: 1.25;
+	text-align: center;
+	color: var(--muted);
+}
+.homelab-piliers{
+	display: grid;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+	gap: 14px;
+	margin-bottom: 22px;
+}
+.homelab-piliers section{
+	display: flex;
+	min-width: 0;
+	flex-direction: column;
+	gap: 12px;
 	padding: 18px;
 	border: 1px solid var(--line);
 	border-radius: var(--radius);
 	background: color-mix(in srgb, var(--surface) 82%, var(--bg));
 }
-.homelab-domaine h4,
-.homelab-section h4,
+.homelab-piliers h4,
+.homelab-preuves h4,
+.homelab-bandeau h4,
 .homelab-etats h4{
 	margin: 0;
 	color: var(--ink);
 }
-.homelab-domaine h4{
+.homelab-piliers h4{
 	display: flex;
 	align-items: center;
 	gap: 9px;
-	font-size: 16px;
+	font-size: 15px;
 	line-height: 1.3;
 }
-.homelab-domaine h4 i{
+.homelab-piliers h4 i{
 	width: 18px;
 	color: var(--accent);
 	text-align: center;
 }
-.homelab-domaine ul,
-.homelab-realisations,
+.homelab-piliers p{
+	margin: 0;
+	font-size: 13px;
+	line-height: 1.55;
+	color: var(--muted);
+}
+.homelab-piliers ul,
+.homelab-liste,
 .homelab-badges{
 	list-style: none;
 	margin: 0;
 	padding: 0;
 }
-.homelab-domaine ul{
+.homelab-piliers ul{
 	display: flex;
 	flex-wrap: wrap;
 	gap: 6px;
-	margin: 14px 0;
+	margin-top: auto;
 }
-.homelab-domaine li,
+.homelab-piliers li,
 .homelab-badges li{
 	font-family: var(--mono);
 	font-size: 11px;
@@ -777,43 +893,38 @@ header.menu-ouvert .bouton-menu .ferme{
 	border-radius: 4px;
 	color: var(--muted);
 }
-.homelab-carte .homelab-domaine p{
-	margin: auto 0 0;
-	font-size: 13px;
-	line-height: 1.55;
-	color: var(--muted);
-}
-.homelab-section{
+.homelab-preuves{
+	display: grid;
+	grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
+	gap: 24px;
 	padding-top: 20px;
-	margin-bottom: 20px;
 	border-top: 1px solid var(--line);
 }
-.homelab-section h4{
+.homelab-preuves h4,
+.homelab-bandeau h4{
 	margin-bottom: 14px;
 	font-size: 15px;
 	letter-spacing: 0.02em;
 }
-.homelab-realisations{
-	display: grid;
-	grid-template-columns: repeat(2, minmax(0, 1fr));
-	gap: 9px 22px;
-}
-.homelab-realisations li{
+.homelab-liste li{
 	display: flex;
 	align-items: flex-start;
 	gap: 9px;
 	min-width: 0;
+	margin-bottom: 10px;
 	font-size: 14px;
 	line-height: 1.45;
 	color: var(--muted);
 }
-.homelab-realisations i{
+.homelab-liste i{
 	margin-top: 4px;
 	color: var(--accent);
 	font-size: 11px;
 }
-.homelab-section-compacte{
-	margin-bottom: 0;
+.homelab-bandeau{
+	padding-top: 18px;
+	margin-top: 10px;
+	border-top: 1px solid var(--line);
 }
 .homelab-badges{
 	display: flex;
@@ -824,7 +935,7 @@ header.menu-ouvert .bouton-menu .ferme{
 	display: grid;
 	grid-template-columns: repeat(2, minmax(0, 1fr));
 	gap: 22px;
-	margin-top: 20px;
+	margin-top: 18px;
 	padding-top: 18px;
 	border-top: 1px solid var(--line);
 }
@@ -845,6 +956,450 @@ header.menu-ouvert .bouton-menu .ferme{
 .homelab-etats i{
 	margin-right: 6px;
 	color: var(--accent);
+}
+.nas-projet{
+	gap: 0;
+	padding: 0;
+	overflow: hidden;
+}
+.nas-presentation{
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) minmax(280px, 32%);
+	gap: 0;
+	border-bottom: 1px solid var(--line);
+}
+.nas-contenu{
+	min-width: 0;
+	padding: 30px;
+}
+.nas-infos{
+	min-width: 0;
+	padding: 30px;
+	border-left: 1px solid var(--line);
+	background: color-mix(in srgb, var(--surface) 70%, var(--bg));
+}
+.nas-en-tete{
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 18px;
+	margin-bottom: 18px;
+}
+.nas-titre{
+	display: flex;
+	align-items: flex-start;
+	gap: 14px;
+	min-width: 0;
+}
+.nas-icone{
+	width: 44px;
+	height: 44px;
+	flex: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid color-mix(in srgb, var(--accent) 35%, var(--line));
+	border-radius: var(--radius);
+	background: color-mix(in srgb, var(--accent) 8%, transparent);
+	color: var(--accent);
+	font-size: 20px;
+}
+.nas-kicker{
+	margin: 0 0 4px;
+	font-family: var(--mono);
+	font-size: 12px;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: var(--accent);
+}
+.nas-projet h3{
+	margin: 0;
+	font-size: clamp(28px, 4vw, 42px);
+	line-height: 1.08;
+}
+.nas-badge{
+	display: inline-flex;
+	align-items: center;
+	gap: 7px;
+	white-space: nowrap;
+}
+.nas-point{
+	width: 7px;
+	height: 7px;
+	border-radius: 50%;
+	background: var(--ok-dot);
+}
+.nas-intro{
+	max-width: 70ch;
+	margin: 0 0 13px;
+	font-size: 16px;
+	line-height: 1.7;
+	color: var(--muted);
+}
+.nas-forces{
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 14px;
+	margin-top: 26px;
+}
+.nas-forces article{
+	min-width: 0;
+	padding: 18px;
+	border: 1px solid var(--line);
+	border-radius: var(--radius);
+	background: var(--surface);
+	transition: transform 0.18s ease, border-color 0.18s ease;
+}
+.nas-forces article:hover{
+	transform: translateY(-2px);
+	border-color: color-mix(in srgb, var(--accent) 45%, var(--line));
+}
+.nas-forces span{
+	width: 38px;
+	height: 38px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 14px;
+	border-radius: 7px;
+	background: color-mix(in srgb, var(--accent) 10%, transparent);
+	color: var(--accent);
+}
+.nas-forces h4,
+.nas-infos h4,
+.nas-panneau h4,
+.nas-carte-realisation h5,
+.nas-environnement h5,
+.nas-services h5,
+.nas-incidents h5{
+	margin: 0;
+	color: var(--ink);
+}
+.nas-forces h4{
+	margin-bottom: 8px;
+	font-size: 16px;
+}
+.nas-forces p{
+	margin: 0;
+	font-size: 13px;
+	line-height: 1.55;
+	color: var(--muted);
+}
+.nas-infos dl{
+	display: grid;
+	gap: 18px;
+	margin: 0;
+}
+.nas-infos dt{
+	margin-bottom: 5px;
+	font-family: var(--mono);
+	font-size: 11px;
+	letter-spacing: 0.09em;
+	text-transform: uppercase;
+	color: var(--accent);
+}
+.nas-infos dd{
+	margin: 0;
+	font-size: 14px;
+	line-height: 1.45;
+	color: var(--ink);
+}
+.nas-separateur{
+	height: 1px;
+	margin: 24px 0;
+	background: var(--line);
+}
+.nas-etat h4{
+	margin-bottom: 12px;
+	font-size: 16px;
+}
+.nas-barre{
+	height: 7px;
+	margin: 18px 0;
+	border-radius: 999px;
+	background: color-mix(in srgb, var(--accent) 12%, var(--line));
+	overflow: hidden;
+}
+.nas-barre span{
+	display: block;
+	width: 74%;
+	height: 100%;
+	border-radius: inherit;
+	background: var(--accent);
+}
+.nas-etat ul,
+.nas-carte-realisation ul,
+.nas-tags,
+.nas-services,
+.nas-competences{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.nas-etat li{
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	margin-bottom: 9px;
+	font-size: 13px;
+	color: var(--muted);
+}
+.nas-etat i{
+	color: var(--accent);
+	font-size: 11px;
+}
+.nas-details{
+	padding: 26px 30px 30px;
+}
+.nas-tabs-entete{
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 18px;
+	margin-bottom: 22px;
+}
+.nas-tabs-entete h4{
+	margin: 8px 0 0;
+	font-size: 18px;
+	color: var(--ink);
+}
+.nas-tabs{
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	justify-content: flex-end;
+}
+.nas-tabs button{
+	border: 1px solid var(--line);
+	border-radius: 999px;
+	padding: 8px 12px;
+	background: transparent;
+	color: var(--muted);
+	font-family: var(--mono);
+	font-size: 12px;
+	cursor: pointer;
+	transition: background-color 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+}
+.nas-tabs button:hover,
+.nas-tabs button.actif{
+	border-color: var(--accent);
+	background: color-mix(in srgb, var(--accent) 10%, transparent);
+	color: var(--accent);
+}
+.nas-panneau[hidden]{
+	display: none;
+}
+.nas-panneau-intro{
+	margin-bottom: 18px;
+}
+.nas-panneau-intro h4{
+	margin-bottom: 6px;
+	font-size: 20px;
+}
+.nas-panneau-intro p{
+	margin: 0;
+	font-size: 14px;
+	line-height: 1.6;
+	color: var(--muted);
+}
+.nas-realisations{
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 18px;
+}
+.nas-carte-realisation{
+	min-width: 0;
+	padding: 16px;
+	border: 1px solid var(--line);
+	border-radius: var(--radius);
+	background: color-mix(in srgb, var(--surface) 82%, var(--bg));
+}
+.nas-media{
+	aspect-ratio: 16 / 9;
+	min-height: 150px;
+	margin-bottom: 16px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	border: 1px dashed var(--line-strong);
+	border-radius: calc(var(--radius) - 2px);
+	background: color-mix(in srgb, var(--accent) 6%, var(--bg));
+	color: var(--muted);
+	text-align: center;
+	font-family: var(--mono);
+	font-size: 12px;
+	overflow: hidden;
+}
+.nas-media.image-chargee{
+	border-style: solid;
+	background: var(--surface);
+}
+.nas-media.image-manquante{
+	background: color-mix(in srgb, var(--accent) 4%, var(--bg));
+}
+.nas-media i{
+	color: var(--accent);
+	font-size: 22px;
+}
+.nas-media img{
+	display: block;
+	width: 100%;
+	height: 100%;
+	min-height: 0;
+	object-fit: cover;
+}
+.nas-carte-realisation h5{
+	margin-bottom: 8px;
+	font-size: 17px;
+}
+.nas-carte-realisation p{
+	margin: 0 0 13px;
+	font-size: 14px;
+	line-height: 1.55;
+	color: var(--muted);
+}
+.nas-carte-realisation li{
+	display: flex;
+	align-items: flex-start;
+	gap: 8px;
+	margin-bottom: 7px;
+	font-size: 13px;
+	line-height: 1.4;
+	color: var(--muted);
+}
+.nas-carte-realisation li i{
+	margin-top: 3px;
+	color: var(--accent);
+	font-size: 10px;
+}
+.nas-tags,
+.nas-competences{
+	display: flex;
+	flex-wrap: wrap;
+	gap: 7px;
+	margin-top: 14px;
+}
+.nas-tags span,
+.nas-competences li{
+	font-family: var(--mono);
+	font-size: 11px;
+	line-height: 1.35;
+	padding: 4px 8px;
+	border: 1px solid var(--line-strong);
+	border-radius: 4px;
+	color: var(--muted);
+}
+.nas-environnement{
+	display: grid;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+	gap: 14px;
+	margin-bottom: 18px;
+}
+.nas-environnement article,
+.nas-services article,
+.nas-incidents article{
+	min-width: 0;
+	border: 1px solid var(--line);
+	border-radius: var(--radius);
+	background: color-mix(in srgb, var(--surface) 82%, var(--bg));
+}
+.nas-environnement article{
+	padding: 16px;
+}
+.nas-environnement h5{
+	margin-bottom: 8px;
+	font-size: 15px;
+}
+.nas-environnement p,
+.nas-services p,
+.nas-incidents p{
+	margin: 0;
+	font-size: 13px;
+	line-height: 1.55;
+	color: var(--muted);
+}
+.nas-schema{
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr);
+	align-items: center;
+	gap: 10px;
+	padding-top: 16px;
+	border-top: 1px solid var(--line);
+}
+.nas-schema span{
+	padding: 12px;
+	border: 1px solid var(--line);
+	border-radius: var(--radius);
+	font-family: var(--mono);
+	font-size: 12px;
+	text-align: center;
+	color: var(--muted);
+}
+.nas-schema i{
+	color: var(--accent);
+}
+.nas-services{
+	display: grid;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+	gap: 14px;
+}
+.nas-services article{
+	display: flex;
+	gap: 12px;
+	padding: 16px;
+}
+.nas-services article > i{
+	width: 34px;
+	height: 34px;
+	flex: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 7px;
+	background: color-mix(in srgb, var(--accent) 10%, transparent);
+	color: var(--accent);
+}
+.nas-services h5{
+	margin-bottom: 6px;
+	font-size: 15px;
+}
+.nas-services span{
+	display: inline-block;
+	margin-top: 10px;
+	font-family: var(--mono);
+	font-size: 11px;
+	color: var(--accent);
+}
+.nas-incidents{
+	display: grid;
+	gap: 14px;
+}
+.nas-incidents article{
+	display: grid;
+	grid-template-columns: 0.8fr repeat(3, minmax(0, 1fr));
+	gap: 14px;
+	padding: 16px;
+}
+.nas-incidents h5{
+	font-size: 15px;
+}
+.nas-incidents strong{
+	display: block;
+	margin-bottom: 5px;
+	font-family: var(--mono);
+	font-size: 11px;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: var(--accent);
+}
+.nas-competences{
+	margin-top: 0;
+}
+.nas-competences li{
+	font-size: 12px;
+	padding: 7px 10px;
 }
 .projet.masque{
 	display: none;
@@ -1142,6 +1697,20 @@ footer{
 	.terminal{
 		position: static;
 	}
+	.nas-presentation{
+		grid-template-columns: 1fr;
+	}
+	.nas-infos{
+		border-top: 1px solid var(--line);
+		border-left: 0;
+	}
+	.nas-environnement,
+	.nas-services{
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+	.nas-incidents article{
+		grid-template-columns: 1fr;
+	}
 }
 
 @media (max-width: 860px){
@@ -1179,12 +1748,40 @@ footer{
 		font-size: 22px;
 		padding: 7px 0;
 	}
-	.homelab-domaines,
-	.homelab-realisations{
+	.homelab-hero,
+	.homelab-piliers,
+	.homelab-preuves{
 		grid-template-columns: 1fr;
 	}
-	.homelab-domaine{
+	.homelab-visuel{
 		min-height: 0;
+	}
+	.homelab-demarche{
+		grid-template-columns: 1fr;
+		align-items: stretch;
+	}
+	.homelab-demarche ol{
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
+	.nas-tabs-entete{
+		flex-direction: column;
+	}
+	.nas-tabs{
+		width: 100%;
+		flex-wrap: nowrap;
+		justify-content: flex-start;
+		overflow-x: auto;
+		padding-bottom: 4px;
+	}
+	.nas-tabs button{
+		flex: none;
+	}
+	.nas-schema{
+		grid-template-columns: 1fr;
+	}
+	.nas-schema i{
+		justify-self: center;
+		transform: rotate(90deg);
 	}
 }
 
@@ -1221,6 +1818,29 @@ footer{
 	.projet-principal{
 		padding: 22px;
 	}
+	.projet-principal.nas-projet{
+		padding: 0;
+	}
+	.nas-contenu,
+	.nas-infos,
+	.nas-details{
+		padding: 20px;
+	}
+	.nas-en-tete{
+		flex-direction: column;
+	}
+	.nas-projet h3{
+		font-size: clamp(26px, 12vw, 36px);
+	}
+	.nas-forces,
+	.nas-realisations,
+	.nas-environnement,
+	.nas-services{
+		grid-template-columns: 1fr;
+	}
+	.nas-media{
+		min-height: 138px;
+	}
 	.homelab-entete{
 		flex-direction: column;
 		align-items: flex-start;
@@ -1234,8 +1854,12 @@ footer{
 		height: 38px;
 		font-size: 18px;
 	}
+	.homelab-indicateurs,
 	.homelab-etats{
 		grid-template-columns: 1fr;
+	}
+	.homelab-demarche ol{
+		grid-template-columns: repeat(2, minmax(0, 1fr));
 	}
 	.formulaire{
 		padding: 20px;

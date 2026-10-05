@@ -32,8 +32,8 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
-    <link rel="stylesheet" href="style.css?v=20261005-contact" />
-    <script src="script.js?v=20261005-contact" defer></script>
+    <link rel="stylesheet" href="style.css?v=20261005-nas-tabs" />
+    <script src="script.js?v=20261005-nas-tabs" defer></script>
   </head>
 
   
@@ -257,108 +257,259 @@
         </div>
 
         <div class="liste-projets" id="projects">
-          <article class="projet projet-principal homelab-carte apparition" data-cat="infra">
-            <div class="homelab-entete">
-              <div class="homelab-identite">
-                <span class="homelab-icone">
-                  <i class="fa-solid fa-server" aria-hidden="true"></i>
-                </span>
-                <div>
-                  <h3>Homelab &amp; infrastructure auto-hébergée</h3>
-                  <p class="homelab-sous-titre">TrueNAS / Linux / Réseau / Self-hosting</p>
+          <article class="projet projet-principal nas-projet apparition" data-cat="infra">
+            <div class="nas-presentation">
+              <div class="nas-contenu">
+                <div class="nas-en-tete">
+                  <div class="nas-titre">
+                    <span class="nas-icone"><i class="fa-solid fa-server" aria-hidden="true"></i></span>
+                    <div>
+                      <p class="nas-kicker">Projet personnel</p>
+                      <h3>NAS / Homelab TrueNAS</h3>
+                    </div>
+                  </div>
+                  <span class="nas-badge etat-projet termine"><span class="nas-point"></span> En production</span>
+                </div>
+
+                <p class="nas-intro">
+                  J'ai conçu et j'administre un homelab basé sur TrueNAS pour centraliser mes données,
+                  héberger des services utiles et travailler sur des sujets proches d'une vraie infrastructure.
+                </p>
+                <p class="nas-intro">
+                  Ce projet me permet d'apprendre en continu tout en gardant un environnement fiable,
+                  sécurisé et évolutif.
+                </p>
+
+                <div class="nas-forces" aria-label="Points forts du projet NAS">
+                  <article>
+                    <span><i class="fa-solid fa-database" aria-hidden="true"></i></span>
+                    <h4>Stockage ZFS fiable</h4>
+                    <p>Données centralisées, snapshots et sauvegardes pour garantir l'intégrité et la disponibilité.</p>
+                  </article>
+                  <article>
+                    <span><i class="fa-solid fa-cube" aria-hidden="true"></i></span>
+                    <h4>Services auto-hébergés</h4>
+                    <p>Déploiement et administration de plusieurs services utilisés au quotidien.</p>
+                  </article>
+                  <article>
+                    <span><i class="fa-solid fa-lock" aria-hidden="true"></i></span>
+                    <h4>Accès distant sécurisé</h4>
+                    <p>Accès sécurisé à l'infrastructure depuis l'extérieur avec Tailscale et gestion des droits.</p>
+                  </article>
+                  <article>
+                    <span><i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i></span>
+                    <h4>Résolution d'incidents</h4>
+                    <p>Diagnostic, dépannage et maintenance afin de conserver un environnement stable et disponible.</p>
+                  </article>
                 </div>
               </div>
-              <span class="etat-projet termine">En production</span>
+
+              <aside class="nas-infos" aria-label="Résumé technique du projet NAS">
+                <dl>
+                  <div>
+                    <dt>Rôle</dt>
+                    <dd>Conception, déploiement et administration système</dd>
+                  </div>
+                  <div>
+                    <dt>Stack</dt>
+                    <dd>TrueNAS, ZFS, Linux, SMB / ACL, containers</dd>
+                  </div>
+                  <div>
+                    <dt>Services</dt>
+                    <dd>Jellyfin, Immich, Minecraft, Nginx, web</dd>
+                  </div>
+                  <div>
+                    <dt>Priorités</dt>
+                    <dd>Droits, sauvegardes, accès distant</dd>
+                  </div>
+                </dl>
+
+                <div class="nas-separateur"></div>
+
+                <div class="nas-etat">
+                  <h4>État du projet</h4>
+                  <span class="nas-badge etat-projet termine"><span class="nas-point"></span> En production</span>
+                  <div class="nas-barre" aria-hidden="true"><span></span></div>
+                  <ul>
+                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Infrastructure en place</li>
+                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Services opérationnels</li>
+                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Utilisation quotidienne</li>
+                  </ul>
+                </div>
+              </aside>
             </div>
 
-            <p class="homelab-introduction">
-              Conception et administration d'un environnement TrueNAS utilisé comme laboratoire personnel
-              pour expérimenter des problématiques proches d'une infrastructure réelle : stockage, réseau,
-              sécurité, conteneurisation, accès distant et continuité de service.
-            </p>
-
-            <div class="homelab-domaines" aria-label="Axes techniques du projet">
-              <section class="homelab-domaine">
-                <h4><i class="fa-solid fa-hard-drive" aria-hidden="true"></i> Infrastructure</h4>
-                <ul>
-                  <li>TrueNAS</li>
-                  <li>ZFS</li>
-                  <li>Linux</li>
-                  <li>SMB</li>
-                  <li>ACL</li>
-                  <li>Containers</li>
-                </ul>
-                <p>Stockage centralisé, gestion des datasets, utilisateurs, groupes et permissions.</p>
-              </section>
-
-              <section class="homelab-domaine">
-                <h4><i class="fa-solid fa-cubes-stacked" aria-hidden="true"></i> Services déployés</h4>
-                <ul>
-                  <li>Jellyfin</li>
-                  <li>Immich</li>
-                  <li>Serveur Minecraft</li>
-                  <li>Nginx</li>
-                  <li>Services web</li>
-                </ul>
-                <p>Déploiement et exploitation de plusieurs services accessibles sur le réseau local ou à distance.</p>
-              </section>
-
-              <section class="homelab-domaine">
-                <h4><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> Administration &amp; sécurité</h4>
-                <ul>
-                  <li>Tailscale</li>
-                  <li>Sauvegardes</li>
-                  <li>Accès distant</li>
-                  <li>Gestion des droits</li>
-                  <li>Diagnostic réseau</li>
-                  <li>Troubleshooting</li>
-                </ul>
-                <p>Sécurisation des accès, résolution d'incidents et maintien en condition opérationnelle.</p>
-              </section>
-            </div>
-
-            <div class="homelab-section">
-              <h4>Réalisations concrètes</h4>
-              <ul class="homelab-realisations">
-                <li><i class="fa-solid fa-check" aria-hidden="true"></i> Mise en place et administration du stockage ZFS</li>
-                <li><i class="fa-solid fa-check" aria-hidden="true"></i> Création et gestion des utilisateurs, groupes et permissions</li>
-                <li><i class="fa-solid fa-check" aria-hidden="true"></i> Configuration des partages réseau SMB</li>
-                <li><i class="fa-solid fa-check" aria-hidden="true"></i> Déploiement de plusieurs services auto-hébergés</li>
-                <li><i class="fa-solid fa-check" aria-hidden="true"></i> Mise en place d'un accès distant sécurisé</li>
-                <li><i class="fa-solid fa-check" aria-hidden="true"></i> Administration d'un serveur Minecraft</li>
-                <li><i class="fa-solid fa-check" aria-hidden="true"></i> Mise en place de sauvegardes</li>
-                <li><i class="fa-solid fa-check" aria-hidden="true"></i> Diagnostic et résolution d'incidents système et réseau</li>
-              </ul>
-            </div>
-
-            <div class="homelab-section homelab-section-compacte">
-              <h4>Compétences démontrées</h4>
-              <ul class="homelab-badges">
-                <li>Administration système</li>
-                <li>Linux</li>
-                <li>TrueNAS</li>
-                <li>ZFS</li>
-                <li>Réseau</li>
-                <li>SMB / ACL</li>
-                <li>Containers</li>
-                <li>Nginx</li>
-                <li>Tailscale</li>
-                <li>Sécurité</li>
-                <li>Self-hosting</li>
-                <li>Troubleshooting</li>
-              </ul>
-            </div>
-
-            <div class="homelab-etats">
-              <div>
-                <h4>État actuel</h4>
-                <p><i class="fa-solid fa-check" aria-hidden="true"></i> Infrastructure opérationnelle : stockage ZFS, services auto-hébergés, partages réseau et sauvegardes.</p>
+            <section class="nas-details" aria-labelledby="nas-details-title">
+              <div class="nas-tabs-entete">
+                <h4 id="nas-details-title">Détails du projet</h4>
+                <div class="nas-tabs" role="tablist" aria-label="Navigation du projet NAS">
+                  <button id="nas-tab-realisations" class="actif" type="button" role="tab" aria-selected="true" aria-controls="nas-panel-realisations" data-nas-tab="realisations">Réalisations</button>
+                  <button id="nas-tab-environnement" type="button" role="tab" aria-selected="false" aria-controls="nas-panel-environnement" data-nas-tab="environnement">Environnement</button>
+                  <button id="nas-tab-services" type="button" role="tab" aria-selected="false" aria-controls="nas-panel-services" data-nas-tab="services">Services</button>
+                  <button id="nas-tab-incidents" type="button" role="tab" aria-selected="false" aria-controls="nas-panel-incidents" data-nas-tab="incidents">Incidents résolus</button>
+                  <button id="nas-tab-competences" type="button" role="tab" aria-selected="false" aria-controls="nas-panel-competences" data-nas-tab="competences">Compétences</button>
+                </div>
               </div>
-              <div>
-                <h4>Prochaines évolutions</h4>
-                <p>Réseau 2,5 GbE · supervision · automatisation · amélioration de la stratégie de sauvegarde.</p>
+
+              <div class="nas-panneaux">
+                <section id="nas-panel-realisations" class="nas-panneau actif" role="tabpanel" aria-labelledby="nas-tab-realisations" data-nas-panel="realisations">
+                  <div class="nas-panneau-intro">
+                    <h4>Principales réalisations</h4>
+                    <p>Ce que j'ai mis en place et ce que ce projet m'a permis d'apprendre.</p>
+                  </div>
+
+                  <div class="nas-realisations">
+                    <article class="nas-carte-realisation">
+                      <div class="nas-media" data-nas-image="infrastructure" data-placeholder="Photo / capture du NAS à ajouter">
+                        <i class="fa-regular fa-image" aria-hidden="true"></i>
+                        <span>Photo / capture du NAS à ajouter</span>
+                      </div>
+                      <h5>Infrastructure TrueNAS</h5>
+                      <p>Installation et configuration de TrueNAS, création du stockage ZFS et administration de l'environnement.</p>
+                      <ul>
+                        <li><i class="fa-solid fa-check" aria-hidden="true"></i> Configuration TrueNAS</li>
+                        <li><i class="fa-solid fa-check" aria-hidden="true"></i> Stockage ZFS</li>
+                        <li><i class="fa-solid fa-check" aria-hidden="true"></i> Datasets et snapshots</li>
+                        <li><i class="fa-solid fa-check" aria-hidden="true"></i> Gestion des sauvegardes</li>
+                      </ul>
+                      <div class="nas-tags"><span>TrueNAS</span><span>ZFS</span><span>Stockage</span><span>Sauvegardes</span></div>
+                    </article>
+
+                    <article class="nas-carte-realisation">
+                      <div class="nas-media" data-nas-image="services" data-placeholder="Capture des services auto-hébergés à ajouter">
+                        <i class="fa-regular fa-image" aria-hidden="true"></i>
+                        <span>Capture des services auto-hébergés à ajouter</span>
+                      </div>
+                      <h5>Services auto-hébergés</h5>
+                      <p>Déploiement et administration de plusieurs services utilisés sur mon infrastructure personnelle.</p>
+                      <ul>
+                        <li><i class="fa-solid fa-check" aria-hidden="true"></i> Jellyfin</li>
+                        <li><i class="fa-solid fa-check" aria-hidden="true"></i> Immich</li>
+                        <li><i class="fa-solid fa-check" aria-hidden="true"></i> Serveur Minecraft / Crafty</li>
+                        <li><i class="fa-solid fa-check" aria-hidden="true"></i> Services web</li>
+                      </ul>
+                      <div class="nas-tags"><span>Jellyfin</span><span>Immich</span><span>Minecraft</span><span>Self-hosting</span></div>
+                    </article>
+
+                    <article class="nas-carte-realisation">
+                      <div class="nas-media" data-nas-image="remoteAccess" data-placeholder="Capture Tailscale / accès distant à ajouter">
+                        <i class="fa-regular fa-image" aria-hidden="true"></i>
+                        <span>Capture Tailscale / accès distant à ajouter</span>
+                      </div>
+                      <h5>Accès distant sécurisé</h5>
+                      <p>Mise en place d'un accès distant sécurisé permettant d'administrer le NAS hors du réseau local.</p>
+                      <ul>
+                        <li><i class="fa-solid fa-check" aria-hidden="true"></i> Accès distant via Tailscale</li>
+                        <li><i class="fa-solid fa-check" aria-hidden="true"></i> Administration hors réseau local</li>
+                        <li><i class="fa-solid fa-check" aria-hidden="true"></i> Gestion des accès</li>
+                        <li><i class="fa-solid fa-check" aria-hidden="true"></i> Diagnostic réseau</li>
+                      </ul>
+                      <div class="nas-tags"><span>Tailscale</span><span>Réseau</span><span>Sécurité</span><span>Accès distant</span></div>
+                    </article>
+
+                    <article class="nas-carte-realisation">
+                      <div class="nas-media" data-nas-image="monitoring" data-placeholder="Capture supervision / état du NAS à ajouter">
+                        <i class="fa-regular fa-image" aria-hidden="true"></i>
+                        <span>Capture supervision / état du NAS à ajouter</span>
+                      </div>
+                      <h5>Supervision &amp; maintenance</h5>
+                      <p>Surveillance de l'état de l'infrastructure, maintenance des services et résolution des incidents rencontrés.</p>
+                      <ul>
+                        <li><i class="fa-solid fa-check" aria-hidden="true"></i> Surveillance CPU / RAM / stockage</li>
+                        <li><i class="fa-solid fa-check" aria-hidden="true"></i> Vérification des services</li>
+                        <li><i class="fa-solid fa-check" aria-hidden="true"></i> Diagnostic des erreurs</li>
+                        <li><i class="fa-solid fa-check" aria-hidden="true"></i> Maintenance de l'environnement</li>
+                      </ul>
+                      <div class="nas-tags"><span>Monitoring</span><span>Maintenance</span><span>Troubleshooting</span><span>TrueNAS</span></div>
+                    </article>
+                  </div>
+                </section>
+
+                <section id="nas-panel-environnement" class="nas-panneau" role="tabpanel" aria-labelledby="nas-tab-environnement" data-nas-panel="environnement" hidden>
+                  <div class="nas-panneau-intro">
+                    <h4>Environnement technique</h4>
+                    <p>Organisation générale de l'infrastructure, du matériel au réseau.</p>
+                  </div>
+                  <div class="nas-environnement">
+                    <article><h5>Matériel</h5><p>Machine dédiée, disques de stockage, ports SATA, alimentation et connectivité réseau vérifiés avant installation.</p></article>
+                    <article><h5>Système</h5><p>TrueNAS Community comme base d'administration du stockage, des datasets et des services.</p></article>
+                    <article><h5>Stockage</h5><p>Pools ZFS, datasets par usage, partages SMB, snapshots et sauvegardes.</p></article>
+                    <article><h5>Réseau</h5><p>Réseau local, exposition limitée des services, vérification des ports et accès distant sécurisé via Tailscale.</p></article>
+                  </div>
+                  <div class="nas-schema" aria-label="Schéma simplifié de l'environnement">
+                    <span>Clients locaux</span>
+                    <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    <span>SMB / services</span>
+                    <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    <span>TrueNAS / ZFS</span>
+                    <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    <span>Sauvegardes</span>
+                  </div>
+                </section>
+
+                <section id="nas-panel-services" class="nas-panneau" role="tabpanel" aria-labelledby="nas-tab-services" data-nas-panel="services" hidden>
+                  <div class="nas-panneau-intro">
+                    <h4>Services déployés</h4>
+                    <p>Services réellement installés ou administrés dans le homelab.</p>
+                  </div>
+                  <div class="nas-services">
+                    <article><i class="fa-solid fa-film" aria-hidden="true"></i><div><h5>Jellyfin</h5><p>Streaming média et accès aux bibliothèques stockées sur le NAS.</p><span>En service</span></div></article>
+                    <article><i class="fa-solid fa-images" aria-hidden="true"></i><div><h5>Immich</h5><p>Gestion de photos avec données persistantes sur l'infrastructure.</p><span>Opérationnel</span></div></article>
+                    <article><i class="fa-solid fa-cubes" aria-hidden="true"></i><div><h5>Crafty / Minecraft</h5><p>Administration de serveurs Minecraft, dont Vanilla et Fabric.</p><span>Opérationnel</span></div></article>
+                    <article><i class="fa-solid fa-globe" aria-hidden="true"></i><div><h5>Nginx / services web</h5><p>Hébergement de services ou pages web sur l'environnement personnel.</p><span>Déployé</span></div></article>
+                  </div>
+                </section>
+
+                <section id="nas-panel-incidents" class="nas-panneau" role="tabpanel" aria-labelledby="nas-tab-incidents" data-nas-panel="incidents" hidden>
+                  <div class="nas-panneau-intro">
+                    <h4>Incidents résolus</h4>
+                    <p>Exemples de troubleshooting rencontrés pendant la mise en place et l'exploitation.</p>
+                  </div>
+                  <div class="nas-incidents">
+                    <article>
+                      <h5>Permissions applicatives</h5>
+                      <div><strong>Problème</strong><p>Services incapables d'accéder correctement à certains datasets.</p></div>
+                      <div><strong>Diagnostic</strong><p>Vérification des chemins montés, utilisateurs, groupes, ACL et UID/GID.</p></div>
+                      <div><strong>Solution</strong><p>Correction des droits applicatifs et validation des accès depuis les services concernés.</p></div>
+                    </article>
+                    <article>
+                      <h5>Débit et négociation réseau</h5>
+                      <div><strong>Problème</strong><p>Performances réseau inférieures à ce qui était attendu.</p></div>
+                      <div><strong>Diagnostic</strong><p>Contrôle du lien Ethernet, des ports utilisés et de la négociation réseau.</p></div>
+                      <div><strong>Solution</strong><p>Tests de débit et ajustements réseau avant validation du fonctionnement.</p></div>
+                    </article>
+                    <article>
+                      <h5>Accès distant</h5>
+                      <div><strong>Problème</strong><p>Besoin d'administrer l'infrastructure hors réseau local sans exposer inutilement l'administration.</p></div>
+                      <div><strong>Diagnostic</strong><p>Distinction entre services publics, services privés et interfaces d'administration.</p></div>
+                      <div><strong>Solution</strong><p>Utilisation de Tailscale et limitation des services exposés.</p></div>
+                    </article>
+                  </div>
+                </section>
+
+                <section id="nas-panel-competences" class="nas-panneau" role="tabpanel" aria-labelledby="nas-tab-competences" data-nas-panel="competences" hidden>
+                  <div class="nas-panneau-intro">
+                    <h4>Compétences démontrées</h4>
+                    <p>Compétences concrètement mobilisées dans le projet.</p>
+                  </div>
+                  <ul class="nas-competences">
+                    <li>Administration système</li>
+                    <li>TrueNAS</li>
+                    <li>Linux</li>
+                    <li>ZFS</li>
+                    <li>Réseau</li>
+                    <li>SMB / ACL</li>
+                    <li>Containers</li>
+                    <li>Nginx</li>
+                    <li>Tailscale</li>
+                    <li>Self-hosting</li>
+                    <li>Sauvegardes</li>
+                    <li>Troubleshooting</li>
+                    <li>Sécurité</li>
+                  </ul>
+                </section>
               </div>
-            </div>
+            </section>
           </article>
 
           <article class="projet apparition" data-cat="web">

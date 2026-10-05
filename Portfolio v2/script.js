@@ -1,6 +1,18 @@
 const MON_MAIL = "mathieu.morinm@gmail.com";
 const NOM_DU_SITE = "@mathieu-morin-dev";
 
+const nasProject = {
+  images: {
+    infrastructure: "public/projects/nas/nas-truenas.webp",
+    services: "public/projects/nas/services-homelab.webp",
+    remoteAccess: "public/projects/nas/tailscale-acces-distant.webp",
+    monitoring: "public/projects/nas/truenas-monitoring.webp",
+  },
+  fallbacks: {
+    monitoring: "assets/truenas-dashboard.png",
+  },
+};
+
 // Theme
 const initialiserTheme = () => {
   const themeButton = document.querySelector("#theme-btn");
@@ -114,6 +126,79 @@ const initialiserFiltres = () => {
       });
       vide.hidden = visibles > 0;
     });
+  });
+};
+
+// Section NAS : onglets internes et chargement d'images sans apercu casse
+const chargerImageNas = (bloc, chemins) => {
+  const [source, ...suivants] = chemins.filter(Boolean);
+
+  if (!source) {
+    bloc.classList.add("image-manquante");
+    return;
+  }
+
+  const image = new Image();
+  const titre = bloc.closest(".nas-carte-realisation")?.querySelector("h5")?.textContent?.trim();
+  image.loading = "lazy";
+  image.decoding = "async";
+  image.alt = titre ? `Capture ${titre}` : "Capture du projet NAS TrueNAS";
+
+  image.addEventListener("load", () => {
+    bloc.replaceChildren(image);
+    bloc.classList.add("image-chargee");
+    bloc.classList.remove("image-manquante");
+  });
+
+  image.addEventListener("error", () => chargerImageNas(bloc, suivants));
+  image.src = source;
+};
+
+const initialiserNasProject = () => {
+  const projet = document.querySelector(".nas-projet");
+
+  if (!projet) return;
+
+  const tabs = Array.from(projet.querySelectorAll("[data-nas-tab]"));
+  const panels = Array.from(projet.querySelectorAll("[data-nas-panel]"));
+
+  const afficherOnglet = (nom, avecFocus = false) => {
+    tabs.forEach((tab) => {
+      const actif = tab.dataset.nasTab === nom;
+      tab.classList.toggle("actif", actif);
+      tab.setAttribute("aria-selected", String(actif));
+      tab.tabIndex = actif ? 0 : -1;
+
+      if (actif && avecFocus) {
+        tab.focus();
+      }
+    });
+
+    panels.forEach((panel) => {
+      panel.hidden = panel.dataset.nasPanel !== nom;
+    });
+  };
+
+  tabs.forEach((tab, index) => {
+    tab.addEventListener("click", () => afficherOnglet(tab.dataset.nasTab));
+    tab.addEventListener("keydown", (event) => {
+      if (!["ArrowRight", "ArrowLeft", "Home", "End"].includes(event.key)) return;
+
+      event.preventDefault();
+      let prochainIndex = index;
+
+      if (event.key === "ArrowRight") prochainIndex = (index + 1) % tabs.length;
+      if (event.key === "ArrowLeft") prochainIndex = (index - 1 + tabs.length) % tabs.length;
+      if (event.key === "Home") prochainIndex = 0;
+      if (event.key === "End") prochainIndex = tabs.length - 1;
+
+      afficherOnglet(tabs[prochainIndex].dataset.nasTab, true);
+    });
+  });
+
+  projet.querySelectorAll(".nas-media[data-nas-image]").forEach((bloc) => {
+    const cleImage = bloc.dataset.nasImage;
+    chargerImageNas(bloc, [nasProject.images[cleImage], nasProject.fallbacks[cleImage]]);
   });
 };
 
@@ -233,5 +318,6 @@ initialiserNavigation();
 initialiserApparitions();
 initialiserHeader();
 initialiserFiltres();
+initialiserNasProject();
 initialiserContact();
 document.querySelector("#year").textContent = String(new Date().getFullYear());
