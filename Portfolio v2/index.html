@@ -29,8 +29,8 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
-    <link rel="stylesheet" href="style.css?v=20261001-accordeon" />
-    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css?v=20261005-contact" />
+    <script src="script.js?v=20261005-contact" defer></script>
   </head>
 
   
@@ -101,7 +101,7 @@
         </div>
         <div class="actions-accueil">
           <a class="bouton-projets" href="#WORK">VOIR MES PROJETS</a>
-          <a class="bouton-cv" href="assets/CV.pdf" target="_blank" rel="noopener noreferrer">CV</a>
+          <a class="bouton-cv" href="assets/Mathieu Morin CV.pdf" target="_blank" rel="noopener noreferrer">CV</a>
         </div>
 
         <p class="actualite">
@@ -254,123 +254,107 @@
         </div>
 
         <div class="liste-projets" id="projects">
-          <article class="projet projet-principal apparition" data-cat="infra">
-            <div class="tete-projet">
-              <i class="fa-solid fa-server icone-projet" aria-hidden="true"></i>
-              <span class="etat-projet termine">en production</span>
-            </div>
-            <h3>NAS / Homelab TrueNAS</h3>
-            <p>
-              J'ai conçu et j'administre un homelab basé sur TrueNAS afin de centraliser mes données,
-              héberger plusieurs services et expérimenter des problématiques proches d'un environnement
-              d'infrastructure réel : stockage ZFS, gestion des droits, réseau, conteneurs, sauvegardes,
-              services web et accès distant.
-            </p>
-            <p>
-              Ce projet m'a surtout appris une démarche d'administration système complète : déployer,
-              configurer, sécuriser, tester, diagnostiquer les incidents, analyser les performances et
-              faire évoluer l'infrastructure.
-            </p>
-
-            <div class="homelab-mesures" aria-label="Repères du projet">
-              <span><strong>1</strong> machine multi-services</span>
-              <span><strong>plusieurs</strong> datasets et services</span>
-              <span><strong>SSD + HDD</strong> pour applications et données</span>
-              <span><strong>1 GbE</strong> comme cible réseau locale</span>
-            </div>
-
-            <div class="homelab-accordeon">
-              <details class="homelab-bloc">
-                <summary><i class="fa-solid fa-list-check" aria-hidden="true"></i> Ce que j'ai réalisé</summary>
-                <ul>
-                  <li>Conception de l'architecture et organisation du stockage</li>
-                  <li>Création et administration de pools ZFS et datasets</li>
-                  <li>Mise en place de partages SMB, utilisateurs, groupes et ACL</li>
-                  <li>Déploiement de services avec volumes, ports et données persistantes</li>
-                  <li>Sauvegardes, accès distant et documentation technique</li>
-                </ul>
-              </details>
-
-              <details class="homelab-bloc">
-                <summary><i class="fa-solid fa-diagram-project" aria-hidden="true"></i> Environnement technique</summary>
-                <dl class="homelab-environnement">
-                  <dt>Plateforme</dt><dd>TrueNAS, Linux</dd>
-                  <dt>Stockage</dt><dd>ZFS, pools, datasets, SSD Apps</dd>
-                  <dt>Réseau</dt><dd>Ethernet, TCP/IP, SMB, Freebox, Tailscale</dd>
-                  <dt>Accès</dt><dd>ACL, UID/GID, HTTPS, droits Unix</dd>
-                </dl>
-              </details>
-
-              <details class="homelab-bloc homelab-bloc-large">
-                <summary><i class="fa-solid fa-cubes-stacked" aria-hidden="true"></i> Services : des cas d'usage concrets</summary>
-                <div class="homelab-services">
-                  <div class="homelab-service">
-                    <strong>Jellyfin</strong>
-                    <p>Datasets médias, droits, ports réseau, lecture directe et étude du transcodage matériel.</p>
-                  </div>
-                  <div class="homelab-service">
-                    <strong>Immich</strong>
-                    <p>Bibliothèques photo externes, volumes persistants et accès applicatif aux datasets.</p>
-                  </div>
-                  <div class="homelab-service">
-                    <strong>Crafty / Minecraft</strong>
-                    <p>Fichiers serveur, mémoire, sauvegardes, whitelist, ports et automatisation des horaires.</p>
-                  </div>
-                  <div class="homelab-service">
-                    <strong>Nginx</strong>
-                    <p>Conteneur web, montage en lecture seule, exposition de port et hébergement statique.</p>
-                  </div>
+          <article class="projet projet-principal homelab-carte apparition" data-cat="infra">
+            <div class="homelab-entete">
+              <div class="homelab-identite">
+                <span class="homelab-icone">
+                  <i class="fa-solid fa-server" aria-hidden="true"></i>
+                </span>
+                <div>
+                  <h3>Homelab &amp; infrastructure auto-hébergée</h3>
+                  <p class="homelab-sous-titre">TrueNAS / Linux / Réseau / Self-hosting</p>
                 </div>
-              </details>
-
-              <details class="homelab-bloc homelab-bloc-large">
-                <summary><i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i> Incidents techniques résolus</summary>
-                <ul class="homelab-incidents">
-                  <li>Erreur I/O lors de la création d'un pool ZFS : vérification des disques, SMART, câbles SATA et contrôleur.</li>
-                  <li>Permissions entre conteneurs et datasets : configuration des UID/GID, ACL et droits récursifs.</li>
-                  <li>Accès aux bibliothèques Immich et aux dossiers Crafty : correction des chemins montés et des droits applicatifs.</li>
-                  <li>Lien Ethernet négocié à 100 Mb/s : analyse du débit SMB, du câble, du port et de la négociation réseau.</li>
-                  <li>Accès aux services : diagnostic des ports, des certificats HTTPS auto-signés et de la connectivité.</li>
-                </ul>
-              </details>
-
-              <details class="homelab-bloc">
-                <summary><i class="fa-solid fa-route" aria-hidden="true"></i> Approche</summary>
-                <ol class="homelab-approche">
-                  <li>Identifier le besoin</li>
-                  <li>Concevoir l'architecture</li>
-                  <li>Déployer et configurer</li>
-                  <li>Tester et diagnostiquer</li>
-                  <li>Documenter et améliorer</li>
-                </ol>
-              </details>
-
-              <details class="homelab-bloc">
-                <summary><i class="fa-solid fa-user-check" aria-hidden="true"></i> Compétences démontrées</summary>
-                <p class="homelab-competences">
-                  Administration système · stockage · réseau · gestion des accès · conteneurs ·
-                  persistance des données · troubleshooting · continuité de service
-                </p>
-              </details>
+              </div>
+              <span class="etat-projet termine">En production</span>
             </div>
 
-            <ul class="technologies">
-              <li>TrueNAS</li>
-              <li>ZFS</li>
-              <li>Linux</li>
-              <li>SMB</li>
-              <li>ACL</li>
-              <li>Containers</li>
-              <li>Nginx</li>
-              <li>Networking</li>
-              <li>Tailscale</li>
-              <li>Self-hosting</li>
-              <li>Troubleshooting</li>
-            </ul>
+            <p class="homelab-introduction">
+              Conception et administration d'un environnement TrueNAS utilisé comme laboratoire personnel
+              pour expérimenter des problématiques proches d'une infrastructure réelle : stockage, réseau,
+              sécurité, conteneurisation, accès distant et continuité de service.
+            </p>
+
+            <div class="homelab-domaines" aria-label="Axes techniques du projet">
+              <section class="homelab-domaine">
+                <h4><i class="fa-solid fa-hard-drive" aria-hidden="true"></i> Infrastructure</h4>
+                <ul>
+                  <li>TrueNAS</li>
+                  <li>ZFS</li>
+                  <li>Linux</li>
+                  <li>SMB</li>
+                  <li>ACL</li>
+                  <li>Containers</li>
+                </ul>
+                <p>Stockage centralisé, gestion des datasets, utilisateurs, groupes et permissions.</p>
+              </section>
+
+              <section class="homelab-domaine">
+                <h4><i class="fa-solid fa-cubes-stacked" aria-hidden="true"></i> Services déployés</h4>
+                <ul>
+                  <li>Jellyfin</li>
+                  <li>Immich</li>
+                  <li>Serveur Minecraft</li>
+                  <li>Nginx</li>
+                  <li>Services web</li>
+                </ul>
+                <p>Déploiement et exploitation de plusieurs services accessibles sur le réseau local ou à distance.</p>
+              </section>
+
+              <section class="homelab-domaine">
+                <h4><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> Administration &amp; sécurité</h4>
+                <ul>
+                  <li>Tailscale</li>
+                  <li>Sauvegardes</li>
+                  <li>Accès distant</li>
+                  <li>Gestion des droits</li>
+                  <li>Diagnostic réseau</li>
+                  <li>Troubleshooting</li>
+                </ul>
+                <p>Sécurisation des accès, résolution d'incidents et maintien en condition opérationnelle.</p>
+              </section>
+            </div>
+
+            <div class="homelab-section">
+              <h4>Réalisations concrètes</h4>
+              <ul class="homelab-realisations">
+                <li><i class="fa-solid fa-check" aria-hidden="true"></i> Mise en place et administration du stockage ZFS</li>
+                <li><i class="fa-solid fa-check" aria-hidden="true"></i> Création et gestion des utilisateurs, groupes et permissions</li>
+                <li><i class="fa-solid fa-check" aria-hidden="true"></i> Configuration des partages réseau SMB</li>
+                <li><i class="fa-solid fa-check" aria-hidden="true"></i> Déploiement de plusieurs services auto-hébergés</li>
+                <li><i class="fa-solid fa-check" aria-hidden="true"></i> Mise en place d'un accès distant sécurisé</li>
+                <li><i class="fa-solid fa-check" aria-hidden="true"></i> Administration d'un serveur Minecraft</li>
+                <li><i class="fa-solid fa-check" aria-hidden="true"></i> Mise en place de sauvegardes</li>
+                <li><i class="fa-solid fa-check" aria-hidden="true"></i> Diagnostic et résolution d'incidents système et réseau</li>
+              </ul>
+            </div>
+
+            <div class="homelab-section homelab-section-compacte">
+              <h4>Compétences démontrées</h4>
+              <ul class="homelab-badges">
+                <li>Administration système</li>
+                <li>Linux</li>
+                <li>TrueNAS</li>
+                <li>ZFS</li>
+                <li>Réseau</li>
+                <li>SMB / ACL</li>
+                <li>Containers</li>
+                <li>Nginx</li>
+                <li>Tailscale</li>
+                <li>Sécurité</li>
+                <li>Self-hosting</li>
+                <li>Troubleshooting</li>
+              </ul>
+            </div>
 
             <div class="homelab-etats">
-              <span><i class="fa-solid fa-check" aria-hidden="true"></i> Projet opérationnel : stockage ZFS, services auto-hébergés, partages réseau, gestion des accès, sauvegardes et accès distant.</span>
-              <span><i class="fa-solid fa-flask" aria-hidden="true"></i> Évolutions prévues : réseau 2,5 GbE, supervision avancée, automatisation et amélioration de la stratégie de sauvegarde.</span>
+              <div>
+                <h4>État actuel</h4>
+                <p><i class="fa-solid fa-check" aria-hidden="true"></i> Infrastructure opérationnelle : stockage ZFS, services auto-hébergés, partages réseau et sauvegardes.</p>
+              </div>
+              <div>
+                <h4>Prochaines évolutions</h4>
+                <p>Réseau 2,5 GbE · supervision · automatisation · amélioration de la stratégie de sauvegarde.</p>
+              </div>
             </div>
           </article>
 
@@ -390,7 +374,7 @@
               <li>CSS</li>
             </ul>
             <div class="liens-projet">
-              <a href="projets-github/Dashboard/Front-end/index.html" target="_blank" rel="noopener noreferrer">
+              <a href="projets-github/Dashboard/Front-end/Index.html" target="_blank" rel="noopener noreferrer">
                 <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Démo
               </a>
               <a href="https://github.com/Teferi268/Dashboard" target="_blank" rel="noopener noreferrer">
@@ -533,7 +517,18 @@
         </p>
 
         <div class="grille-contact">
-          <form class="formulaire apparition" id="form" novalidate>
+          <form
+            class="formulaire apparition"
+            id="form"
+            action="https://formsubmit.co/mathieu.morinm@gmail.com"
+            data-endpoint="https://formsubmit.co/ajax/mathieu.morinm@gmail.com"
+            method="POST"
+            novalidate
+          >
+            <input type="hidden" name="_subject" value="Nouveau message depuis le portfolio" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input class="champ-cache" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" />
             <div class="champ">
               <label for="nom">Nom</label>
               <input type="text" id="nom" name="nom" autocomplete="name" required />

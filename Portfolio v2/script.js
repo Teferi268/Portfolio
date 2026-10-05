@@ -121,21 +121,29 @@ const initialiserFiltres = () => {
 const initialiserContact = () => {
   const form = document.querySelector("#form");
   const note = document.querySelector("#form-note");
+  const submitButton = form.querySelector('button[type="submit"]');
   const copyButton = document.querySelector("#copy-btn");
   const copyIcon = copyButton.querySelector("i");
   const emailValide = (valeur) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(valeur);
 
-  form.addEventListener("submit", (event) => {
+  form.addEventListener("submit", async (event) => {
     event.preventDefault();
-    const nom = form.nom.value.trim();
-    const email = form.email.value.trim();
-    const sujet = form.sujet.value.trim();
-    const message = form.message.value.trim();
+    const champs = form.elements;
+    const nomChamp = champs.namedItem("nom");
+    const emailChamp = champs.namedItem("email");
+    const sujetChamp = champs.namedItem("sujet");
+    const messageChamp = champs.namedItem("message");
+    const honeypotChamp = champs.namedItem("_honey");
+    const nom = nomChamp.value.trim();
+    const email = emailChamp.value.trim();
+    const sujet = sujetChamp.value.trim();
+    const message = messageChamp.value.trim();
+    const honeypot = honeypotChamp.value.trim();
     const emailIncorrect = !emailValide(email);
 
-    form.nom.setAttribute("aria-invalid", String(nom === ""));
-    form.email.setAttribute("aria-invalid", String(emailIncorrect));
-    form.message.setAttribute("aria-invalid", String(message === ""));
+    nomChamp.setAttribute("aria-invalid", String(nom === ""));
+    emailChamp.setAttribute("aria-invalid", String(emailIncorrect));
+    messageChamp.setAttribute("aria-invalid", String(message === ""));
 
     if (nom === "" || emailIncorrect || message === "") {
       note.textContent = "Il manque le nom, un e-mail valide ou le message.";
@@ -143,11 +151,66 @@ const initialiserContact = () => {
       return;
     }
 
+    if (honeypot !== "") {
+      note.textContent = "Message envoye. Merci pour votre contact.";
+      note.className = "note-formulaire ok";
+      form.reset();
+      return;
+    }
+
+    if (!window.fetch || window.location.protocol === "file:") {
+      note.textContent = "Ouverture de la page d'envoi securisee...";
+      note.className = "note-formulaire";
+      HTMLFormElement.prototype.submit.call(form);
+      return;
+    }
+
     const objet = sujet === "" ? `Message de ${nom}` : sujet;
-    const corps = `${message}\n\n--\n${nom}\n${email}`;
-    note.textContent = "Votre messagerie s'ouvre avec le message pret a partir.";
-    note.className = "note-formulaire ok";
-    window.location.href = `mailto:${MON_MAIL}?subject=${encodeURIComponent(objet)}&body=${encodeURIComponent(corps)}`;
+    const endpoint = form.dataset.endpoint;
+
+    submitButton.disabled = true;
+    submitButton.textContent = "ENVOI...";
+    note.textContent = "Envoi du message en cours...";
+    note.className = "note-formulaire";
+
+    try {
+      const response = await fetch(endpoint, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          nom,
+          email,
+          sujet: objet,
+          message,
+          _replyto: email,
+          _subject: `Portfolio - ${objet}`,
+          _template: "table",
+          _captcha: "false",
+        }),
+      });
+      const data = await response.json().catch(() => ({}));
+      const serviceError = data.success === false || data.success === "false" || data.ok === false || data.error;
+
+      if (!response.ok || serviceError) {
+        throw new Error(data.message || data.error || "Envoi impossible");
+      }
+
+      form.reset();
+      note.textContent = "Message envoye. Je vous repondrai rapidement.";
+      note.className = "note-formulaire ok";
+    } catch (error) {
+      const message = error.message.toLowerCase();
+      note.textContent = message.includes("activat")
+        ? "Formulaire a activer : cliquez sur le mail de confirmation FormSubmit, puis renvoyez le message."
+        : "L'envoi automatique a echoue. Vous pouvez me contacter directement par e-mail.";
+      note.className = "note-formulaire erreur";
+    } finally {
+      submitButton.disabled = false;
+      submitButton.textContent = "ENVOYER";
+    }
   });
 
   copyButton.addEventListener("click", async () => {

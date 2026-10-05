@@ -1,1 +1,2 @@
+# Optionnel : le jeu fonctionne aussi en JSON local si MongoDB n'est pas disponible.
 pymongo>=4.6,<5

@@ -1,28 +1,16 @@
 # Calculatrice
 
-## But du projet
-Cette application reprend l’idée d’une calculatrice simple de bureau, avec une interface propre et des calculs opérationnels en JavaScript vanilla.
+Calculatrice responsive en JavaScript vanilla avec affichage de l expression, gestion du clavier et evaluation sans execution dynamique de code.
 
-## Fonctionnalités
-- saisie de nombres et d’opérations
-- affichage de l’expression en cours
-- résultat calculé à l’écran
-- boutons CE, C et retour arrière
-- gestion du clavier
-- design responsive inspiré de la maquette de départ
+## Fonctionnalites
 
-## Technologies utilisées
-- HTML
-- CSS
-- JavaScript vanilla
+- saisie de nombres et d operations
+- affichage de l expression en cours
+- resultat calcule a l ecran
+- boutons CE, C et retour arriere
+- prise en charge du clavier
+- gestion de la division par zero et des erreurs
 
-## Comment lancer le projet
-1. Ouvrir le dossier `projet-calculatrice` dans VS Code.
-2. Ouvrir le fichier `index.html` dans le navigateur.
-3. Utiliser les boutons ou le clavier pour faire un calcul.
+## Lancement
 
-## Améliorations possibles
-- historique des calculs
-- pourcentage et racine carrée
-- mémoire de calcul
-- meilleure gestion des erreurs de saisie
+Ouvrir index.html dans un navigateur.

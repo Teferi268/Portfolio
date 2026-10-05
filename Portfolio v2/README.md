@@ -72,10 +72,10 @@ Pour savoir où intervenir :
   thème avant le rendu pour éviter le clignotement blanc.
 - **Fil d'Ariane** — `@mathieu-morin-dev/…` suit la section lue, via un
   `IntersectionObserver`.
-- **Formulaire de contact** — il n'y a pas de serveur : après validation, le
-  message est préparé dans le client mail de la personne (`mailto:`). Pour un
-  envoi direct, remplacer la fonction `initialiserContact` dans `script.js` par
-  un service type Formspree et un attribut `action` sur le formulaire.
+- **Formulaire de contact** — le site utilise FormSubmit pour envoyer les
+  messages par e-mail depuis un portfolio statique, avec validation JavaScript,
+  honeypot anti-spam et fallback HTML si JavaScript ne charge pas. La premiere
+  soumission peut demander de confirmer l'adresse via un e-mail FormSubmit.
 - **Accessibilité** — lien d'évitement, focus visible, `aria-*` sur les boutons,
   et les animations se coupent si le système demande à les réduire.
 

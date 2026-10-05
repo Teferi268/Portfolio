@@ -1,38 +1,56 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quizz countries</title>
-    <link rel="stylesheet" href="styles.css">
-    
-</head>
-<body>
-    <header class = "header">
-        <nav class = "navbar">
-            <a href="Index.html">Régions</a>
-            <a href="#" data-region="ALL">Toutes</a>
-            <a href="#" data-region="Americas">Amérique</a>
-            <a href="#" data-region="Europe">Europe</a>
-            <a href="#" data-region="Asia">Asie</a>
-            <a href="#" data-region="Africa">Afrique</a>
-            <a href="#" data-region="Oceania">Océanie</a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz Countries</title>
+    <meta name="description" content="Jeu de reconnaissance de drapeaux par region avec score et fallback local." />
+    <link rel="stylesheet" href="styles.css?v=20261005-flags2" />
+    <script src="script.js?v=20261005-flags2" defer></script>
+  </head>
+  <body>
+    <main class="country-game" aria-labelledby="game-title">
+      <section class="game-panel">
+        <header class="game-header">
+          <div>
+            <p class="eyebrow">Jeu JavaScript</p>
+            <h1 id="game-title">Quiz Countries</h1>
+            <p>Choisis une region, observe le drapeau, puis retrouve le bon pays.</p>
+          </div>
+          <div class="score-card" aria-live="polite">
+            <span>Score</span>
+            <strong id="scoreValue">0 / 0</strong>
+          </div>
+        </header>
+
+        <nav class="region-tabs" aria-label="Filtrer par region">
+          <button class="active" type="button" data-region="ALL">Toutes</button>
+          <button type="button" data-region="Americas">Amerique</button>
+          <button type="button" data-region="Europe">Europe</button>
+          <button type="button" data-region="Asia">Asie</button>
+          <button type="button" data-region="Africa">Afrique</button>
+          <button type="button" data-region="Oceania">Oceanie</button>
         </nav>
-    </header>
-    <div class="game">
-        <button class="select_country">Selectioner un pays !</button>
-        <div class="show_flag">
-            <p class = "blink">Sélectionnez une region</p>
-        </div>
-        
-    </div>
 
+        <section class="quiz-layout">
+          <div class="flag-card">
+            <p id="regionLabel" class="region-label">Toutes les regions</p>
+            <div id="flagContainer" class="flag-container" aria-live="polite">
+              <p>Appuie sur "Nouveau drapeau" pour commencer.</p>
+            </div>
+            <button id="nextQuestion" class="primary-button" type="button">Nouveau drapeau</button>
+          </div>
 
-
-
-
-
-
-    <script src="script.js"></script>
-</body>
+          <form id="answerForm" class="answer-card">
+            <p class="card-title">Propositions</p>
+            <fieldset id="choices" class="choices" disabled>
+              <legend class="sr-only">Choisir le pays correspondant au drapeau</legend>
+            </fieldset>
+            <button id="submitAnswer" class="secondary-button" type="submit" disabled>Verifier</button>
+            <p id="resultMessage" class="result-message" aria-live="polite"></p>
+          </form>
+        </section>
+      </section>
+    </main>
+  </body>
 </html>

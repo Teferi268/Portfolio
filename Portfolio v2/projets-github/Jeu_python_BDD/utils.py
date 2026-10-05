@@ -1,22 +1,22 @@
 def intro():
 	print("=" * 50)
-	print("       BIENVENUE DANS L'ARÈNE DES HÉROS")
+	print("       BIENVENUE DANS L'ARENE DES HEROS")
 	print("=" * 50)
 	print()
-	print("Vous êtes sur le point de former votre équipe")
-	print("et d'affronter des monstres terrifiants!")
+	print("Formez votre equipe et affrontez des vagues d'adversaires.")
 	print()
-	print("Règles du jeu:")
-	print("- Choisissez 3 héros pour votre équipe")
-	print("- Combattez des monstres tour par tour")
-	print("- Survivez le plus longtemps possible!")
+	print("Regles du jeu :")
+	print("- Choisissez 3 heros pour votre equipe")
+	print("- Combattez tour par tour")
+	print("- Une potion est proposee tous les 3 tours")
+	print("- Survivez le plus longtemps possible")
 	print()
 	print("-" * 50)
 
 
 def menu_principal_affichage():
 	print("\n=== MENU PRINCIPAL ===")
-	print("1. Démarrer le jeu")
+	print("1. Demarrer le jeu")
 	print("2. Afficher le classement")
 	print("3. Quitter")
 
@@ -28,8 +28,7 @@ def charger_heroes_db(collection_heroes):
 			heroes.append({doc["nom"]: {"ATK": doc["ATK"], "DEF": doc["DEF"], "PV": doc["PV"]}})
 		else:
 			for key, value in doc.items():
-				if isinstance(value, dict) and "ATK" in value and "DEF" in value and "PV" in value:
-					#Verifie que c'est bien un dictionaire avant d'ajouter l'heros
+				if isinstance(value, dict) and {"ATK", "DEF", "PV"}.issubset(value):
 					heroes.append({key: value})
 					break
 	return heroes
@@ -44,8 +43,7 @@ def charger_monstres_db(collection_monstres):
 			)
 		else:
 			for key, value in doc.items():
-				if isinstance(value, dict) and "ATK" in value and "DEF" in value and "PV" in value:
-					#Verifie que c'est bien un dictionaire avant d'ajouter le monstre
+				if isinstance(value, dict) and {"ATK", "DEF", "PV"}.issubset(value):
 					monstres.append({key: value})
 					break
 	return monstres
@@ -62,10 +60,8 @@ def lire_top_scores(collection_scores, limite=3):
 def afficher_top_scores(scores):
 	print("\n=== TOP 3 SCORES ===")
 	if len(scores) == 0:
-		print("Aucun score enregistré.")
+		print("Aucun score enregistre.")
 		return
 
-	rang = 1
-	for score in scores:
+	for rang, score in enumerate(scores, start=1):
 		print(f"{rang}. {score['pseudo']} - {score['score']} vagues")
-		rang += 1

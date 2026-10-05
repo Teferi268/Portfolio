@@ -8,7 +8,9 @@ const progressValue = document.getElementById('progressValue');
 
 const storageKey = 'mini-dashboard-theme';
 const tasksStorageKey = 'mini-dashboard-quick-tasks';
-const savedTheme = localStorage.getItem(storageKey) || 'light';
+const savedTheme = ['light', 'dark'].includes(localStorage.getItem(storageKey))
+  ? localStorage.getItem(storageKey)
+  : 'light';
 let quickTaskItems = loadQuickTasks();
 
 function loadQuickTasks() {
@@ -29,7 +31,13 @@ function loadQuickTasks() {
       return [];
     }
 
-    return parsedTasks;
+    return parsedTasks
+      .filter((task) => task && typeof task.label === 'string')
+      .map((task) => ({
+        id: task.id || Date.now() + Math.random(),
+        label: task.label.slice(0, 60),
+        completed: Boolean(task.completed),
+      }));
   } catch {
     return [];
   }
@@ -42,6 +50,7 @@ function saveQuickTasks() {
 function applyTheme(theme) {
   document.documentElement.setAttribute('data-theme', theme);
   themeToggle.textContent = theme === 'dark' ? 'Passer en mode clair' : 'Passer en mode sombre';
+  themeToggle.setAttribute('aria-pressed', String(theme === 'dark'));
   localStorage.setItem(storageKey, theme);
 }
 
@@ -64,7 +73,7 @@ function updateProgress() {
 }
 
 function renderQuickTasks() {
-  quickTasks.innerHTML = '';
+  quickTasks.replaceChildren();
 
   quickTaskItems.forEach((task) => {
     const item = document.createElement('li');
@@ -92,6 +101,7 @@ function renderQuickTasks() {
     deleteButton.className = 'quick-task-delete';
     deleteButton.type = 'button';
     deleteButton.textContent = 'Supprimer';
+    deleteButton.setAttribute('aria-label', `Supprimer la tache ${task.label}`);
     deleteButton.addEventListener('click', () => {
       quickTaskItems = quickTaskItems.filter((currentTask) => currentTask.id !== task.id);
       saveQuickTasks();
