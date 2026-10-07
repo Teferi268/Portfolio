@@ -3,9 +3,9 @@ const NOM_DU_SITE = "@mathieu-morin-dev";
 
 const nasProject = {
   images: {
-    infrastructure: "public/projects/nas/nas-truenas.webp",
-    services: "public/projects/nas/services-homelab.webp",
-    remoteAccess: "public/projects/nas/tailscale-acces-distant.webp",
+    infrastructure: "public/projects/nas/nas-truenas.png",
+    services: "public/projects/nas/services-homelab.svg",
+    remoteAccess: "public/projects/nas/tailscale-acces-distant.png",
     monitoring: "public/projects/nas/truenas-monitoring.webp",
   },
   fallbacks: {

@@ -32,8 +32,8 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
-    <link rel="stylesheet" href="style.css?v=20261005-nas-tabs" />
-    <script src="script.js?v=20261005-nas-tabs" defer></script>
+    <link rel="stylesheet" href="style.css?v=20261007-nas-images" />
+    <script src="script.js?v=20261007-nas-images" defer></script>
   </head>
 
   
@@ -360,9 +360,8 @@
 
                   <div class="nas-realisations">
                     <article class="nas-carte-realisation">
-                      <div class="nas-media" data-nas-image="infrastructure" data-placeholder="Photo / capture du NAS à ajouter">
-                        <i class="fa-regular fa-image" aria-hidden="true"></i>
-                        <span>Photo / capture du NAS à ajouter</span>
+                      <div class="nas-media image-chargee" data-nas-image="infrastructure" data-placeholder="Photo / capture du NAS à ajouter">
+                        <img src="public/projects/nas/nas-truenas.png" alt="Capture Infrastructure TrueNAS" loading="lazy" decoding="async" />
                       </div>
                       <h5>Infrastructure TrueNAS</h5>
                       <p>Installation et configuration de TrueNAS, création du stockage ZFS et administration de l'environnement.</p>
@@ -376,9 +375,8 @@
                     </article>
 
                     <article class="nas-carte-realisation">
-                      <div class="nas-media" data-nas-image="services" data-placeholder="Capture des services auto-hébergés à ajouter">
-                        <i class="fa-regular fa-image" aria-hidden="true"></i>
-                        <span>Capture des services auto-hébergés à ajouter</span>
+                      <div class="nas-media image-chargee" data-nas-image="services" data-placeholder="Capture des services auto-hébergés à ajouter">
+                        <img src="public/projects/nas/services-homelab.svg" alt="Capture Services auto-hébergés" loading="lazy" decoding="async" />
                       </div>
                       <h5>Services auto-hébergés</h5>
                       <p>Déploiement et administration de plusieurs services utilisés sur mon infrastructure personnelle.</p>
@@ -392,9 +390,8 @@
                     </article>
 
                     <article class="nas-carte-realisation">
-                      <div class="nas-media" data-nas-image="remoteAccess" data-placeholder="Capture Tailscale / accès distant à ajouter">
-                        <i class="fa-regular fa-image" aria-hidden="true"></i>
-                        <span>Capture Tailscale / accès distant à ajouter</span>
+                      <div class="nas-media image-chargee" data-nas-image="remoteAccess" data-placeholder="Capture Tailscale / accès distant à ajouter">
+                        <img src="public/projects/nas/tailscale-acces-distant.png" alt="Capture Accès distant sécurisé" loading="lazy" decoding="async" />
                       </div>
                       <h5>Accès distant sécurisé</h5>
                       <p>Mise en place d'un accès distant sécurisé permettant d'administrer le NAS hors du réseau local.</p>
@@ -408,9 +405,8 @@
                     </article>
 
                     <article class="nas-carte-realisation">
-                      <div class="nas-media" data-nas-image="monitoring" data-placeholder="Capture supervision / état du NAS à ajouter">
-                        <i class="fa-regular fa-image" aria-hidden="true"></i>
-                        <span>Capture supervision / état du NAS à ajouter</span>
+                      <div class="nas-media image-chargee" data-nas-image="monitoring" data-placeholder="Capture supervision / état du NAS à ajouter">
+                        <img src="assets/truenas-dashboard.png" alt="Capture Supervision et maintenance" loading="lazy" decoding="async" />
                       </div>
                       <h5>Supervision &amp; maintenance</h5>
                       <p>Surveillance de l'état de l'infrastructure, maintenance des services et résolution des incidents rencontrés.</p>
@@ -510,6 +506,28 @@
                 </section>
               </div>
             </section>
+          </article>
+
+          <article class="projet apparition" data-cat="web">
+            <div class="tete-projet">
+              <i class="fa-solid fa-people-group icone-projet" aria-hidden="true"></i>
+              <span class="etat-projet termine">terminé</span>
+            </div>
+            <h3>TodoLink</h3>
+            <p>
+              Projet réalisé en groupe de 3 à l'école : une application Laravel pour créer,
+              assigner et suivre des tâches avec priorités, pièces jointes et synchronisation calendrier.
+            </p>
+            <ul class="technologies">
+              <li>Laravel</li>
+              <li>PHP</li>
+              <li>Tailwind CSS</li>
+            </ul>
+            <div class="liens-projet">
+              <a href="https://github.com/meowklr/todolink_projet_mes" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-github" aria-hidden="true"></i> Code
+              </a>
+            </div>
           </article>
 
           <article class="projet apparition" data-cat="web">
@@ -728,7 +746,7 @@
                   </a>
                 </li>
                 <li>
-                  <a href="assets/CV.pdf" target="_blank" rel="noopener noreferrer">
+                  <a href="assets/Mathieu Morin CV.pdf" target="_blank" rel="noopener noreferrer">
                     <i class="fa-regular fa-file-lines" aria-hidden="true"></i> Curriculum vitae
                   </a>
                 </li>

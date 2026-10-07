@@ -1,0 +1,181 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1124 566" role="img" aria-labelledby="title desc">
+  <title id="title">Applications TrueNAS du homelab</title>
+  <desc id="desc">Capture recréée en haute définition de la liste des applications TrueNAS : cloudflared, crafty-4, immich, jellyfin, siteweb et tailscale.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#171717"/>
+      <stop offset="1" stop-color="#252525"/>
+    </linearGradient>
+    <linearGradient id="jelly" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#7b4ce2"/>
+      <stop offset="1" stop-color="#39bff2"/>
+    </linearGradient>
+    <style>
+      .ui{font-family:"IBM Plex Sans", Arial, sans-serif;fill:#e9e9e9}
+      .head{font-size:18px;font-weight:700;fill:#f2f2f2}
+      .name{font-size:16px;font-weight:700}
+      .cell{font-size:14px;font-weight:600;fill:#d8d8d8}
+      .small{font-size:13px;font-weight:600;fill:#d8d8d8}
+      .muted{fill:#b8b8b8}
+      .line{stroke:#373737;stroke-width:1.5}
+      .blue-line{stroke:#189de7;stroke-width:6}
+      .btn{fill:#404040;stroke:#717171;stroke-width:1}
+    </style>
+  </defs>
+
+  <rect width="1124" height="566" fill="url(#bg)"/>
+
+  <g class="ui">
+    <rect x="0" y="0" width="1124" height="86" fill="#1d1d1d"/>
+    <line class="line" x1="0" y1="86" x2="1124" y2="86"/>
+
+    <text class="head" x="70" y="39">Application ↑</text>
+    <text class="head" x="315" y="39">Status</text>
+    <text class="head" x="430" y="39">CPU</text>
+    <text class="head" x="493" y="39">RAM</text>
+    <text class="head" x="575" y="39">Block I/O</text>
+    <text class="head" x="715" y="39">Network</text>
+    <text class="head" x="855" y="39">Updates</text>
+    <text class="head" x="1003" y="39">Controls</text>
+
+    <g transform="translate(0 86)">
+      <rect x="0" y="0" width="1124" height="80" fill="#242424"/>
+      <rect x="0" y="80" width="1124" height="80" fill="#202020"/>
+      <rect x="0" y="160" width="1124" height="80" fill="#242424"/>
+      <rect x="0" y="240" width="1124" height="80" fill="#202020"/>
+      <rect x="0" y="320" width="1124" height="80" fill="#242424"/>
+      <rect x="0" y="400" width="1124" height="80" fill="#202020"/>
+      <line class="line" x1="0" y1="80" x2="1124" y2="80"/>
+      <line class="line" x1="0" y1="160" x2="1124" y2="160"/>
+      <line class="line" x1="0" y1="240" x2="1124" y2="240"/>
+      <line class="line" x1="0" y1="320" x2="1124" y2="320"/>
+      <line class="line" x1="0" y1="400" x2="1124" y2="400"/>
+
+      <g transform="translate(0 0)">
+        <rect x="28" y="23" width="22" height="22" rx="2" fill="none" stroke="#2d79b7" stroke-width="2"/>
+        <path d="M106 46h-58a13 13 0 0 1 12-17 22 22 0 0 1 43 3h3a7 7 0 0 1 0 14z" fill="#f29943"/>
+        <text class="name" x="143" y="44">cloudflared</text>
+        <rect x="306" y="20" width="96" height="34" rx="17" fill="#282828" stroke="#808080"/>
+        <text class="small muted" x="328" y="42">Stopped</text>
+        <text class="cell" x="431" y="43">N/A</text>
+        <text class="cell" x="492" y="43">N/A</text>
+        <text class="cell" x="575" y="43">N/A</text>
+        <text class="cell" x="715" y="43">N/A</text>
+        <circle cx="861" cy="37" r="13" fill="#e6dc4b"/>
+        <text x="858" y="42" font-size="16" font-weight="800" fill="#111">!</text>
+        <text class="cell" x="890" y="33">Update</text>
+        <text class="cell" x="890" y="52">available</text>
+        <circle cx="1066" cy="38" r="17" fill="#e6e6e6"/>
+        <path d="M1060 29v18l14-9z" fill="#707070"/>
+      </g>
+
+      <g transform="translate(0 80)">
+        <rect x="28" y="23" width="22" height="22" rx="2" fill="none" stroke="#2d79b7" stroke-width="2"/>
+        <path class="blue-line" d="M73 29h25a11 11 0 0 1 0 22H73"/>
+        <path d="M83 29H58a11 11 0 0 0 0 22h25" fill="none" stroke="#5dca5d" stroke-width="6"/>
+        <text class="name" x="143" y="44">crafty-4</text>
+        <rect x="306" y="20" width="100" height="34" rx="17" fill="#1e321c" stroke="#67b34a"/>
+        <text class="small" x="330" y="42" fill="#89d65e">Running</text>
+        <text class="cell" x="432" y="43">0%</text>
+        <text class="cell" x="492" y="36">1.73 GiB</text>
+        <text class="cell" x="575" y="36">386.96 MiB -</text>
+        <text class="cell" x="575" y="57">0 B</text>
+        <text class="cell" x="715" y="36">0 b/s - 0 b/s</text>
+        <circle cx="861" cy="36" r="17" fill="#f2f2f2"/>
+        <path d="M853 35l6 7 12-16" fill="none" stroke="#555" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+        <text class="cell" x="890" y="42">Up to date</text>
+        <path d="M1044 24a18 18 0 1 0 8-3" fill="none" stroke="#e6e6e6" stroke-width="5"/>
+        <rect x="1082" y="22" width="26" height="26" rx="13" fill="#e6e6e6"/>
+        <rect x="1089" y="29" width="12" height="12" rx="2" fill="#707070"/>
+      </g>
+
+      <g transform="translate(0 160)">
+        <rect x="28" y="23" width="22" height="22" rx="2" fill="none" stroke="#2d79b7" stroke-width="2"/>
+        <circle cx="80" cy="21" r="18" fill="#ef3f36"/>
+        <circle cx="105" cy="40" r="18" fill="#ffd231"/>
+        <circle cx="90" cy="65" r="18" fill="#31cf6f"/>
+        <circle cx="61" cy="57" r="18" fill="#1688f0"/>
+        <circle cx="56" cy="31" r="18" fill="#f06ab3"/>
+        <text class="name" x="143" y="44">immich</text>
+        <rect x="306" y="20" width="100" height="34" rx="17" fill="#1e321c" stroke="#67b34a"/>
+        <text class="small" x="330" y="42" fill="#89d65e">Running</text>
+        <text class="cell" x="432" y="43">1%</text>
+        <text class="cell" x="492" y="36">1.32 GiB</text>
+        <text class="cell" x="575" y="36">93.05 MiB -</text>
+        <text class="cell" x="575" y="57">0 B</text>
+        <text class="cell" x="715" y="34">264.06 kb/s -</text>
+        <text class="cell" x="715" y="55">263.78 kb/s</text>
+        <circle cx="861" cy="36" r="17" fill="#f2f2f2"/>
+        <path d="M853 35l6 7 12-16" fill="none" stroke="#555" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+        <text class="cell" x="890" y="42">Up to date</text>
+        <path d="M1044 24a18 18 0 1 0 8-3" fill="none" stroke="#e6e6e6" stroke-width="5"/>
+        <rect x="1082" y="22" width="26" height="26" rx="13" fill="#e6e6e6"/>
+        <rect x="1089" y="29" width="12" height="12" rx="2" fill="#707070"/>
+      </g>
+
+      <g transform="translate(0 240)">
+        <rect x="28" y="23" width="22" height="22" rx="2" fill="#398ccc" stroke="#2d79b7" stroke-width="2"/>
+        <path d="M81 13l41 70H40z" fill="url(#jelly)" opacity=".95"/>
+        <path d="M81 31l24 40H57z" fill="#242424"/>
+        <text class="name" x="143" y="44">jellyfin</text>
+        <rect x="306" y="20" width="100" height="34" rx="17" fill="#1e321c" stroke="#67b34a"/>
+        <text class="small" x="330" y="42" fill="#89d65e">Running</text>
+        <text class="cell" x="432" y="43">7%</text>
+        <text class="cell" x="492" y="34">253.82</text>
+        <text class="cell" x="492" y="55">MiB</text>
+        <text class="cell" x="575" y="36">1.49 MiB - 0</text>
+        <text class="cell" x="575" y="57">B</text>
+        <text class="cell" x="715" y="34">863.36 kb/s -</text>
+        <text class="cell" x="715" y="55">28.44 kb/s</text>
+        <circle cx="861" cy="36" r="17" fill="#f2f2f2"/>
+        <path d="M853 35l6 7 12-16" fill="none" stroke="#555" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+        <text class="cell" x="890" y="42">Up to date</text>
+        <path d="M1044 24a18 18 0 1 0 8-3" fill="none" stroke="#e6e6e6" stroke-width="5"/>
+        <rect x="1082" y="22" width="26" height="26" rx="13" fill="#e6e6e6"/>
+        <rect x="1089" y="29" width="12" height="12" rx="2" fill="#707070"/>
+      </g>
+
+      <g transform="translate(0 320)">
+        <rect x="28" y="23" width="22" height="22" rx="2" fill="none" stroke="#2d79b7" stroke-width="2"/>
+        <path d="M83 18l31 17v34L83 86 52 69V35z" fill="#5aa5d8"/>
+        <path d="M83 18v34l31-17M83 52L52 35M83 52v34" fill="none" stroke="#1e3d50" stroke-width="5"/>
+        <text class="name" x="143" y="44">siteweb</text>
+        <rect x="306" y="20" width="96" height="34" rx="17" fill="#282828" stroke="#808080"/>
+        <text class="small muted" x="328" y="42">Stopped</text>
+        <text class="cell" x="431" y="43">N/A</text>
+        <text class="cell" x="492" y="43">N/A</text>
+        <text class="cell" x="575" y="43">N/A</text>
+        <text class="cell" x="715" y="43">N/A</text>
+        <circle cx="861" cy="36" r="17" fill="#f2f2f2"/>
+        <path d="M853 35l6 7 12-16" fill="none" stroke="#555" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+        <text class="cell" x="890" y="42">Up to date</text>
+        <circle cx="1066" cy="38" r="17" fill="#e6e6e6"/>
+        <path d="M1060 29v18l14-9z" fill="#707070"/>
+      </g>
+
+      <g transform="translate(0 400)">
+        <rect x="28" y="23" width="22" height="22" rx="2" fill="none" stroke="#2d79b7" stroke-width="2"/>
+        <g fill="#cfcfcf">
+          <circle cx="58" cy="26" r="6"/><circle cx="82" cy="26" r="6"/><circle cx="106" cy="26" r="6"/>
+          <circle cx="58" cy="50" r="6"/><circle cx="82" cy="50" r="6"/><circle cx="106" cy="50" r="6"/>
+          <circle cx="58" cy="74" r="6"/><circle cx="82" cy="74" r="6"/><circle cx="106" cy="74" r="6"/>
+        </g>
+        <text class="name" x="143" y="44">tailscale</text>
+        <rect x="306" y="20" width="100" height="34" rx="17" fill="#1e321c" stroke="#67b34a"/>
+        <text class="small" x="330" y="42" fill="#89d65e">Running</text>
+        <text class="cell" x="432" y="43">0%</text>
+        <text class="cell" x="492" y="34">70.25</text>
+        <text class="cell" x="492" y="55">MiB</text>
+        <text class="cell" x="575" y="36">85.24 MiB -</text>
+        <text class="cell" x="575" y="57">0 B</text>
+        <text class="cell" x="715" y="43">N/A</text>
+        <circle cx="861" cy="36" r="17" fill="#f2f2f2"/>
+        <path d="M853 35l6 7 12-16" fill="none" stroke="#555" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+        <text class="cell" x="890" y="42">Up to date</text>
+        <path d="M1044 24a18 18 0 1 0 8-3" fill="none" stroke="#e6e6e6" stroke-width="5"/>
+        <rect x="1082" y="22" width="26" height="26" rx="13" fill="#e6e6e6"/>
+        <rect x="1089" y="29" width="12" height="12" rx="2" fill="#707070"/>
+      </g>
+    </g>
+  </g>
+</svg>
