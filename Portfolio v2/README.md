@@ -68,7 +68,7 @@ Pour savoir où intervenir :
 - **ABOUT** — les trois paragraphes de présentation, les pastilles `.facts`,
   les lignes du terminal et les six cartes de compétences.
 - **Parcours** — dates, intitulés et établissements de la frise.
-- **WORK** — les six projets : titre, description, étiquettes, état
+- **WORK** — les projets : titre, description, étiquettes, état
   (`ok` = terminé, `wip` = en cours) et lien vers le dépôt. Chaque carte porte
   un `data-cat` (`infra`, `script`, `web`) qui alimente les filtres : pour
   ajouter une catégorie, ajouter un bouton `.filter` avec le `data-filter`
