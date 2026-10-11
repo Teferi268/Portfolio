@@ -112,19 +112,53 @@ const initialiserFiltres = () => {
   const filtres = document.querySelectorAll(".filtre");
   const projets = document.querySelectorAll(".projet");
   const vide = document.querySelector("#empty");
+  const categorieActive = { valeur: "tous" };
+
+  const actualiserProjets = () => {
+    let visibles = 0;
+
+    projets.forEach((projet) => {
+      const garde = categorieActive.valeur === "tous" || projet.dataset.cat === categorieActive.valeur;
+      projet.classList.toggle("masque", !garde);
+      if (garde) visibles += 1;
+    });
+
+    if (vide) vide.hidden = visibles > 0;
+  };
 
   filtres.forEach((filtre) => {
     filtre.addEventListener("click", () => {
-      const categorie = filtre.dataset.filter;
-      let visibles = 0;
-
+      categorieActive.valeur = filtre.dataset.filter;
       filtres.forEach((autre) => autre.classList.toggle("actif", autre === filtre));
-      projets.forEach((projet) => {
-        const garde = categorie === "tous" || projet.dataset.cat === categorie;
-        projet.classList.toggle("masque", !garde);
-        if (garde) visibles += 1;
+      actualiserProjets();
+    });
+  });
+
+  actualiserProjets();
+};
+
+const initialiserDetailsProjets = () => {
+  document.querySelectorAll(".projet").forEach((projet) => {
+    const bouton = projet.querySelector("[data-details-toggle]");
+    if (!bouton) return;
+
+    const sections = projet.querySelectorAll(
+      ".nas-details, .hungry-shot-section, .hungry-shot-grid, .hungry-shot-links"
+    );
+    sections.forEach((section) => {
+      section.hidden = true;
+    });
+
+    bouton.addEventListener("click", () => {
+      const ouvert = bouton.getAttribute("aria-expanded") === "true";
+      bouton.setAttribute("aria-expanded", String(!ouvert));
+      projet.classList.toggle("details-open", !ouvert);
+      bouton.innerHTML = ouvert
+        ? '<i class="fa-solid fa-arrow-down" aria-hidden="true"></i> En apprendre plus'
+        : '<i class="fa-solid fa-arrow-up" aria-hidden="true"></i> Réduire les détails';
+      sections.forEach((section) => {
+        section.hidden = ouvert;
       });
-      vide.hidden = visibles > 0;
     });
   });
 };
@@ -318,6 +352,7 @@ initialiserNavigation();
 initialiserApparitions();
 initialiserHeader();
 initialiserFiltres();
+initialiserDetailsProjets();
 initialiserNasProject();
 initialiserContact();
 document.querySelector("#year").textContent = String(new Date().getFullYear());

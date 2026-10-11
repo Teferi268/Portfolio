@@ -255,7 +255,6 @@
           <button class="filtre" type="button" data-filter="script">Scripts</button>
           <button class="filtre" type="button" data-filter="web">Web</button>
         </div>
-
         <div class="liste-projets" id="projects">
           <article class="projet projet-principal nas-projet apparition" data-cat="infra">
             <div class="nas-presentation">
@@ -279,7 +278,6 @@
                   Ce projet me permet d'apprendre en continu tout en gardant un environnement fiable,
                   sécurisé et évolutif.
                 </p>
-
                 <div class="nas-forces" aria-label="Points forts du projet NAS">
                   <article>
                     <span><i class="fa-solid fa-database" aria-hidden="true"></i></span>
@@ -339,7 +337,11 @@
               </aside>
             </div>
 
-            <section class="nas-details" aria-labelledby="nas-details-title">
+            <button class="bouton-details-projet" type="button" data-details-toggle aria-expanded="false">
+              <i class="fa-solid fa-arrow-down" aria-hidden="true"></i> En apprendre plus
+            </button>
+
+            <section class="nas-details" aria-labelledby="nas-details-title" hidden>
               <div class="nas-tabs-entete">
                 <h4 id="nas-details-title">Détails du projet</h4>
                 <div class="nas-tabs" role="tablist" aria-label="Navigation du projet NAS">
@@ -532,6 +534,33 @@
 
           <article class="projet apparition" data-cat="web">
             <div class="tete-projet">
+              <i class="fa-solid fa-paw icone-projet" aria-hidden="true"></i>
+              <span class="etat-projet termine">terminé</span>
+            </div>
+            <h3>L'Atelier Tout Doux</h3>
+            <p>
+              Site vitrine et boutique pour une créatrice de peluches au crochet : catalogue filtrable,
+              créations sur mesure, FAQ et formulaire de contact. J'ai conçu l'identité, l'expérience
+              et la structure du site, puis utilisé l'IA comme outil de production et d'itération du code.
+            </p>
+            <ul class="technologies">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+              <li>Responsive</li>
+            </ul>
+            <div class="liens-projet">
+              <a href="https://lateliertoutdoux.netlify.app/" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Démo
+              </a>
+              <a href="https://github.com/Teferi268/site-peluche" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-github" aria-hidden="true"></i> Code
+              </a>
+            </div>
+          </article>
+
+          <article class="projet apparition" data-cat="web">
+            <div class="tete-projet">
               <i class="fa-solid fa-cloud-sun icone-projet" aria-hidden="true"></i>
               <span class="etat-projet en-cours">en évolution</span>
             </div>
@@ -577,28 +606,183 @@
             </div>
           </article>
 
-          <article class="projet apparition" data-cat="script">
-            <div class="tete-projet">
-              <i class="fa-solid fa-gamepad icone-projet" aria-hidden="true"></i>
-              <span class="etat-projet termine">terminé</span>
+          <article class="projet projet-principal hungry-shot-projet apparition" data-cat="script">
+            <div class="hungry-shot-hero">
+              <div class="hungry-shot-intro">
+                <div class="hungry-shot-entete">
+                  <div class="hungry-shot-identite">
+                    <span class="hungry-shot-icone"><i class="fa-solid fa-gamepad" aria-hidden="true"></i></span>
+                    <div>
+                      <p class="hungry-shot-kicker">Projet jeu vidéo · Python</p>
+                      <h3>Hungry Shot</h3>
+                    </div>
+                  </div>
+                  <span class="etat-projet en-cours">évolution prévue</span>
+                </div>
+                <p class="hungry-shot-sous-titre">Action, rapidité et précision dans un couloir rempli d'obstacles.</p>
+                <p class="hungry-shot-description">
+                  Hungry Shot est un jeu d'action développé avec Pygame. Le joueur contrôle un cuistot,
+                  observe les plats demandés par cinq gourmands et lance le bon projectile avant la fin
+                  du temps imparti.
+                </p>
+                <div class="hungry-shot-actions">
+                  <a class="bouton-projets" href="https://github.com/Teferi268/Hungry-Shot" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-github" aria-hidden="true"></i> VOIR LE PROJET
+                  </a>
+                  <span class="hungry-shot-disponibilite"><i class="fa-solid fa-desktop" aria-hidden="true"></i> Jeu desktop Pygame</span>
+                </div>
+                <div class="hungry-shot-indicateurs" aria-label="Résumé de Hungry Shot">
+                  <span><strong>100 s</strong><small>par partie</small></span>
+                  <span><strong>5</strong><small>gourmands</small></span>
+                  <span><strong>3</strong><small>plats à lancer</small></span>
+                </div>
+              </div>
+              <figure class="hungry-shot-visuel">
+                <img src="public/projects/hungry-shot/background.png" alt="Décor du jeu Hungry Shot" loading="lazy" decoding="async" />
+                <figcaption>Le couloir de jeu : cuistot à gauche, gourmands à droite, obstacles au centre.</figcaption>
+              </figure>
             </div>
-            <h3>Hungry-Shot</h3>
-            <p>
-              Un jeu de tir développé avec Pygame : le joueur déplace son personnage, choisit
-              ses aliments et les envoie aux gourmands pour réaliser le meilleur score.
-            </p>
-            <p>
-              Je compte faire évoluer le projet afin de pouvoir y jouer en ligne à deux sur
-              des PC différents, avec une partie hébergée et synchronisée depuis mon NAS.
-            </p>
-            <ul class="technologies">
-              <li>Python</li>
-              <li>Pygame</li>
-              <li>Jeu 2D</li>
-            </ul>
-            <div class="liens-projet">
+
+            <button class="bouton-details-projet" type="button" data-details-toggle aria-expanded="false">
+              <i class="fa-solid fa-arrow-down" aria-hidden="true"></i> En apprendre plus
+            </button>
+
+            <div class="hungry-shot-section" hidden>
+              <div class="hungry-shot-section-heading">
+                <p class="hungry-shot-label">01 · Concept du jeu</p>
+                <h4>Servir juste, viser vite</h4>
+                <p>Chaque décision compte : un bon plat fait progresser le gourmand, une erreur augmente sa colère.</p>
+              </div>
+              <div class="hungry-shot-cards">
+                <article>
+                  <span><i class="fa-solid fa-utensils" aria-hidden="true"></i></span>
+                  <h5>Le cuistot</h5>
+                  <p>Placé à gauche de l'écran, il se déplace verticalement pour aligner ses tirs avec les gourmands.</p>
+                </article>
+                <article>
+                  <span><i class="fa-solid fa-face-smile" aria-hidden="true"></i></span>
+                  <h5>Les gourmands</h5>
+                  <p>Cinq personnages fixes indiquent le plat désiré et possèdent chacun une limite de plats à manger.</p>
+                </article>
+                <article>
+                  <span><i class="fa-solid fa-burger" aria-hidden="true"></i></span>
+                  <h5>Les plats</h5>
+                  <p>Burger, donut et salade sont sélectionnés à la souris puis lancés avec la barre espace.</p>
+                </article>
+                <article>
+                  <span><i class="fa-solid fa-bomb" aria-hidden="true"></i></span>
+                  <h5>Les mobs</h5>
+                  <p>Ils traversent verticalement le couloir depuis le haut ou le bas et peuvent casser les projectiles.</p>
+                </article>
+              </div>
+            </div>
+
+            <div class="hungry-shot-grid">
+              <section class="hungry-shot-panel">
+                <p class="hungry-shot-label">02 · Gameplay</p>
+                <h4>Une partie sous pression</h4>
+                <ul class="hungry-shot-list">
+                  <li><i class="fa-solid fa-crosshairs" aria-hidden="true"></i><span><strong>Observer</strong> le plat affiché par chaque gourmand.</span></li>
+                  <li><i class="fa-solid fa-arrows-left-right-to-line" aria-hidden="true"></i><span><strong>Sélectionner</strong> le burger, le donut ou la salade.</span></li>
+                  <li><i class="fa-solid fa-bullseye" aria-hidden="true"></i><span><strong>Lancer</strong> le projectile dans le bon alignement.</span></li>
+                  <li><i class="fa-solid fa-shield-halved" aria-hidden="true"></i><span><strong>Éviter</strong> les mobs qui traversent le couloir.</span></li>
+                </ul>
+                <div class="hungry-shot-score">
+                  <span><strong>+1000</strong><small>bon plat</small></span>
+                  <span><strong>-500</strong><small>mauvais plat</small></span>
+                  <span><strong>+100</strong><small>mob détruit</small></span>
+                </div>
+              </section>
+
+              <section class="hungry-shot-panel">
+                <p class="hungry-shot-label">03 · Contrôles</p>
+                <h4>Commandes du jeu</h4>
+                <div class="hungry-shot-controls">
+                  <div><kbd>Z</kbd><span>Monter</span></div>
+                  <div><kbd>S</kbd><span>Descendre</span></div>
+                  <div><kbd>Espace</kbd><span>Lancer un plat</span></div>
+                  <div><kbd>Clic</kbd><span>Changer de plat</span></div>
+                </div>
+              </section>
+            </div>
+
+            <div class="hungry-shot-grid">
+              <section class="hungry-shot-panel">
+                <p class="hungry-shot-label">04 · Objectif</p>
+                <h4>Rassasier quatre gourmands</h4>
+                <p>La partie dure 100 secondes. La victoire est atteinte lorsque quatre gourmands ont mangé leur nombre maximum de plats.</p>
+                <ul class="hungry-shot-list compact">
+                  <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span>Victoire : au moins quatre gourmands rassasiés.</span></li>
+                  <li><i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i><span>Défaite : temps écoulé ou gourmand arrivé au maximum de colère.</span></li>
+                  <li><i class="fa-solid fa-skull-crossbones" aria-hidden="true"></i><span>Défaite : au moins deux gourmands en overdose.</span></li>
+                </ul>
+              </section>
+              <section class="hungry-shot-panel">
+                <p class="hungry-shot-label">05 · États des gourmands</p>
+                <h4>Le bon plat ou la colère</h4>
+                <div class="hungry-shot-states">
+                  <figure><img src="public/projects/hungry-shot/gourmand.png" alt="Gourmand dans son état normal" loading="lazy" decoding="async" /><figcaption>Normal</figcaption></figure>
+                  <figure><img src="public/projects/hungry-shot/gourmand_furieux.png" alt="Gourmand furieux" loading="lazy" decoding="async" /><figcaption>Furieux</figcaption></figure>
+                  <figure><img src="public/projects/hungry-shot/gourmand_overdose.png" alt="Gourmand en overdose" loading="lazy" decoding="async" /><figcaption>Overdose</figcaption></figure>
+                </div>
+              </section>
+            </div>
+
+            <div class="hungry-shot-section" hidden>
+              <div class="hungry-shot-section-heading">
+                <p class="hungry-shot-label">06 · Fonctionnalités techniques</p>
+                <h4>Un projet organisé autour d'une boucle de jeu</h4>
+              </div>
+              <div class="hungry-shot-techniques">
+                <span><i class="fa-solid fa-repeat" aria-hidden="true"></i>Boucle Pygame à 60 FPS</span>
+                <span><i class="fa-solid fa-arrows-to-circle" aria-hidden="true"></i>Collisions projectiles / gourmands / mobs</span>
+                <span><i class="fa-solid fa-stopwatch" aria-hidden="true"></i>Timer de partie</span>
+                <span><i class="fa-solid fa-ranking-star" aria-hidden="true"></i>Score et classement TOP 5</span>
+                <span><i class="fa-solid fa-sparkles" aria-hidden="true"></i>Sprites et états visuels</span>
+                <span><i class="fa-solid fa-file-code" aria-hidden="true"></i>Configuration JSON des gourmands</span>
+                <span><i class="fa-solid fa-window-maximize" aria-hidden="true"></i>Écrans d'accueil et de résultat</span>
+                <span><i class="fa-brands fa-python" aria-hidden="true"></i>Code réparti en modules Python</span>
+              </div>
+            </div>
+
+            <div class="hungry-shot-gallery">
+              <div class="hungry-shot-section-heading">
+                <p class="hungry-shot-label">07 · Aperçu du jeu</p>
+                <h4>Quelques éléments graphiques du projet</h4>
+              </div>
+              <div class="hungry-shot-images">
+                <figure><img src="public/projects/hungry-shot/cuistot.png" alt="Sprite du cuistot" loading="lazy" decoding="async" /><figcaption>Le cuistot</figcaption></figure>
+                <figure><img src="public/projects/hungry-shot/burger.png" alt="Projectile burger" loading="lazy" decoding="async" /><figcaption>Projectile burger</figcaption></figure>
+                <figure><img src="public/projects/hungry-shot/donut.png" alt="Projectile donut" loading="lazy" decoding="async" /><figcaption>Projectile donut</figcaption></figure>
+                <figure><img src="public/projects/hungry-shot/rat.png" alt="Mob rat traversant le couloir" loading="lazy" decoding="async" /><figcaption>Mob obstacle</figcaption></figure>
+              </div>
+            </div>
+
+            <div class="hungry-shot-grid">
+              <section class="hungry-shot-panel">
+                <p class="hungry-shot-label">08 · Ce que j'ai appris</p>
+                <h4>Compétences développées</h4>
+                <ul class="hungry-shot-learning">
+                  <li>Programmation Python et programmation orientée objet</li>
+                  <li>Utilisation de Pygame et gestion des événements clavier / souris</li>
+                  <li>Gestion des collisions, des sprites et du temps réel</li>
+                  <li>Organisation d'un projet en plusieurs fichiers</li>
+                  <li>Lecture d'une configuration JSON</li>
+                  <li>Création d'un système de score et de classement</li>
+                  <li>Débogage et amélioration progressive du jeu</li>
+                </ul>
+              </section>
+              <section class="hungry-shot-panel hungry-shot-future">
+                <p class="hungry-shot-label">09 · Suite du projet</p>
+                <h4>Une évolution vers le jeu en ligne</h4>
+                <p>Je souhaite faire évoluer Hungry Shot pour permettre à deux joueurs sur des PC différents de jouer ensemble, avec une partie hébergée et synchronisée depuis mon NAS.</p>
+                <p class="hungry-shot-note"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> Cette version est actuellement un jeu desktop Pygame : elle ne s'exécute pas directement dans le navigateur. Le bouton ci-dessous ouvre le code source et ses instructions de lancement.</p>
+              </section>
+            </div>
+
+            <div class="liens-projet hungry-shot-links">
               <a href="https://github.com/Teferi268/Hungry-Shot" target="_blank" rel="noopener noreferrer">
-                <i class="fa-brands fa-github" aria-hidden="true"></i> Code
+                <i class="fa-brands fa-github" aria-hidden="true"></i> Code source et lancement
               </a>
             </div>
           </article>
