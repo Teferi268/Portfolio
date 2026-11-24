@@ -1645,22 +1645,6 @@ header.menu-ouvert .bouton-menu .ferme{
 	font-size: clamp(17px, 2vw, 20px);
 	line-height: 1.7;
 }
-.detail-projet-role{
-	max-width: 76ch;
-	margin: 18px 0 0;
-	padding-left: 14px;
-	border-left: 2px solid var(--accent);
-	color: var(--ink);
-	font-size: 15px;
-	line-height: 1.65;
-}
-.detail-projet-role strong{
-	color: var(--accent);
-	font-family: var(--mono);
-	font-size: 12px;
-	letter-spacing: 0.08em;
-	text-transform: uppercase;
-}
 .agria-contexte{
 	margin: 12px 0 0;
 	color: var(--muted);
