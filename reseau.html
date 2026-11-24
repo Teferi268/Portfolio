@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Architecture Réseau &amp; Services — Mathieu Morin</title>
+    <meta name="description" content="Découvrez une maquette réseau d'entreprise sous Cisco Packet Tracer : VLAN, adressage IPv4 VLSM, routage inter-VLAN et services DHCP, DNS et Web." />
+    <meta name="theme-color" content="#F1F3F5" />
+    <link rel="canonical" href="https://mathieu-morin-dev.fr/reseau.html" />
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="style.css?v=20261124-project-pages" />
+    <script src="script.js?v=20261124-project-pages" defer></script>
+  </head>
+  <body>
+    <script>
+      (() => {
+        const theme = localStorage.getItem("theme");
+        const dark = theme ? theme === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
+        document.body.classList.toggle("mode-sombre", dark);
+      })();
+    </script>
+    <a class="lien-rapide" href="#contenu">Aller au contenu</a>
+    <header>
+      <a class="chemin" href="index.html#WORK">@mathieu-morin-dev/WORK</a>
+      <nav class="menu" id="menu">
+        <a class="lien-navigation" href="index.html#ABOUT">ABOUT</a>
+        <a class="lien-navigation" href="index.html#WORK">WORK</a>
+        <a class="lien-navigation" href="index.html#CONTACT">CONTACT</a>
+      </nav>
+      <div class="actions-header">
+        <button class="bouton-theme" id="theme-btn" type="button" aria-label="Activer le mode clair" aria-pressed="true">
+          <i class="fa-solid fa-sun soleil" aria-hidden="true"></i>
+          <i class="fa-solid fa-moon lune" aria-hidden="true"></i>
+        </button>
+        <button class="bouton-menu" id="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu">
+          <i class="fa-solid fa-bars ouvert" aria-hidden="true"></i>
+          <i class="fa-solid fa-xmark ferme" aria-hidden="true"></i>
+        </button>
+      </div>
+    </header>
+
+    <main class="page-detail-projet" id="contenu">
+      <a class="retour-projets" href="index.html#WORK"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Retour aux projets</a>
+      <article>
+        <div class="detail-projet-entete">
+          <h1 class="titre reseau-titre">Architecture Réseau &amp; Services</h1>
+          <p class="detail-projet-description">
+            Conception d'une infrastructure d'entreprise dans Cisco Packet Tracer : réseaux séparés
+            par service, plan d'adressage IPv4 calculé en VLSM et zone serveur dédiée aux services
+            DHCP, DNS et Web.
+          </p>
+          <div class="detail-projet-actions">
+            <a class="action-principale" href="public/projects/reseau/tp-cisco-mise-en-situation.pkt" download>
+              <i class="fa-solid fa-download" aria-hidden="true"></i> Télécharger la maquette Packet Tracer
+            </a>
+          </div>
+          <ul class="technologies detail-projet-technologies" aria-label="Technologies utilisées">
+            <li>Cisco Packet Tracer</li>
+            <li>VLAN 802.1Q</li>
+            <li>IPv4 · VLSM</li>
+            <li>Routage inter-VLAN</li>
+            <li>DHCP</li>
+            <li>DNS</li>
+            <li>Services Web</li>
+          </ul>
+        </div>
+
+        <section class="detail-projet-section" aria-labelledby="reseau-architecture">
+          <p class="detail-projet-section-label">Présentation</p>
+          <h2 id="reseau-architecture">Un réseau d'entreprise organisé par zones</h2>
+          <p>
+            La maquette relie quatre routeurs, des switches d'accès et un réseau de serveurs distinct.
+            Les postes et imprimantes sont regroupés par service dans des VLAN dédiés. Cette
+            segmentation facilite la lecture de l'architecture et permet de contrôler le routage
+            entre les différents sous-réseaux.
+          </p>
+          <div class="detail-projet-fonctionnalites">
+            <article><i class="fa-solid fa-diagram-project" aria-hidden="true"></i><div><h3>Segmentation par VLAN</h3><p>Ventes, comptabilité, logistique, R&amp;D, direction, accueil et informatique disposent chacun de leur réseau logique.</p></div></article>
+            <article><i class="fa-solid fa-route" aria-hidden="true"></i><div><h3>Routage entre réseaux</h3><p>Les routeurs interconnectent les segments utilisateurs, les réseaux d'administration et la zone serveur.</p></div></article>
+            <article><i class="fa-solid fa-server" aria-hidden="true"></i><div><h3>Services centralisés</h3><p>Un serveur DHCP, un serveur DNS et un serveur Web sont placés sur un sous-réseau serveur dédié.</p></div></article>
+            <article><i class="fa-solid fa-network-wired" aria-hidden="true"></i><div><h3>Administration séparée</h3><p>Deux VLAN distincts isolent la gestion des équipements côté utilisateurs et côté serveurs.</p></div></article>
+          </div>
+        </section>
+
+        <section class="detail-projet-section" aria-labelledby="reseau-securite">
+          <p class="detail-projet-section-label">Volet complémentaire · sécurité</p>
+          <h2 id="reseau-securite">Renforcer l'administration d'un routeur Cisco</h2>
+          <p>
+            Le rapport complète le travail de topologie par un exercice dédié au durcissement d'un
+            routeur Cisco 1941 : protéger les accès locaux et distants, limiter les tentatives de
+            connexion et n'autoriser que l'administration chiffrée à distance.
+          </p>
+          <div class="detail-projet-fonctionnalites">
+            <article><i class="fa-solid fa-lock" aria-hidden="true"></i><div><h3>Administration SSH</h3><p>SSH version 2 avec clés RSA de 2 048 bits; les accès distants sont limités à SSH et le délai d'attente SSH est réglé à 60 secondes.</p></div></article>
+            <article><i class="fa-solid fa-user-shield" aria-hidden="true"></i><div><h3>Accès protégés</h3><p>Authentification locale, politique de mots de passe d'au moins 12 caractères et délai d'inactivité de trois minutes sur la console et les sessions distantes.</p></div></article>
+            <article><i class="fa-solid fa-shield-halved" aria-hidden="true"></i><div><h3>Protection contre les essais répétés</h3><p>Après trois échecs dans une période de cinq minutes, les nouvelles tentatives sont bloquées pendant deux minutes.</p></div></article>
+            <article><i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i><div><h3>Bannières et console</h3><p>Des messages d'avertissement encadrent la connexion; la console est configurée pour garder les journaux lisibles pendant les commandes.</p></div></article>
+          </div>
+          <p>
+            <strong>Retour d'expérience :</strong> le routeur a redémarré plusieurs fois pendant la
+            séance. L'équipe a dû refaire la configuration et n'a pas pu conserver toutes les
+            captures des vérifications; le rapport indique que les réglages ont été contrôlés en
+            séance. La persistance de la configuration après redémarrage n'est donc pas démontrée.
+          </p>
+        </section>
+
+        <section class="detail-projet-section" aria-labelledby="reseau-adressage">
+          <p class="detail-projet-section-label">Plan d'adressage IPv4</p>
+          <h2 id="reseau-adressage">Des sous-réseaux dimensionnés en VLSM</h2>
+          <p>
+            Le plan répartit le bloc 192.168.0.0/24 selon les besoins de chaque service. Les
+            passerelles indiquées ci-dessous sont celles prévues pour les réseaux utilisateurs;
+            les postes et imprimantes reçoivent leur configuration par DHCP.
+          </p>
+          <div class="detail-projet-fonctionnalites">
+            <article>
+              <i class="fa-solid fa-users" aria-hidden="true"></i>
+              <div>
+                <h3>Réseaux des services</h3>
+                <p>VLAN 10 · Ventes — 192.168.0.0/26 · passerelle 192.168.0.62</p>
+                <p>VLAN 20 · Comptabilité — 192.168.0.64/27 · passerelle 192.168.0.94</p>
+                <p>VLAN 30 · Logistique — 192.168.0.96/27 · passerelle 192.168.0.126</p>
+                <p>VLAN 80 · IT — 192.168.0.128/27 · passerelle 192.168.0.158</p>
+              </div>
+            </article>
+            <article>
+              <i class="fa-solid fa-building" aria-hidden="true"></i>
+              <div>
+                <h3>Autres réseaux utilisateurs</h3>
+                <p>VLAN 50 · R&amp;D — 192.168.0.160/27 · passerelle 192.168.0.190</p>
+                <p>VLAN 60 · Direction — 192.168.0.192/27 · passerelle 192.168.0.222</p>
+                <p>VLAN 70 · Accueil — 192.168.0.248/29 · passerelle 192.168.0.254</p>
+              </div>
+            </article>
+            <article>
+              <i class="fa-solid fa-sliders" aria-hidden="true"></i>
+              <div>
+                <h3>Réseaux d'administration</h3>
+                <p>VLAN 81 · Management Users — 192.168.0.224/28</p>
+                <p>VLAN 82 · Management Serveurs — 192.168.0.240/29</p>
+                <p>Les interfaces de gestion des switches utilisent des adresses statiques.</p>
+              </div>
+            </article>
+            <article>
+              <i class="fa-solid fa-database" aria-hidden="true"></i>
+              <div>
+                <h3>LAN des serveurs</h3>
+                <p>Réseau 192.168.1.0/29 · passerelle 192.168.1.6</p>
+                <p>SRV-01 DHCP · 192.168.1.1</p>
+                <p>SRV-02 DNS · 192.168.1.2</p>
+                <p>SRV-03 Web · 192.168.1.3</p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="detail-projet-section" aria-labelledby="reseau-captures">
+          <p class="detail-projet-section-label">Documentation visuelle</p>
+          <h2 id="reseau-captures">Topologie et préparation du réseau</h2>
+          <p>Les captures présentent la maquette, le plan d'adressage des équipements et le calcul des sous-réseaux.</p>
+          <div class="detail-projet-galerie">
+            <figure><a class="detail-projet-image-link" href="public/projects/reseau/topologie-cisco.webp" data-agrandir aria-label="Agrandir la topologie Cisco Packet Tracer"><img src="public/projects/reseau/topologie-cisco.webp" alt="Topologie Cisco Packet Tracer avec VLAN, routeurs, switches et serveurs" loading="lazy" decoding="async" /></a><figcaption>Topologie de l'infrastructure dans Cisco Packet Tracer</figcaption></figure>
+            <figure><a class="detail-projet-image-link" href="public/projects/reseau/plan-adressage.webp" data-agrandir aria-label="Agrandir le plan d'adressage IPv4"><img src="public/projects/reseau/plan-adressage.webp" alt="Tableau du plan d'adressage IPv4 des routeurs, switches, serveurs et postes" loading="lazy" decoding="async" /></a><figcaption>Plan d'adressage des équipements et des VLAN</figcaption></figure>
+            <figure><a class="detail-projet-image-link" href="public/projects/reseau/plan-vlsm.webp" data-agrandir aria-label="Agrandir le calcul VLSM"><img src="public/projects/reseau/plan-vlsm.webp" alt="Feuille de calcul VLSM montrant les préfixes, masques et plages d'adresses" loading="lazy" decoding="async" /></a><figcaption>Calcul des sous-réseaux et des plages d'adresses (VLSM)</figcaption></figure>
+          </div>
+        </section>
+      </article>
+      <div class="visionneuse-image" role="dialog" aria-modal="true" aria-labelledby="visionneuse-caption" hidden>
+        <button class="visionneuse-fermer" type="button" aria-label="Fermer l'image agrandie"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+        <img alt="" />
+        <p id="visionneuse-caption"></p>
+      </div>
+    </main>
+
+    <footer>
+      <p class="ligne-pied"><span>&copy; <span id="year">2026</span> Mathieu Morin</span><span class="separateur-pied">/</span><span>Architecture Réseau &amp; Services</span></p>
+      <a class="retour-haut" href="#contenu" aria-label="Remonter en haut de la page"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></a>
+    </footer>
+  </body>
+</html>

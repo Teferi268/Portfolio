@@ -271,13 +271,15 @@
                 </div>
 
                 <p class="nas-intro">
-                  J'ai conçu et j'administre un homelab basé sur TrueNAS pour centraliser mes données,
-                  héberger des services utiles et travailler sur des sujets proches d'une vraie infrastructure.
+                  Je conçois et administre mon homelab TrueNAS pour centraliser mes données et auto-héberger
+                  plusieurs services.
                 </p>
                 <p class="nas-intro">
-                  Ce projet me permet d'apprendre en continu tout en gardant un environnement fiable,
-                  sécurisé et évolutif.
+                  Exemple concret : diagnostiquer les droits SMB/ACL d'un dataset pour rétablir l'accès attendu.
                 </p>
+                <button class="bouton-details-projet" type="button" data-details-toggle aria-expanded="false">
+                  <i class="fa-solid fa-arrow-down" aria-hidden="true"></i> En apprendre plus
+                </button>
                 <div class="nas-forces" aria-label="Points forts du projet NAS">
                   <article>
                     <span><i class="fa-solid fa-database" aria-hidden="true"></i></span>
@@ -302,7 +304,11 @@
                 </div>
               </div>
 
-              <aside class="nas-infos" aria-label="Résumé technique du projet NAS">
+              <aside class="nas-infos" aria-label="Schéma et résumé technique du projet NAS">
+                <figure class="nas-schema-apercu">
+                  <img src="public/projects/nas/homelab-schema.png" alt="Schéma du homelab TrueNAS : réseau local et accès Tailscale, services auto-hébergés, stockage ZFS et sauvegardes" loading="lazy" decoding="async" />
+                  <figcaption>Vue d'ensemble du homelab</figcaption>
+                </figure>
                 <dl>
                   <div>
                     <dt>Rôle</dt>
@@ -336,10 +342,6 @@
                 </div>
               </aside>
             </div>
-
-            <button class="bouton-details-projet" type="button" data-details-toggle aria-expanded="false">
-              <i class="fa-solid fa-arrow-down" aria-hidden="true"></i> En apprendre plus
-            </button>
 
             <section class="nas-details" aria-labelledby="nas-details-title" hidden>
               <div class="nas-tabs-entete">
@@ -510,15 +512,18 @@
             </section>
           </article>
 
-          <article class="projet apparition" data-cat="infra">
+          <article class="projet apparition projet-reseau" data-cat="infra">
             <div class="tete-projet">
               <i class="fa-solid fa-network-wired icone-projet" aria-hidden="true"></i>
               <span class="etat-projet termine">terminé</span>
             </div>
+            <figure class="projet-apercu projet-apercu-reseau">
+              <img src="public/projects/reseau/topologie-cisco.webp" alt="Topologie du réseau d'entreprise sous Cisco Packet Tracer" loading="lazy" decoding="async" />
+            </figure>
             <h3>Architecture Réseau &amp; Services</h3>
             <p>
               Maquette complète d'un réseau d'entreprise segmenté sous Cisco Packet Tracer,
-              avec séparation des services en VLAN, routage inter-VLAN et services DHCP/DNS centralisés.
+              avec VLAN par service, routage inter-VLAN, services DHCP/DNS et sécurisation d'un routeur Cisco.
             </p>
             <ul class="technologies">
               <li>Cisco Packet Tracer</li>
@@ -527,38 +532,21 @@
               <li>DNS</li>
               <li>IPv4</li>
             </ul>
-          </article>
-
-          <article class="projet apparition" data-cat="web">
-            <div class="tete-projet">
-              <i class="fa-solid fa-people-group icone-projet" aria-hidden="true"></i>
-              <span class="etat-projet termine">terminé</span>
-            </div>
-            <h3>TodoLink</h3>
-            <p>
-              Projet réalisé en groupe de 3 à l'école : une application Laravel pour créer,
-              assigner et suivre des tâches avec priorités, pièces jointes et synchronisation calendrier.
-            </p>
-            <ul class="technologies">
-              <li>Laravel</li>
-              <li>PHP</li>
-              <li>Tailwind CSS</li>
-            </ul>
             <div class="liens-projet">
-              <a href="https://github.com/meowklr/todolink_projet_mes" target="_blank" rel="noopener noreferrer">
-                <i class="fa-brands fa-github" aria-hidden="true"></i> Code
-              </a>
-              <a class="lien-page-projet" href="todolink.html">
+              <a class="lien-page-projet" href="reseau.html">
                 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i> En voir plus
               </a>
             </div>
           </article>
 
-          <article class="projet apparition" data-cat="web">
+          <article class="projet apparition projet-agria" data-cat="web">
             <div class="tete-projet">
               <i class="fa-solid fa-seedling icone-projet" aria-hidden="true"></i>
               <span class="etat-projet termine">terminé</span>
             </div>
+            <figure class="projet-apercu projet-apercu-agria">
+              <img src="public/projects/agria/carte-creation.webp" alt="Aperçu de la carte satellite pour créer une parcelle dans Agria" loading="lazy" decoding="async" />
+            </figure>
             <h3>Agria</h3>
             <p>
               Projet de groupe réalisé en Bachelor 1 (2025/2026) : une application mobile de suivi
@@ -581,6 +569,31 @@
                 <i class="fa-solid fa-file-word" aria-hidden="true"></i> Rapport
               </a>
               <a class="lien-page-projet" href="agria.html">
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i> En voir plus
+              </a>
+            </div>
+          </article>
+
+          <article class="projet apparition" data-cat="web">
+            <div class="tete-projet">
+              <i class="fa-solid fa-people-group icone-projet" aria-hidden="true"></i>
+              <span class="etat-projet termine">terminé</span>
+            </div>
+            <h3>TodoLink</h3>
+            <p>
+              Projet réalisé en groupe de 3 à l'école : une application Laravel pour créer,
+              assigner et suivre des tâches avec priorités, pièces jointes et synchronisation calendrier.
+            </p>
+            <ul class="technologies">
+              <li>Laravel</li>
+              <li>PHP</li>
+              <li>Tailwind CSS</li>
+            </ul>
+            <div class="liens-projet">
+              <a href="https://github.com/meowklr/todolink_projet_mes" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-github" aria-hidden="true"></i> Code
+              </a>
+              <a class="lien-page-projet" href="todolink.html">
                 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i> En voir plus
               </a>
             </div>
