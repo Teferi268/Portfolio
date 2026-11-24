@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agria — Mathieu Morin</title>
+    <meta name="description" content="Découvrez Agria, une application de suivi agricole avec cartographie des parcelles, météo, alertes et diagnostic des cultures par IA." />
+    <meta name="theme-color" content="#F1F3F5" />
+    <link rel="canonical" href="https://mathieu-morin-dev.fr/agria.html" />
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="style.css?v=20261124-project-pages" />
+    <script src="script.js?v=20261124-project-pages" defer></script>
+  </head>
+  <body>
+    <script>
+      (() => {
+        const theme = localStorage.getItem("theme");
+        const dark = theme ? theme === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
+        document.body.classList.toggle("mode-sombre", dark);
+      })();
+    </script>
+    <a class="lien-rapide" href="#contenu">Aller au contenu</a>
+    <header>
+      <a class="chemin" href="index.html#WORK">@mathieu-morin-dev/WORK</a>
+      <nav class="menu" id="menu">
+        <a class="lien-navigation" href="index.html#ABOUT">ABOUT</a>
+        <a class="lien-navigation" href="index.html#WORK">WORK</a>
+        <a class="lien-navigation" href="index.html#CONTACT">CONTACT</a>
+      </nav>
+      <div class="actions-header">
+        <button class="bouton-theme" id="theme-btn" type="button" aria-label="Activer le mode clair" aria-pressed="true">
+          <i class="fa-solid fa-sun soleil" aria-hidden="true"></i>
+          <i class="fa-solid fa-moon lune" aria-hidden="true"></i>
+        </button>
+        <button class="bouton-menu" id="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu">
+          <i class="fa-solid fa-bars ouvert" aria-hidden="true"></i>
+          <i class="fa-solid fa-xmark ferme" aria-hidden="true"></i>
+        </button>
+      </div>
+    </header>
+
+    <main class="page-detail-projet" id="contenu">
+      <a class="retour-projets" href="index.html#WORK"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Retour aux projets</a>
+      <article>
+        <div class="detail-projet-entete">
+          <h1 class="titre">Agria</h1>
+          <p class="detail-projet-description">
+            Agria est un prototype d'application mobile destiné aux agriculteurs en coopérative.
+            Il réunit météo locale, suivi des parcelles et diagnostic des cultures pour aider à
+            prendre des décisions directement sur le terrain.
+          </p>
+          <p class="agria-contexte">Projet de Bachelor 1 réalisé par quatre étudiants en une semaine · Testé sur iOS et Android avec Expo Go</p>
+          <div class="detail-projet-actions">
+            <a class="action-principale" href="https://github.com/meowklr/Agria" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-github" aria-hidden="true"></i> Voir le code source
+            </a>
+            <a href="assets/Rapport_Agria_2026.docx" target="_blank" rel="noopener noreferrer">
+              <i class="fa-solid fa-file-word" aria-hidden="true"></i> Lire le rapport
+            </a>
+          </div>
+          <ul class="technologies detail-projet-technologies" aria-label="Technologies utilisées">
+            <li>TypeScript</li>
+            <li>React Native</li>
+            <li>Expo</li>
+            <li>Firebase</li>
+            <li>Leaflet · WebView</li>
+            <li>Make.com</li>
+            <li>OpenWeatherMap</li>
+            <li>Open-Meteo</li>
+          </ul>
+        </div>
+
+        <section class="detail-projet-section" aria-labelledby="agria-fonctionnalites">
+          <p class="detail-projet-section-label">Présentation</p>
+          <h2 id="agria-fonctionnalites">Un compagnon numérique pour le suivi des cultures</h2>
+          <p>
+            Le projet part d'un constat : les agriculteurs ont besoin d'outils mobiles simples pour
+            cartographier leurs parcelles, consulter une météo localisée et repérer les maladies. Agria
+            rassemble ces usages dans une seule application, pensée pour rester utile même lorsque la
+            connexion internet n'est pas permanente.
+          </p>
+          <div class="detail-projet-fonctionnalites agria-modules">
+            <article>
+              <i class="fa-solid fa-cloud-sun" aria-hidden="true"></i>
+              <div><h3>Météo et alertes</h3><p>Le tableau de bord présente la météo du jour, les prévisions à cinq jours et des alertes de risque. Un score local analyse sept facteurs météo; Make.com peut ensuite enrichir l'alerte avec une recommandation générée par IA.</p></div>
+            </article>
+            <article>
+              <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i>
+              <div><h3>Carte des parcelles</h3><p>Sur la carte satellite, l'utilisateur dessine ses parcelles et obtient automatiquement leur surface en hectares. Il peut aussi renseigner culture, sol, stade et date de semis; l'accrochage aux parcelles voisines aide à éviter les chevauchements.</p></div>
+            </article>
+            <article>
+              <i class="fa-solid fa-stethoscope" aria-hidden="true"></i>
+              <div><h3>Diagnostic guidé</h3><p>Le parcours en trois étapes demande une culture, des symptômes puis une localisation. Un algorithme compare les réponses à une base de 15 maladies réparties sur cinq cultures et fournit une première explication et des recommandations.</p></div>
+            </article>
+            <article>
+              <i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i>
+              <div><h3>Enrichissement par IA</h3><p>Pour aller plus loin, le diagnostic local peut être transmis à un agent agronomique via Make.com. Le rapport détaillé revient dans l'application, est enregistré dans Firebase et reste consultable dans les notifications.</p></div>
+            </article>
+            <article>
+              <i class="fa-solid fa-user-shield" aria-hidden="true"></i>
+              <div><h3>Compte et administration</h3><p>Le profil rassemble les informations de l'exploitation et ses statistiques. Un back-office séparé permet aux administrateurs de gérer utilisateurs et parcelles, consulter les journaux et suivre l'activité.</p></div>
+            </article>
+          </div>
+        </section>
+
+        <section class="detail-projet-section" aria-labelledby="agria-architecture">
+          <p class="detail-projet-section-label">Architecture et choix techniques</p>
+          <h2 id="agria-architecture">Une application mobile connectée, avec une base locale</h2>
+          <p>
+            L'application est développée en React Native avec Expo et TypeScript. Leaflet est affiché
+            dans une WebView pour conserver les outils cartographiques du prototype web. Firebase
+            Realtime Database synchronise les données et Firebase Authentication protège les comptes;
+            AsyncStorage conserve une copie locale pour que l'application puisse continuer à fonctionner
+            hors ligne avant synchronisation.
+          </p>
+          <div class="detail-projet-fonctionnalites agria-architecture">
+            <article><i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i><div><h3>Mobile</h3><p>Expo Router · React Native SDK 54 · TypeScript</p></div></article>
+            <article><i class="fa-solid fa-earth-europe" aria-hidden="true"></i><div><h3>Cartographie et météo</h3><p>Leaflet · WebView · ArcGIS/Esri · Nominatim · Open-Meteo</p></div></article>
+            <article><i class="fa-solid fa-database" aria-hidden="true"></i><div><h3>Données et comptes</h3><p>Firebase Realtime Database · Firebase Authentication · AsyncStorage</p></div></article>
+            <article><i class="fa-solid fa-diagram-project" aria-hidden="true"></i><div><h3>Automatisation</h3><p>Webhooks Make.com pour les analyses IA et les alertes enrichies</p></div></article>
+          </div>
+        </section>
+
+        <section class="detail-projet-section" aria-labelledby="agria-realisation">
+          <p class="detail-projet-section-label">Retour d'expérience</p>
+          <h2 id="agria-realisation">Les défis du projet</h2>
+          <p>
+            Le projet a été mené en équipe de quatre sur une semaine. Pour intégrer Leaflet, une
+            bibliothèque conçue pour le web, dans l'application mobile, nous l'avons isolée dans une
+            WebView et reliée à React Native par échange de messages. Le dessin tactile des parcelles
+            a demandé plusieurs ajustements : fermeture automatique du polygone, zone de sélection
+            élargie et aimantation aux parcelles voisines.
+          </p>
+          <p>
+            Le backend a également évolué pendant le projet : nous sommes passés de Supabase à Firebase
+            pour simplifier l'initialisation sous React Native et bénéficier de la synchronisation en
+            temps réel. Les données sont d'abord enregistrées localement, puis synchronisées dès que
+            le service est disponible.
+          </p>
+          <p>
+            Agria reste un prototype fonctionnel, testé sur iOS et Android via Expo Go. Le diagnostic
+            actuel s'appuie sur le rapprochement des symptômes; l'analyse directe d'une photo et
+            l'extension du diagnostic à d'autres cultures font partie des pistes d'évolution.
+          </p>
+        </section>
+
+        <section class="detail-projet-section" aria-labelledby="agria-captures">
+          <p class="detail-projet-section-label">Aperçu de l'application</p>
+          <h2 id="agria-captures">Les écrans de l'application sur mobile</h2>
+          <p>Les captures ci-dessous montrent les principaux parcours dans le design « Golden Hour », conçu pour rester lisible en extérieur.</p>
+          <div class="detail-projet-galerie agria-galerie">
+            <figure><a class="detail-projet-image-link agria-telephone" href="public/projects/agria/carte-creation.webp" data-agrandir aria-label="Agrandir la capture Carte satellite et création d'une parcelle"><img src="public/projects/agria/carte-creation.webp" alt="Création d'une parcelle sur la carte satellite Agria" loading="lazy" decoding="async" /></a><figcaption>Carte satellite et création d'une parcelle</figcaption></figure>
+            <figure><a class="detail-projet-image-link agria-telephone" href="public/projects/agria/dashboard-home.webp" data-agrandir aria-label="Agrandir la capture Accueil, météo et alertes"><img src="public/projects/agria/dashboard-home.webp" alt="Accueil Agria avec météo et alertes" loading="lazy" decoding="async" /></a><figcaption>Accueil, météo et alertes</figcaption></figure>
+            <figure><a class="detail-projet-image-link agria-telephone" href="public/projects/agria/diagnostic.webp" data-agrandir aria-label="Agrandir la capture Diagnostic des cultures"><img src="public/projects/agria/diagnostic.webp" alt="Écran de diagnostic des cultures Agria" loading="lazy" decoding="async" /></a><figcaption>Diagnostic des cultures</figcaption></figure>
+            <figure><a class="detail-projet-image-link agria-telephone" href="public/projects/agria/profil-replie.webp" data-agrandir aria-label="Agrandir la capture Profil et informations du compte"><img src="public/projects/agria/profil-replie.webp" alt="Profil utilisateur Agria" loading="lazy" decoding="async" /></a><figcaption>Profil et informations du compte</figcaption></figure>
+          </div>
+        </section>
+      </article>
+      <div class="visionneuse-image" role="dialog" aria-modal="true" aria-labelledby="visionneuse-caption" hidden>
+        <button class="visionneuse-fermer" type="button" aria-label="Fermer l'image agrandie"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+        <img alt="" />
+        <p id="visionneuse-caption"></p>
+      </div>
+    </main>
+
+    <footer>
+      <p class="ligne-pied"><span>&copy; <span id="year">2026</span> Mathieu Morin</span><span class="separateur-pied">/</span><span>Agria</span></p>
+      <a class="retour-haut" href="#contenu" aria-label="Remonter en haut de la page"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></a>
+    </footer>
+  </body>
+</html>

@@ -40,7 +40,9 @@ const initialiserTheme = () => {
 const initialiserNavigation = () => {
   const path = document.querySelector(".chemin");
   const links = document.querySelectorAll(".lien-navigation");
-  const sections = document.querySelectorAll("main section[id]");
+  const sections = Array.from(document.querySelectorAll("main section[id]")).filter((section) =>
+    Array.from(links).some((link) => link.getAttribute("href") === `#${section.id}`)
+  );
 
   const setPage = (pageName) => {
     path.textContent = `${NOM_DU_SITE}/${pageName}`;
@@ -236,9 +238,61 @@ const initialiserNasProject = () => {
   });
 };
 
+const initialiserVisionneuseImages = () => {
+  const visionneuse = document.querySelector(".visionneuse-image");
+  if (!visionneuse) return;
+
+  const grandeImage = visionneuse.querySelector("img");
+  const legende = visionneuse.querySelector("p");
+  const boutonFermer = visionneuse.querySelector(".visionneuse-fermer");
+  let positionDefilement = 0;
+  let lienActif = null;
+
+  const fermerVisionneuse = () => {
+    visionneuse.hidden = true;
+    lienActif?.focus({ preventScroll: true });
+    window.scrollTo(0, positionDefilement);
+    document.documentElement.classList.remove("visionneuse-ouverte");
+  };
+
+  document.querySelectorAll(".detail-projet-image-link[data-agrandir]").forEach((lien) => {
+    lien.addEventListener("click", (event) => {
+      event.preventDefault();
+      positionDefilement = window.scrollY;
+      lienActif = lien;
+      const image = lien.querySelector("img");
+      grandeImage.src = lien.href;
+      grandeImage.alt = image.alt;
+      legende.textContent = lien.closest("figure").querySelector("figcaption").textContent;
+      document.documentElement.classList.add("visionneuse-ouverte");
+      visionneuse.hidden = false;
+      boutonFermer.focus({ preventScroll: true });
+      window.scrollTo(0, positionDefilement);
+    });
+  });
+
+  boutonFermer.addEventListener("click", fermerVisionneuse);
+  visionneuse.addEventListener("click", (event) => {
+    if (event.target === visionneuse) fermerVisionneuse();
+  });
+  document.addEventListener("keydown", (event) => {
+    if (visionneuse.hidden) return;
+
+    if (event.key === "Escape") {
+      event.preventDefault();
+      fermerVisionneuse();
+    } else if (event.key === "Tab") {
+      event.preventDefault();
+      boutonFermer.focus({ preventScroll: true });
+    }
+  });
+};
+
 // Copie de l'adresse e-mail
 const initialiserContact = () => {
   const copyButton = document.querySelector("#copy-btn");
+  if (!copyButton) return;
+
   const copyIcon = copyButton.querySelector("i");
 
   copyButton.addEventListener("click", async () => {
@@ -263,5 +317,7 @@ initialiserHeader();
 initialiserFiltres();
 initialiserDetailsProjets();
 initialiserNasProject();
+initialiserVisionneuseImages();
 initialiserContact();
-document.querySelector("#year").textContent = String(new Date().getFullYear());
+const year = document.querySelector("#year");
+if (year) year.textContent = String(new Date().getFullYear());

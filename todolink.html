@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TodoLink — Mathieu Morin</title>
+    <meta name="description" content="Découvrez TodoLink, une application Laravel de création, d'assignation et de suivi de tâches réalisée en équipe." />
+    <meta name="theme-color" content="#F1F3F5" />
+    <link rel="canonical" href="https://mathieu-morin-dev.fr/todolink.html" />
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="style.css?v=20261124-project-pages" />
+    <script src="script.js?v=20261124-project-pages" defer></script>
+  </head>
+  <body>
+    <script>
+      (() => {
+        const theme = localStorage.getItem("theme");
+        const dark = theme ? theme === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
+        document.body.classList.toggle("mode-sombre", dark);
+      })();
+    </script>
+    <a class="lien-rapide" href="#contenu">Aller au contenu</a>
+    <header>
+      <a class="chemin" href="index.html#WORK">@mathieu-morin-dev/WORK</a>
+      <nav class="menu" id="menu">
+        <a class="lien-navigation" href="index.html#ABOUT">ABOUT</a>
+        <a class="lien-navigation" href="index.html#WORK">WORK</a>
+        <a class="lien-navigation" href="index.html#CONTACT">CONTACT</a>
+      </nav>
+      <div class="actions-header">
+        <button class="bouton-theme" id="theme-btn" type="button" aria-label="Activer le mode clair" aria-pressed="true">
+          <i class="fa-solid fa-sun soleil" aria-hidden="true"></i>
+          <i class="fa-solid fa-moon lune" aria-hidden="true"></i>
+        </button>
+        <button class="bouton-menu" id="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu">
+          <i class="fa-solid fa-bars ouvert" aria-hidden="true"></i>
+          <i class="fa-solid fa-xmark ferme" aria-hidden="true"></i>
+        </button>
+      </div>
+    </header>
+
+    <main class="page-detail-projet" id="contenu">
+      <a class="retour-projets" href="index.html#WORK"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Retour aux projets</a>
+      <article>
+        <div class="detail-projet-entete">
+          <h1 class="titre">TodoLink</h1>
+          <p class="detail-projet-description">
+            Une application Laravel conçue en groupe de trois pour créer, assigner et suivre des tâches.
+            Elle réunit les priorités, les pièces jointes et la synchronisation avec un calendrier.
+          </p>
+          <div class="detail-projet-actions">
+            <a class="action-principale" href="https://github.com/meowklr/todolink_projet_mes" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-github" aria-hidden="true"></i> Voir le code source
+            </a>
+          </div>
+          <ul class="technologies detail-projet-technologies" aria-label="Technologies utilisées">
+            <li>Laravel</li>
+            <li>PHP</li>
+            <li>Tailwind CSS</li>
+          </ul>
+        </div>
+
+        <section class="detail-projet-section" aria-labelledby="todolink-fonctionnalites">
+          <p class="detail-projet-section-label">Présentation</p>
+          <h2 id="todolink-fonctionnalites">Le suivi des tâches, de la création à l'échéance</h2>
+          <p>
+            TodoLink centralise l'organisation d'un programme de tâches. Les utilisateurs peuvent
+            détailler le travail à effectuer, le confier à des collaborateurs et suivre les priorités
+            et échéances depuis un tableau de bord.
+          </p>
+          <div class="detail-projet-fonctionnalites">
+            <article><i class="fa-solid fa-list-check" aria-hidden="true"></i><p>Créer des tâches et préciser les actions à réaliser.</p></article>
+            <article><i class="fa-solid fa-users" aria-hidden="true"></i><p>Assigner le travail à des collaborateurs.</p></article>
+            <article><i class="fa-solid fa-flag" aria-hidden="true"></i><p>Organiser les tâches avec des priorités et des échéances.</p></article>
+            <article><i class="fa-solid fa-paperclip" aria-hidden="true"></i><p>Joindre des fichiers et synchroniser les tâches au calendrier.</p></article>
+          </div>
+        </section>
+
+        <section class="detail-projet-section" aria-labelledby="todolink-captures">
+          <p class="detail-projet-section-label">Aperçu de l'application</p>
+          <h2 id="todolink-captures">Quelques écrans de TodoLink</h2>
+          <div class="detail-projet-galerie">
+            <figure><a class="detail-projet-image-link" href="public/projects/todolink/accueil.webp" data-agrandir aria-label="Agrandir la capture Accueil et accès à l'application"><img src="public/projects/todolink/accueil.webp" alt="Page d'accueil de TodoLink" loading="lazy" decoding="async" /></a><figcaption>Accueil et accès à l'application</figcaption></figure>
+            <figure><a class="detail-projet-image-link" href="public/projects/todolink/connexion.webp" data-agrandir aria-label="Agrandir la capture Création d'un compte"><img src="public/projects/todolink/connexion.webp" alt="Formulaire d'inscription de TodoLink" loading="lazy" decoding="async" /></a><figcaption>Création d'un compte</figcaption></figure>
+            <figure><a class="detail-projet-image-link" href="public/projects/todolink/creation-tache.webp" data-agrandir aria-label="Agrandir la capture Création et configuration d'une tâche"><img src="public/projects/todolink/creation-tache.webp" alt="Formulaire de création d'une tâche" loading="lazy" decoding="async" /></a><figcaption>Création et configuration d'une tâche</figcaption></figure>
+            <figure><a class="detail-projet-image-link" href="public/projects/todolink/dashboard.webp" data-agrandir aria-label="Agrandir la capture Tableau de bord et suivi des tâches"><img src="public/projects/todolink/dashboard.webp" alt="Tableau de bord des tâches TodoLink" loading="lazy" decoding="async" /></a><figcaption>Tableau de bord et suivi des tâches</figcaption></figure>
+          </div>
+        </section>
+      </article>
+      <div class="visionneuse-image" role="dialog" aria-modal="true" aria-labelledby="visionneuse-caption" hidden>
+        <button class="visionneuse-fermer" type="button" aria-label="Fermer l'image agrandie"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+        <img alt="" />
+        <p id="visionneuse-caption"></p>
+      </div>
+    </main>
+
+    <footer>
+      <p class="ligne-pied"><span>&copy; <span id="year">2026</span> Mathieu Morin</span><span class="separateur-pied">/</span><span>TodoLink</span></p>
+      <a class="retour-haut" href="#contenu" aria-label="Remonter en haut de la page"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></a>
+    </footer>
+  </body>
+</html>
