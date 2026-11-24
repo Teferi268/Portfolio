@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="fr" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mini Dashboard - Projet 3</title>
+    <meta name="description" content="Mini tableau de bord avec date, taches rapides, progression et theme persistant." />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="dashboard-shell">
+      <section class="hero-panel">
+        <div>
+          <h1>Mini Dashboard</h1>
+        </div>
+        <button id="themeToggle" class="theme-toggle" type="button" aria-pressed="false">Passer en mode sombre</button>
+      </section>
+
+      <section class="dashboard-grid">
+        <article class="dashboard-card welcome-card">
+          <p class="card-label">Bienvenue</p>
+          <h2>Bonjour, prêt à avancer sur tes projets ?</h2>
+          <p>Ce mini tableau de bord rassemble quelques informations utiles dans une interface sobre et un peu plus éditoriale.</p>
+        </article>
+
+        <article class="dashboard-card date-card">
+          <p class="card-label">Date du jour</p>
+          <strong id="currentDate" aria-live="polite">--</strong>
+        </article>
+
+        <article class="dashboard-card tasks-card">
+          <p class="card-label">Tâches rapides</p>
+          <form class="quick-task-form" id="quickTaskForm" autocomplete="off">
+            <label class="sr-only" for="quickTaskInput">Nouvelle tâche rapide</label>
+            <input id="quickTaskInput" type="text" maxlength="60" placeholder="Ajouter une action..." />
+            <button type="submit">Ajouter</button>
+          </form>
+          <ul id="quickTasks" class="quick-tasks"></ul>
+        </article>
+
+        <article class="dashboard-card progress-card">
+          <p class="card-label">Progression</p>
+          <div class="progress-info">
+            <strong id="progressValue" aria-live="polite">72%</strong>
+            <span>Objectif hebdomadaire fictif</span>
+          </div>
+          <div class="progress-bar" aria-hidden="true">
+            <span id="progressFill"></span>
+          </div>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
