@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://mathieu-morin-dev.fr/sitemap.xml
