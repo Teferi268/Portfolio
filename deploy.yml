@@ -1,0 +1,45 @@
+name: Deploy Portfolio to OVH
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: portfolio-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Recuperation du code
+        uses: actions/checkout@v6
+
+      - name: Verification du portfolio
+        run: test -f index.html
+
+      - name: Deploiement automatique sur OVH
+        uses: SamKirkland/FTP-Deploy-Action@v4.4.0
+        with:
+          server: ${{ secrets.OVH_HOST }}
+          username: ${{ secrets.OVH_USERNAME }}
+          password: ${{ secrets.OVH_PASSWORD }}
+          protocol: ftps
+          port: 21
+          local-dir: ./
+          server-dir: ./www/
+          dangerous-clean-slate: false
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            **/.env*
+            **/.vscode/**
+            **/README.md
+            **/deploy.yml
