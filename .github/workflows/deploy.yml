@@ -24,22 +24,25 @@ jobs:
       - name: Verification du portfolio
         run: test -f index.html
 
-      - name: Deploiement automatique sur OVH
-        uses: SamKirkland/FTP-Deploy-Action@v4.4.0
+      - name: Deploiement SFTP automatique sur OVH
+        uses: eiserv/easySFTP@v3.8.6
         with:
-          server: ${{ secrets.OVH_HOST }}
+          host: ${{ secrets.OVH_HOST }}
+          port: 22
           username: ${{ secrets.OVH_USERNAME }}
           password: ${{ secrets.OVH_PASSWORD }}
-          protocol: ftps
-          port: 21
-          local-dir: ./
-          server-dir: ./www/
-          dangerous-clean-slate: false
+          host-key: ${{ secrets.OVH_SFTP_HOST_KEY }}
+          source: .
+          target: ./www/
+          mode: overlay
           exclude: |
-            **/.git*
-            **/.git*/**
+            .git/
+            .git/**
+            .github/
+            .github/**
+            **/node_modules/
             **/node_modules/**
             **/.env*
+            **/.vscode/
             **/.vscode/**
             **/README.md
-            **/deploy.yml
