@@ -692,7 +692,7 @@ header.menu-ouvert .bouton-menu .ferme{
 	border: 1px solid var(--line);
 	border-radius: var(--radius);
 	padding: 24px;
-	transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+	transition: transform 0.45s ease, border-color 0.45s ease, box-shadow 0.45s ease;
 }
 .projet:hover{
 	transform: translateY(-4px);
@@ -1418,16 +1418,13 @@ header.menu-ouvert .bouton-menu .ferme{
 	gap: 12px;
 	padding: 16px;
 }
-.nas-services article > i{
+.nas-services article > img{
 	width: 34px;
 	height: 34px;
 	flex: none;
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
+	object-fit: contain;
 	border-radius: 7px;
 	background: color-mix(in srgb, var(--accent) 10%, transparent);
-	color: var(--accent);
 }
 .nas-services h5{
 	margin-bottom: 6px;
